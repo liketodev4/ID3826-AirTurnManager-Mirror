@@ -1,0 +1,51 @@
+﻿<Page x:Class="AirTurnManager.UI.Views.KeyRepeatPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Style="{StaticResource PageStyle}"
+      mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <RelativePanel HorizontalAlignment="Stretch">
+                <StackPanel Orientation="Vertical"
+                            RelativePanel.AlignLeftWithPanel="True"
+                            RelativePanel.AlignRightWithPanel="True"
+                            RelativePanel.AlignTopWithPanel="True">
+                    <StackPanel Margin="{StaticResource SmallTopMargin}">
+                        <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Key repeat" />
+                        <RadioButton GroupName="keyRepeatRadioGroup">Off</RadioButton>
+                        <RadioButton GroupName="keyRepeatRadioGroup" IsChecked="True">AirTurn repeat</RadioButton>
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}">
+                        <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Delay before key repeat" />
+                        <Slider IsHitTestVisible="True"
+                                Maximum="100"
+                                Minimum="0"
+                                StepFrequency="10"
+                                Value="80" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource SmallTopMargin}">
+                        <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Key repeat rate" />
+                        <Slider IsHitTestVisible="True"
+                                Maximum="100"
+                                Minimum="0"
+                                StepFrequency="10"
+                                Value="25" />
+                        <TextBlock FontSize="{StaticResource SmallFontSize}"
+                                   Text="When you press and hold down a padal the AirTurn can send just one key event (Off), or it can send multiple the actions repeatly (AirTurn repeat) for which you can set the time before AirTurn starts repeating and the number of repeat per second."
+                                   TextWrapping="WrapWholeWords" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            RelativePanel.AlignBottomWithPanel="True"
+                            RelativePanel.AlignRightWithPanel="True">
+                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Revert to default</Button>
+                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Revert to saved</Button>
+                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Save to AirTurn</Button>
+                </StackPanel>
+            </RelativePanel>
+
+        </Grid>
+    </Grid>
+</Page>

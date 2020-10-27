@@ -1,0 +1,33 @@
+﻿<Page x:Class="AirTurnManager.UI.Views.UpdatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Style="{StaticResource PageStyle}"
+      mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftTopRightBottomMargin}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <RelativePanel>
+                <TextBlock x:Name="messageLabel"
+                           Margin="{StaticResource SmallLeftTopRightBottomMargin}"
+                           RelativePanel.AlignTopWithPanel="True">
+                    Update:
+                </TextBlock>
+                <TextBox Margin="{StaticResource SmallLeftRightMargin}"
+                         VerticalAlignment="Stretch"
+                         IsReadOnly="True"
+                         RelativePanel.Above="updateButton"
+                         RelativePanel.AlignLeftWithPanel="True"
+                         RelativePanel.AlignRightWithPanel="True"
+                         RelativePanel.Below="messageLabel"
+                         Text="Information about update."
+                         TextWrapping="Wrap" />
+                <Button x:Name="updateButton"
+                        Margin="{StaticResource SmallLeftTopRightBottomMargin}"
+                        Content="Update"
+                        RelativePanel.AlignBottomWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True" />
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>
