@@ -5,9 +5,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Style="{StaticResource PageStyle}"
       mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftTopRightBottomMargin}">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <RelativePanel>
+            <RelativePanel HorizontalAlignment="Stretch">
                 <TextBlock x:Name="messageLabel"
                            Margin="{StaticResource SmallLeftTopRightBottomMargin}"
                            RelativePanel.AlignTopWithPanel="True">
