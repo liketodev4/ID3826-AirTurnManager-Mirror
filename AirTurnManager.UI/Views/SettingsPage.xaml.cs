@@ -7,9 +7,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace AirTurnManager.UI.Views
 {
-    // TODO WTS: Change the URL for your privacy policy in the Resource File, currently set to https://YourPrivacyUrlGoesHere
     public sealed partial class SettingsPage : Page
     {
+        // TODO Change the URL for your privacy policy in the Resource File.
         public SettingsViewModel ViewModel { get; } = new SettingsViewModel();
 
         public SettingsPage()

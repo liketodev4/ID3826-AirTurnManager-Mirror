@@ -6,9 +6,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace AirTurnManager.UI.Views
 {
-    // TODO WTS: Change the icons and titles for all NavigationViewItems in ShellPage.xaml.
     public sealed partial class ShellPage : Page
     {
+        // TODO Change the icons and titles for all NavigationViewItems in ShellPage.xaml.
         public ShellViewModel ViewModel { get; } = new ShellViewModel();
 
         public ShellPage()

@@ -10,7 +10,7 @@ using Windows.UI.Xaml;
 
 namespace AirTurnManager.UI.ViewModels
 {
-    // TODO Add other settings as necessary. For help see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/pages/settings.md
+    // Add other settings as necessary. For help see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/pages/settings.md
     public class SettingsViewModel : Observable
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
