@@ -3,24 +3,28 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:control="using:AirTurnManager.UI.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:AirTurnManager.UI.Helpers"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Style="{StaticResource PageStyle}"
       mc:Ignorable="d">
+    <Page.Resources>
+        <local:BooleanConverter x:Key="BooleanConverter" />
+    </Page.Resources>
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <RelativePanel HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Vertical" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Connection speed" />
-                        <RadioButton GroupName="connectionSpeedRadioGroup" IsChecked="True">Low power (recommended)</RadioButton>
-                        <RadioButton GroupName="connectionSpeedRadioGroup">Fast responce</RadioButton>
+                        <RadioButton GroupName="connectionSpeedRadioGroup" IsChecked="{x:Bind ViewModel.IsLowConnectionSpeed, Converter={StaticResource BooleanConverter}, ConverterParameter='true', Mode=TwoWay}">Low power (recommended)</RadioButton>
+                        <RadioButton GroupName="connectionSpeedRadioGroup" IsChecked="{x:Bind ViewModel.IsLowConnectionSpeed, Converter={StaticResource BooleanConverter}, ConverterParameter='false', Mode=TwoWay}">Fast responce</RadioButton>
                         <TextBlock FontSize="{StaticResource SmallFontSize}" Text="The airturn connection can be optimised either for a faster responce to pedal presses or a lower power consumption. 'Low power' is a recommended unless you have specific problem with slow responce." TextWrapping="WrapWholeWords" />
                     </StackPanel>
 
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Pairing method" />
-                        <RadioButton GroupName="pairingMethodRadioGroup">Open pairing</RadioButton>
-                        <RadioButton GroupName="pairingMethodRadioGroup" IsChecked="True">Closed pairing</RadioButton>
+                        <RadioButton GroupName="pairingMethodRadioGroup" IsChecked="{x:Bind ViewModel.IsOpenPairingMethod, Converter={StaticResource BooleanConverter}, ConverterParameter='true', Mode=TwoWay}">Open pairing</RadioButton>
+                        <RadioButton GroupName="pairingMethodRadioGroup" IsChecked="{x:Bind ViewModel.IsOpenPairingMethod, Converter={StaticResource BooleanConverter}, ConverterParameter='false', Mode=TwoWay}">Closed pairing</RadioButton>
                         <TextBlock FontSize="{StaticResource SmallFontSize}" Text="Currently is Open method, paired only to this PC." TextWrapping="WrapWholeWords" />
                         <TextBlock FontSize="{StaticResource SmallFontSize}" Text="In Open method, pairing is only requered in modes 2+ and the AirTurn can pair to up to 8 devices." TextWrapping="WrapWholeWords" />
                         <TextBlock FontSize="{StaticResource SmallFontSize}" Text="In Close method, pairing is requered in all modes, and pairing can only made with one device." TextWrapping="WrapWholeWords" />
@@ -32,16 +36,16 @@
                                 Maximum="200"
                                 Minimum="0"
                                 StepFrequency="10"
-                                Value="30" />
+                                Value="{x:Bind ViewModel.DebounceTime, Mode=TwoWay}" />
                         <TextBlock FontSize="{StaticResource SmallFontSize}" Text="Defines the time during which only one input event can occur. If yuo are experiensing multiple output being sent, try increasing this value. If your AirTurn is not responsive enough, try decreasing this value." TextWrapping="WrapWholeWords" />
                     </StackPanel>
 
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="OEM" />
-                        <RadioButton GroupName="oemRadioGroup" IsChecked="True">AirTurn</RadioButton>
+                        <RadioButton GroupName="oemRadioGroup" IsChecked="{x:Bind ViewModel.IsAirTurnOem, Converter={StaticResource BooleanConverter}, ConverterParameter='true', Mode=TwoWay}">AirTurn</RadioButton>
                         <StackPanel Orientation="Horizontal">
-                            <RadioButton GroupName="oemRadioGroup">Other</RadioButton>
-                            <TextBox Width="40" Text="ttt" />
+                            <RadioButton GroupName="oemRadioGroup" IsChecked="{x:Bind ViewModel.IsAirTurnOem, Converter={StaticResource BooleanConverter}, ConverterParameter='false', Mode=TwoWay}">Other</RadioButton>
+                            <TextBox Width="40" IsEnabled="{x:Bind ViewModel.IsAirTurnOem, Converter={StaticResource BooleanConverter}, ConverterParameter='false', Mode=OneWay}" Text="{x:Bind ViewModel.OtherOemString, Mode=TwoWay}" />
                         </StackPanel>
                     </StackPanel>
 

@@ -137,6 +137,7 @@
     <Compile Include="Controls\ParametersActionsControl.xaml.cs">
       <DependentUpon>ParametersActionsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BooleanConverter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\NavigationHelper.cs" />
