@@ -4,16 +4,20 @@
       xmlns:control="using:AirTurnManager.UI.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="using:AirTurnManager.UI.Helpers"
       Style="{StaticResource PageStyle}"
       mc:Ignorable="d">
+    <Page.Resources>
+        <local:BooleanConverter x:Key="BooleanConverter" />
+    </Page.Resources>
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <RelativePanel HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Vertical" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Key repeat" />
-                        <RadioButton GroupName="keyRepeatRadioGroup">Off</RadioButton>
-                        <RadioButton GroupName="keyRepeatRadioGroup" IsChecked="True">AirTurn repeat</RadioButton>
+                        <RadioButton GroupName="keyRepeatRadioGroup" IsChecked="{x:Bind ViewModel.IsAirTurnRepeat, Converter={StaticResource BooleanConverter}, ConverterParameter='false', Mode=TwoWay}">Off</RadioButton>
+                        <RadioButton GroupName="keyRepeatRadioGroup" IsChecked="{x:Bind ViewModel.IsAirTurnRepeat, Converter={StaticResource BooleanConverter}, ConverterParameter='true', Mode=TwoWay}">AirTurn repeat</RadioButton>
                     </StackPanel>
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Delay before key repeat" />
@@ -21,7 +25,7 @@
                                 Maximum="100"
                                 Minimum="0"
                                 StepFrequency="10"
-                                Value="80" />
+                                Value="{x:Bind ViewModel.DelayBeforeKeyRepeat, Mode=TwoWay}" />
                     </StackPanel>
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Key repeat rate" />
@@ -29,7 +33,7 @@
                                 Maximum="100"
                                 Minimum="0"
                                 StepFrequency="10"
-                                Value="25" />
+                                Value="{x:Bind ViewModel.KeyRepeatRate, Mode=TwoWay}" />
                         <TextBlock FontSize="{StaticResource SmallFontSize}" Text="When you press and hold down a padal the AirTurn can send just one key event (Off), or it can send multiple the actions repeatly (AirTurn repeat) for which you can set the time before AirTurn starts repeating and the number of repeat per second." TextWrapping="WrapWholeWords" />
                     </StackPanel>
                 </StackPanel>

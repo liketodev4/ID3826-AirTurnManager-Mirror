@@ -16,7 +16,7 @@
                                 Maximum="120"
                                 Minimum="0"
                                 StepFrequency="10"
-                                Value="80" />
+                                Value="{x:Bind ViewModel.PowerOffTimeout, Mode=TwoWay}" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True">

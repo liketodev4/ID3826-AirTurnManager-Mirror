@@ -7,8 +7,25 @@ namespace AirTurnManager.UI.ViewModels
 {
     public class PowerSavingViewModel : BaseViewModel
     {
+        #region Private members
+
+        private int _powerOffTimeout;
+
+        #endregion
+
+        #region Public members
+
+        public int PowerOffTimeout
+        {
+            get { return _powerOffTimeout; }
+            set { Set(ref _powerOffTimeout, value); }
+        }
+
+        #endregion
         public PowerSavingViewModel()
         {
+            // temporary assign values
+            _powerOffTimeout = 100;
         }
 
         #region Revert and Save parameters Methods
