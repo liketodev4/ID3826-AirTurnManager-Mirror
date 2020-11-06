@@ -44,10 +44,12 @@
             </Grid.RowDefinitions>
             <Frame x:Name="shellFrame" Grid.Row="0" />
 
-            <!--Status bar-->
+            <!--  Status bar  -->
             <RelativePanel Grid.Row="1" Margin="{StaticResource MediumLeftTopRightBottomMargin}">
-                <TextBlock Text="H: 1.0.0 F:2.1.3 Mode: 1" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True"></TextBlock>
-                <Button RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True">Disconnect</Button>
+                <TextBlock RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Text="H: 1.0.0 F:2.1.3 Mode: 1" />
+                <Button Command="{x:Bind ViewModel.DisconnectDeviceCommand}" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                    Disconnect
+                </Button>
             </RelativePanel>
         </Grid>
     </winui:NavigationView>

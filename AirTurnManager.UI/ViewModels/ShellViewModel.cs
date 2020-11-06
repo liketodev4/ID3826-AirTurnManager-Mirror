@@ -9,6 +9,7 @@ using AirTurnManager.UI.Services;
 using AirTurnManager.UI.Views;
 
 using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
@@ -29,6 +30,8 @@ namespace AirTurnManager.UI.ViewModels
         private ICommand _loadedCommand;
         private ICommand _itemInvokedCommand;
 
+        private ICommand _disconnectDeviceCommand;
+
         public bool IsBackEnabled
         {
             get { return _isBackEnabled; }
@@ -44,6 +47,15 @@ namespace AirTurnManager.UI.ViewModels
         public ICommand LoadedCommand => _loadedCommand ?? (_loadedCommand = new RelayCommand(OnLoaded));
 
         public ICommand ItemInvokedCommand => _itemInvokedCommand ?? (_itemInvokedCommand = new RelayCommand<WinUI.NavigationViewItemInvokedEventArgs>(OnItemInvoked));
+
+        public ICommand DisconnectDeviceCommand => _disconnectDeviceCommand ?? (_disconnectDeviceCommand = new RelayCommand(DisconnectDevice));
+
+        #region Methods for Commands
+        private async void DisconnectDevice()
+        {
+            await new MessageDialog("Device disconnected").ShowAsync();
+        }
+        #endregion
 
         public ShellViewModel()
         {

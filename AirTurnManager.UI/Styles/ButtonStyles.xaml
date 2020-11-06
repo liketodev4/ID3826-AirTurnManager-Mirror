@@ -2,9 +2,7 @@
 
     <Style x:Key="ButtonBaseStyle" TargetType="Button" />
 
-    <Style x:Key="ButtonChoiseOfAction"
-           BasedOn="{StaticResource ButtonBaseStyle}"
-           TargetType="Button">
+    <Style x:Key="ButtonChoiseOfAction" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
         <Setter Property="Control.Width" Value="100" />
         <Setter Property="Control.HorizontalAlignment" Value="Center" />
         <Setter Property="Control.VerticalAlignment" Value="Center" />

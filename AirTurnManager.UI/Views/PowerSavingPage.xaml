@@ -1,6 +1,7 @@
 ﻿<Page x:Class="AirTurnManager.UI.Views.PowerSavingPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:control="using:AirTurnManager.UI.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Style="{StaticResource PageStyle}"
@@ -8,10 +9,7 @@
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <RelativePanel HorizontalAlignment="Stretch">
-                <StackPanel Orientation="Vertical"
-                            RelativePanel.AlignLeftWithPanel="True"
-                            RelativePanel.AlignRightWithPanel="True"
-                            RelativePanel.AlignTopWithPanel="True">
+                <StackPanel Orientation="Vertical" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                     <StackPanel Margin="{StaticResource SmallTopMargin}">
                         <TextBlock FontSize="{StaticResource MediumFontSize}" Text="Power off when iddle after" />
                         <Slider IsHitTestVisible="True"
@@ -21,12 +19,8 @@
                                 Value="80" />
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            RelativePanel.AlignBottomWithPanel="True"
-                            RelativePanel.AlignRightWithPanel="True">
-                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Revert to default</Button>
-                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Revert to saved</Button>
-                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Save to AirTurn</Button>
+                <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                    <control:ParametersActionsControl DoneParametersCommand="{x:Bind ViewModel.DoneParametersCommand}" RevertToDefaultParametersCommand="{x:Bind ViewModel.RevertToDefaultParametersCommand}" RevertToSavedParametersCommand="{x:Bind ViewModel.RevertToSavedParametersCommand}" />
                 </StackPanel>
             </RelativePanel>
         </Grid>

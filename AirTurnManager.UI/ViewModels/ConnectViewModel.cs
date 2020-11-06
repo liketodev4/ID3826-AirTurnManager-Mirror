@@ -4,7 +4,7 @@ using AirTurnManager.UI.Helpers;
 
 namespace AirTurnManager.UI.ViewModels
 {
-    public class ConnectViewModel : Observable
+    public class ConnectViewModel : BaseViewModel
     {
         public ConnectViewModel()
         {

@@ -1,6 +1,7 @@
 ﻿<Page x:Class="AirTurnManager.UI.Views.ActionsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:control="using:AirTurnManager.UI.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Style="{StaticResource PageStyle}"
@@ -114,204 +115,127 @@
                                Text="Proprietary" />
 
                     <!--  Mode 2 row  -->
-                    <Button Grid.Row="2"
-                            Grid.Column="1"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="2"
-                            Grid.Column="2"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="2"
-                            Grid.Column="3"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="2"
-                            Grid.Column="4"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="2" Grid.Column="4" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="2"
-                            Grid.Column="5"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="2" Grid.Column="5" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="2"
-                            Grid.Column="6"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="2" Grid.Column="6" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
 
                     <!--  Mode 3 row  -->
-                    <Button Grid.Row="3"
-                            Grid.Column="1"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="3"
-                            Grid.Column="2"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="3"
-                            Grid.Column="3"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="3"
-                            Grid.Column="4"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="3" Grid.Column="4" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="3"
-                            Grid.Column="5"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="3" Grid.Column="5" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="3"
-                            Grid.Column="6"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="3" Grid.Column="6" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
 
                     <!--  Mode 4 row  -->
-                    <Button Grid.Row="4"
-                            Grid.Column="1"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="4"
-                            Grid.Column="2"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="4"
-                            Grid.Column="3"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="4"
-                            Grid.Column="4"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="4" Grid.Column="4" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="4"
-                            Grid.Column="5"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="4" Grid.Column="5" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="4"
-                            Grid.Column="6"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="4" Grid.Column="6" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
 
                     <!--  Mode 5 row  -->
-                    <Button Grid.Row="5"
-                            Grid.Column="1"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="5"
-                            Grid.Column="2"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="5"
-                            Grid.Column="3"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="5"
-                            Grid.Column="4"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="5" Grid.Column="4" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="5"
-                            Grid.Column="5"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="5"
-                            Grid.Column="6"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="5" Grid.Column="6" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
 
                     <!--  Mode 6 row  -->
-                    <Button Grid.Row="6"
-                            Grid.Column="1"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="6"
-                            Grid.Column="2"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="6" Grid.Column="2" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="6"
-                            Grid.Column="3"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="6" Grid.Column="3" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="6"
-                            Grid.Column="4"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="6" Grid.Column="4" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="6"
-                            Grid.Column="5"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="6"
-                            Grid.Column="6"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="6" Grid.Column="6" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
 
                     <!--  Mode 7 row  -->
-                    <Button Grid.Row="7"
-                            Grid.Column="1"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="7"
-                            Grid.Column="2"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="7" Grid.Column="2" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="7"
-                            Grid.Column="3"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="7" Grid.Column="3" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="7"
-                            Grid.Column="4"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="7" Grid.Column="4" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="7"
-                            Grid.Column="5"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="7" Grid.Column="5" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
-                    <Button Grid.Row="7"
-                            Grid.Column="6"
-                            Style="{StaticResource ButtonChoiseOfAction}">
+                    <Button Grid.Row="7" Grid.Column="6" Style="{StaticResource ButtonChoiseOfAction}">
                         Key
                     </Button>
                 </Grid>
-
-                <StackPanel Orientation="Horizontal"
-                            RelativePanel.AlignBottomWithPanel="True"
-                            RelativePanel.AlignRightWithPanel="True">
-                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Revert to default</Button>
-                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Revert to saved</Button>
-                    <Button Margin="{StaticResource SmallLeftTopRightBottomMargin}">Save to AirTurn</Button>
+                <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                    <control:ParametersActionsControl DoneParametersCommand="{x:Bind ViewModel.DoneParametersCommand}" RevertToDefaultParametersCommand="{x:Bind ViewModel.RevertToDefaultParametersCommand}" RevertToSavedParametersCommand="{x:Bind ViewModel.RevertToSavedParametersCommand}" />
                 </StackPanel>
             </RelativePanel>
         </Grid>
