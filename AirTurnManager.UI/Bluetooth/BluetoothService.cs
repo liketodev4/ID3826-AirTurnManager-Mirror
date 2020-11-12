@@ -17,7 +17,7 @@ namespace AirTurnManager.UI.Bluetooth
 {
     public class BluetoothService
     {
-        public ObservableCollection<BluetoothDevice> KnownBluetoothDevices = new ObservableCollection<BluetoothDevice>();
+        public ObservableCollection<BluetoothDeviceItem> KnownBluetoothDevices = new ObservableCollection<BluetoothDeviceItem>();
         public ObservableCollection<DeviceInformation> UnknownBluetoothDevices = new ObservableCollection<DeviceInformation>();
 
         private DeviceWatcher bluetoothDeviceWatcher;
@@ -30,7 +30,8 @@ namespace AirTurnManager.UI.Bluetooth
                 "System.Devices.Aep.DeviceAddress",
                 "System.Devices.Aep.IsConnected",
                 "System.Devices.Aep.Bluetooth.Le.IsConnectable",
-                "System.Devices.Aep.Bluetooth.LastSeenTime"};
+                "System.Devices.Aep.Bluetooth.LastSeenTime",
+                "System.Devices.Aep.SignalStrength"};
 
 
             //System.Devices.Aep.Bluetooth.IssueInquiry
@@ -154,7 +155,7 @@ namespace AirTurnManager.UI.Bluetooth
                         // If device has been updated with a friendly name it's no longer unknown.
                         if (deviceInfo.Name != String.Empty)
                         {
-                            KnownBluetoothDevices.Add(new BluetoothDevice(deviceInfo));
+                            KnownBluetoothDevices.Add(new BluetoothDeviceItem(deviceInfo));
                             UnknownBluetoothDevices.Remove(deviceInfo);
                         }
                     }
@@ -177,7 +178,7 @@ namespace AirTurnManager.UI.Bluetooth
                         if (deviceInfo.Name != string.Empty)
                         {
                             // If device has a friendly name display it immediately.
-                            KnownBluetoothDevices.Add(new BluetoothDevice(deviceInfo));
+                            KnownBluetoothDevices.Add(new BluetoothDeviceItem(deviceInfo));
                         }
                         else
                         {
@@ -189,9 +190,9 @@ namespace AirTurnManager.UI.Bluetooth
             });
         }
 
-        private BluetoothDevice FindKnownBluetoothDevice(string id)
+        private BluetoothDeviceItem FindKnownBluetoothDevice(string id)
         {
-            foreach (BluetoothDevice bluetoothDevice in KnownBluetoothDevices)
+            foreach (BluetoothDeviceItem bluetoothDevice in KnownBluetoothDevices)
             {
                 if (bluetoothDevice.Id == id)
                 {

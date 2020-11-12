@@ -9,9 +9,9 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace AirTurnManager.UI.Bluetooth
 {
-    public class BluetoothDevice : Observable
+    public class BluetoothDeviceItem : Observable
     {
-        public BluetoothDevice(DeviceInformation deviceInformation)
+        public BluetoothDeviceItem(DeviceInformation deviceInformation)
         {
             DeviceInformation = deviceInformation;
         }
@@ -25,6 +25,9 @@ namespace AirTurnManager.UI.Bluetooth
         public bool IsConnectable => (bool?)DeviceInformation.Properties["System.Devices.Aep.Bluetooth.Le.IsConnectable"] == true;
         public string Address => (string)DeviceInformation.Properties["System.Devices.Aep.DeviceAddress"];
         public string LastSeenTime => ((DateTimeOffset)DeviceInformation.Properties["System.Devices.Aep.Bluetooth.LastSeenTime"]).UtcDateTime.ToString();
+        public int SignalStrength => (int)DeviceInformation.Properties["System.Devices.Aep.SignalStrength"];
+
+        #region TODO maybe need to check property for exists
 
         //if (DeviceInfo.Properties.ContainsKey("System.Devices.Aep.Bluetooth.LastSeenTime") && (DeviceInfo.Properties["System.Devices.Aep.Bluetooth.LastSeenTime"] != null))
         //        {
@@ -35,6 +38,7 @@ namespace AirTurnManager.UI.Bluetooth
         //        {
         //            RSSI = (int) DeviceInfo.Properties["System.Devices.Aep.SignalStrength"];
 
+        #endregion
 
         public void Update(DeviceInformationUpdate deviceInfoUpdate)
         {

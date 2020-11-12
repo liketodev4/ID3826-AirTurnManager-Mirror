@@ -137,7 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
-    <Compile Include="Bluetooth\BluetoothDevice.cs" />
+    <Compile Include="Bluetooth\BluetoothDeviceItem.cs" />
     <Compile Include="Bluetooth\BluetoothService.cs" />
     <Compile Include="Controls\ParametersActionsControl.xaml.cs">
       <DependentUpon>ParametersActionsControl.xaml</DependentUpon>
