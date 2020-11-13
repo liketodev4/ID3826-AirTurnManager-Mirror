@@ -17,6 +17,8 @@ namespace AirTurnManager.UI.Bluetooth
 {
     public class BluetoothService
     {
+        public bool ConstantlySearch { get; set; } = true;
+
         public ObservableCollection<BluetoothDeviceItem> KnownBluetoothDevices = new ObservableCollection<BluetoothDeviceItem>();
         public ObservableCollection<DeviceInformation> UnknownBluetoothDevices = new ObservableCollection<DeviceInformation>();
 
@@ -31,7 +33,8 @@ namespace AirTurnManager.UI.Bluetooth
                 "System.Devices.Aep.IsConnected",
                 "System.Devices.Aep.Bluetooth.Le.IsConnectable",
                 "System.Devices.Aep.Bluetooth.LastSeenTime",
-                "System.Devices.Aep.SignalStrength"};
+                "System.Devices.Aep.SignalStrength",
+                "System.Devices.Aep.IsPresent"};
 
 
             //System.Devices.Aep.Bluetooth.IssueInquiry
@@ -81,15 +84,19 @@ namespace AirTurnManager.UI.Bluetooth
                 bluetoothDeviceWatcher.EnumerationCompleted += BluetoothDeviceWatcher_EnumerationCompletedAsync;
                 bluetoothDeviceWatcher.Stopped += BluetoothDeviceWatcher_StoppedAsync;
 
+                ConstantlySearch = false;
                 bluetoothDeviceWatcher.Stop();
                 bluetoothDeviceWatcher = null;
             }
         }
         private async void BluetoothDeviceWatcher_StoppedAsync(DeviceWatcher sender, object args)
         {
+            if (ConstantlySearch)
+            {
+                bluetoothDeviceWatcher.Start();
+            }
             await DispatcherHelper.ExecuteOnUIThreadAsync(() =>
             {
-                KnownBluetoothDevices.Clear();
             });
         }
 
@@ -101,6 +108,7 @@ namespace AirTurnManager.UI.Bluetooth
                 if (sender == bluetoothDeviceWatcher)
                 {
                     // Enumeration completed.
+                    bluetoothDeviceWatcher.Stop();
                 }
             });
         }
@@ -145,6 +153,11 @@ namespace AirTurnManager.UI.Bluetooth
                     {
                         // Device is already being displayed - update UI.
                         bluetoothDevice.Update(deviceInfoUpdate);
+                        if (!FilterBluetoothDevice(bluetoothDevice.DeviceInformation))
+                        {
+                            KnownBluetoothDevices.Remove(bluetoothDevice);
+                            UnknownBluetoothDevices.Add(bluetoothDevice.DeviceInformation);
+                        }
                         return;
                     }
 
@@ -152,8 +165,8 @@ namespace AirTurnManager.UI.Bluetooth
                     if (deviceInfo != null)
                     {
                         deviceInfo.Update(deviceInfoUpdate);
-                        // If device has been updated with a friendly name it's no longer unknown.
-                        if (deviceInfo.Name != String.Empty)
+                        // If device has been updated
+                        if (FilterBluetoothDevice(deviceInfo))
                         {
                             KnownBluetoothDevices.Add(new BluetoothDeviceItem(deviceInfo));
                             UnknownBluetoothDevices.Remove(deviceInfo);
@@ -175,7 +188,7 @@ namespace AirTurnManager.UI.Bluetooth
                     // Make sure device isn't already present in the list.
                     if (FindKnownBluetoothDevice(deviceInfo.Id) == null)
                     {
-                        if (deviceInfo.Name != string.Empty)
+                        if (FilterBluetoothDevice(deviceInfo))
                         {
                             // If device has a friendly name display it immediately.
                             KnownBluetoothDevices.Add(new BluetoothDeviceItem(deviceInfo));
@@ -189,6 +202,19 @@ namespace AirTurnManager.UI.Bluetooth
                 }
             });
         }
+
+        private bool FilterBluetoothDevice(DeviceInformation deviceInfo)
+        {
+            var device = new BluetoothDeviceItem(deviceInfo);
+            // check filter)
+            if (deviceInfo.Name != string.Empty && device.IsAvailable)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        
 
         private BluetoothDeviceItem FindKnownBluetoothDevice(string id)
         {

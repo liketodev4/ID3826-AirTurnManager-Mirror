@@ -17,10 +17,25 @@ namespace AirTurnManager.UI.Bluetooth
         }
 
         public DeviceInformation DeviceInformation { get; private set; }
-
+        public bool IsAvailable
+        {
+            get
+            {
+                var lastTimeSeen = ((DateTimeOffset)DeviceInformation.Properties["System.Devices.Aep.Bluetooth.LastSeenTime"]).UtcDateTime;
+                if (lastTimeSeen.AddSeconds(4) > DateTime.Now)
+                {
+                    // alive device
+                    return true;
+                }
+                return false;
+            }
+        }
         public string Id => DeviceInformation.Id;
         public string Name => DeviceInformation.Name;
         public bool IsPaired => DeviceInformation.Pairing.IsPaired;
+        public bool CanPair => DeviceInformation.Pairing.CanPair;
+        public bool IsEnabled => DeviceInformation.IsEnabled;
+        public bool IsPresent => (bool?)DeviceInformation.Properties["System.Devices.Aep.IsPresent"] == true;
         public bool IsConnected => (bool?)DeviceInformation.Properties["System.Devices.Aep.IsConnected"] == true;
         public bool IsConnectable => (bool?)DeviceInformation.Properties["System.Devices.Aep.Bluetooth.Le.IsConnectable"] == true;
         public string Address => (string)DeviceInformation.Properties["System.Devices.Aep.DeviceAddress"];
@@ -50,6 +65,10 @@ namespace AirTurnManager.UI.Bluetooth
             OnPropertyChanged(nameof(IsConnectable));
             OnPropertyChanged(nameof(Address));
             OnPropertyChanged(nameof(LastSeenTime));
+            OnPropertyChanged(nameof(IsEnabled));
+            OnPropertyChanged(nameof(IsAvailable));
+            OnPropertyChanged(nameof(IsPresent));
+            OnPropertyChanged(nameof(CanPair));
         }
         //public IReadOnlyDictionary<string, object> Properties => DeviceInformation.Properties;
         //public BitmapImage GlyphBitmapImage { get; private set; }

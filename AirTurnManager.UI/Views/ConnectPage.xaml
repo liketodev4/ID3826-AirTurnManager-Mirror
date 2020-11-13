@@ -25,9 +25,15 @@
                         IsPaired:<Run Text="{x:Bind IsPaired, Mode=OneWay}" />
                         , IsConnected:<Run Text="{x:Bind IsConnected, Mode=OneWay}" />
                         , IsConnectable:<Run Text="{x:Bind IsConnectable, Mode=OneWay}" />
-                        , Address:<Run Text="{x:Bind Address, Mode=OneWay}" />
+                        , CanPair:<Run Text="{x:Bind CanPair, Mode=OneWay}" />
+                    </TextBlock>
+                    <TextBlock>
+                        Address:<Run Text="{x:Bind Address, Mode=OneWay}" />
                         , LastSeenTime:<Run Text="{x:Bind LastSeenTime, Mode=OneWay}" />
                         , SignalStrength:<Run Text="{x:Bind SignalStrength, Mode=OneWay}" />
+                        , IsAvailable:<Run Text="{x:Bind IsAvailable, Mode=OneWay}" />
+                        , IsEnabled:<Run Text="{x:Bind IsEnabled, Mode=OneWay}" />
+                        , IsPresent:<Run Text="{x:Bind IsPresent, Mode=OneWay}" />
                     </TextBlock>
                 </StackPanel>
             </Grid>
@@ -41,7 +47,7 @@
                           BorderThickness="1"
                           VerticalScrollBarVisibility="Auto"
                           VerticalScrollMode="Auto">
-                <ListView x:Name="ResultsListView" ItemTemplate="{StaticResource ResultsListViewTemplate}" ItemsSource="{x:Bind ViewModel.bluetoothService.KnownBluetoothDevices, Mode=OneWay}" />
+                <ListView x:Name="ResultsListView" ItemTemplate="{StaticResource ResultsListViewTemplate}" ItemsSource="{x:Bind ViewModel.bluetoothService.KnownBluetoothDevices, Mode=OneWay}"/>
             </ScrollViewer>
         </Grid>
     </Grid>

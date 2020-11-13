@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using AirTurnManager.UI.Bluetooth;
 using AirTurnManager.UI.Helpers;
 using AirTurnManager.UI.Services;
@@ -10,15 +13,11 @@ namespace AirTurnManager.UI.ViewModels
     public class ConnectViewModel : BaseViewModel
     {
         public BluetoothService bluetoothService;
-
+        
         public ConnectViewModel()
         {
-            
             bluetoothService = new BluetoothService();
             bluetoothService.StartSearchingDevices();
-
         }
-
-        
     }
 }
