@@ -4,6 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:AirTurnManager.UI.Bluetooth"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Name="connectionPage"
       Style="{StaticResource PageStyle}"
       mc:Ignorable="d">
     <Page.Resources>
@@ -20,7 +21,7 @@
                         </TextBlock>
                     </StackPanel>
                     <StackPanel RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
-                        <Button>Connect</Button>
+                        <Button Command="{Binding ElementName=connectionPage, Path=ViewModel.ConnectDeviceCommand}" CommandParameter="{x:Bind Id}">Connect</Button>
                     </StackPanel>
                 </RelativePanel>
             </Grid>
