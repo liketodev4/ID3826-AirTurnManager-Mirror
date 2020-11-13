@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="/Styles/Page.xaml" />
 
                 <ResourceDictionary Source="/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/Styles/ListViewItemStretch.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
