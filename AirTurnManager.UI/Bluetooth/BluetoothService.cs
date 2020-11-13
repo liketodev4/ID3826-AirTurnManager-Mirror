@@ -13,17 +13,19 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Toolkit.Uwp.Helpers;
 using System.Windows.Input;
+using AirTurnManager.UI.Services;
 
 namespace AirTurnManager.UI.Bluetooth
 {
     public class BluetoothService
     {
+        private DeviceWatcher bluetoothDeviceWatcher;
         public bool ConstantlySearch { get; set; } = true;
-
         public ObservableCollection<BluetoothDeviceItem> KnownBluetoothDevices = new ObservableCollection<BluetoothDeviceItem>();
         public ObservableCollection<DeviceInformation> UnknownBluetoothDevices = new ObservableCollection<DeviceInformation>();
 
-        private DeviceWatcher bluetoothDeviceWatcher;
+
+        #region Start -stop searching devices methods
 
         public void StartSearchingDevices()
         {
@@ -37,17 +39,7 @@ namespace AirTurnManager.UI.Bluetooth
                 "System.Devices.Aep.SignalStrength",
                 "System.Devices.Aep.IsPresent"};
 
-
-            //System.Devices.Aep.Bluetooth.IssueInquiry
-            //System.Devices.Aep.Bluetooth.LastSeenTime
-            //System.Devices.Aep.Bluetooth.Le.IsConnectable
-            //System.Devices.Aep.IsPaired
-            //System.Devices.Aep.CanPair
-            //System.Devices.Aep.IsConnected
-            //System.Devices.Aep.IsPresent
-            //System.Devices.Aep.ProtocolId
-
-            // BT_Code: Example showing paired and non-paired in a single query.
+            // BT_Code: showing paired and non-paired in a single query.
             string aqsAllBluetoothLEDevices = "(System.Devices.Aep.ProtocolId:=\"{bb7bb05e-5972-42b5-94fc-76eaa7084d49}\")";
 
             bluetoothDeviceWatcher =
@@ -71,6 +63,7 @@ namespace AirTurnManager.UI.Bluetooth
             // To monitor for the presence of Bluetooth LE devices for an extended period,
             // use the BluetoothLEAdvertisementWatcher runtime class. See the BluetoothAdvertisement
             // sample for an example.
+            //! In this implementation we use ConstantlySearch flag and restarting search if it need
             bluetoothDeviceWatcher.Start();
         }
 
@@ -90,6 +83,65 @@ namespace AirTurnManager.UI.Bluetooth
                 bluetoothDeviceWatcher = null;
             }
         }
+
+        #endregion
+
+        #region Connect - disconnect device methods
+
+        public async Task<bool> ConnectDeviceAsync(string deviceId)
+        {
+            var device = FindKnownBluetoothDevice(deviceId);
+            var dialog = new ContentDialog()
+            {
+                IsPrimaryButtonEnabled = true,
+                PrimaryButtonText = "Connect",
+                IsSecondaryButtonEnabled = true,
+                SecondaryButtonText = "Cancel",
+                RequestedTheme = ThemeSelectorService.Theme,
+                Title = "Connecting ...",
+                Content = $"Connect with the device {device.Name} ?"
+            };
+            ContentDialogResult dialogResult = await dialog.ShowAsync();
+            if (dialogResult == ContentDialogResult.Primary)
+            {
+                // do connect
+                return true;
+            }
+            return false;
+        }
+
+        #endregion
+
+        #region Pair and Unpair methods
+
+        public async Task<bool> PairingDeviceAsync(string deviceId)
+        {
+            var device = FindKnownBluetoothDevice(deviceId);
+            // do pairing
+            DevicePairingResult pairingResult = await device.DeviceInformation.Pairing.PairAsync();
+            if (pairingResult.Status == DevicePairingResultStatus.Paired)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<bool> UnpairingDeviceAsync(string deviceId)
+        {
+            var device = FindKnownBluetoothDevice(deviceId);
+            // do unpairing
+            DeviceUnpairingResult unpairingResult = await device.DeviceInformation.Pairing.UnpairAsync();
+            if (unpairingResult.Status == DeviceUnpairingResultStatus.Unpaired)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        #endregion
+
+        #region BluetoothDeviceWatcher events
+
         private async void BluetoothDeviceWatcher_StoppedAsync(DeviceWatcher sender, object args)
         {
             if (ConstantlySearch)
@@ -204,6 +256,10 @@ namespace AirTurnManager.UI.Bluetooth
             });
         }
 
+        #endregion
+
+        #region Filtering devices
+
         private bool FilterBluetoothDevice(DeviceInformation deviceInfo)
         {
             var device = new BluetoothDeviceItem(deviceInfo);
@@ -215,7 +271,9 @@ namespace AirTurnManager.UI.Bluetooth
             return false;
         }
 
-        
+        #endregion
+
+        #region Helpers methods
 
         private BluetoothDeviceItem FindKnownBluetoothDevice(string id)
         {
@@ -240,5 +298,7 @@ namespace AirTurnManager.UI.Bluetooth
             }
             return null;
         }
+
+        #endregion
     }
 }

@@ -12,7 +12,6 @@ namespace AirTurnManager.UI.Views
 
         public ConnectPage()
         {
-            DataContext = ViewModel;
             InitializeComponent();
         }
     }

@@ -33,10 +33,14 @@ namespace AirTurnManager.UI.ViewModels
             return true;
         }
 
-        private void ConnectDeviceEvent(string deviceId)
+        private async void ConnectDeviceEvent(string deviceId)
         {
-            // do conect to device
-            var param = deviceId;
+            // do connect to device
+            var result = await bluetoothService.PairingDeviceAsync(deviceId);
+            if (result)
+            {
+                
+            }
         }
 
         #endregion
