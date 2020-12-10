@@ -1,0 +1,13 @@
+﻿Atlassian account credentials:
+liketodev4@gmail.com
+pass: g4atlassian
+
+
+Log in with Atlassian account
+https://bitbucket.org
+
+
+Bitbucket
+https://bitbucket.org
+
+https://bitbucket.org/airturn/airturn-shared-components/src/master/
