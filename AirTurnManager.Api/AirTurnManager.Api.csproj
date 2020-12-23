@@ -11,4 +11,10 @@
     <Folder Include="DeviceTypes\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AirTurnSharedComponentsApp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
