@@ -1,5 +1,8 @@
 ﻿using AirTurnManager.Api.Foundation;
+using AirTurnManager.ApiTest.Foundation;
+using Newtonsoft.Json;
 using System;
+using System.IO;
 
 namespace AirTurnManager.ApiTest
 {
@@ -7,24 +10,7 @@ namespace AirTurnManager.ApiTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Api test starting. {DateTime.Now}");
-
-            var atb = new ATBase();
-            atb._type = ATBase.ATObjectType.ATObjectTypeATBase;
-            try
-            {
-                var result = ATBase.ATBaseNew(null);
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-
-            Console.ReadKey();
+            
         }
     }
 }

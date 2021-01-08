@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTurnManager.UI", "AirTurnManager.UI\AirTurnManager.UI.csproj", "{3EFA5549-1D38-4918-9295-48018055B086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTurnManager.Api", "AirTurnManager.Api\AirTurnManager.Api.csproj", "{5CF01ACD-6569-4830-98F2-1AD344A049DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirTurnManager.Api", "AirTurnManager.Api\AirTurnManager.Api.csproj", "{5CF01ACD-6569-4830-98F2-1AD344A049DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTurnManager.ApiTest", "AirTurnManager.ApiTest\AirTurnManager.ApiTest.csproj", "{4C9F2A80-142A-4DAC-A42B-1C694B6326D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirTurnManager.ApiTest", "AirTurnManager.ApiTest\AirTurnManager.ApiTest.csproj", "{4C9F2A80-142A-4DAC-A42B-1C694B6326D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
