@@ -111,99 +111,99 @@ namespace AirTurnManager.Api.Foundation
             internal uint valueElementCount;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATJSONParser@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserNew")]
             internal static extern global::System.IntPtr ATJSONParserNew(global::System.IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserInitWithString")]
             internal static extern global::System.IntPtr ATJSONParserInitWithString(global::System.IntPtr parser, [MarshalAs(UnmanagedType.LPUTF8Str)] string jsonString, ulong jsonStringLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserKeyEquals")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserKeyEquals(global::System.IntPtr parser, [MarshalAs(UnmanagedType.LPUTF8Str)] string key);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserPushKeysToError")]
             internal static extern void ATJSONParserPushKeysToError(global::System.IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserNextElement")]
             internal static extern void ATJSONParserNextElement(global::System.IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserEnterObjectOrArray")]
             internal static extern void ATJSONParserEnterObjectOrArray(global::System.IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGoToObjectOrArrayEnd")]
             internal static extern void ATJSONParserGoToObjectOrArrayEnd(global::System.IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserLockLevel")]
             internal static extern uint ATJSONParserLockLevel(global::System.IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserUnlockLevel")]
             internal static extern void ATJSONParserUnlockLevel(global::System.IntPtr parser, uint levelLock);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserUnlockLevelAndMoveToEnd")]
             internal static extern void ATJSONParserUnlockLevelAndMoveToEnd(global::System.IntPtr parser, uint levelLock);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetBoolValue")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetBoolValue(global::System.IntPtr parser, bool* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetUInt8Value")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetUInt8Value(global::System.IntPtr parser, byte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetUInt16Value")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetUInt16Value(global::System.IntPtr parser, ushort* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetInt8Value")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetInt8Value(global::System.IntPtr parser, sbyte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetInt16Value")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetInt16Value(global::System.IntPtr parser, short* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetLongValue")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetLongValue(global::System.IntPtr parser, long* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetHexBytesValue")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParserGetHexBytesValue(global::System.IntPtr parser, byte* bytes, ulong maxSize, ulong* parsedBytesLength);

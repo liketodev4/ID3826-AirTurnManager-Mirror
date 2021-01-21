@@ -31,90 +31,90 @@ namespace AirTurnManager.Api.Foundation
             internal global::System.IntPtr @string;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATString@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringNew")]
             internal static extern global::System.IntPtr ATStringNew(global::System.IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInitWithDynamicAllocation")]
             internal static extern global::System.IntPtr ATStringInitWithDynamicAllocation(global::System.IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInit")]
             internal static extern global::System.IntPtr ATStringInit(global::System.IntPtr @string, ulong maxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInitWithStringBuffer")]
             internal static extern global::System.IntPtr ATStringInitWithStringBuffer(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string existingString, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInitWithStringBufferNoCopy")]
             internal static extern global::System.IntPtr ATStringInitWithStringBufferNoCopy(global::System.IntPtr @string, sbyte* existingString, ulong length, ulong capacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResizeMaxLength")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringResizeMaxLength(global::System.IntPtr @string, ulong newMaxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResize")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringResize(global::System.IntPtr @string, ulong newLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResizeMaxLengthToFit")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringResizeMaxLengthToFit(global::System.IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResetToEmpty")]
             internal static extern void ATStringResetToEmpty(global::System.IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendFormat")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringAppendFormat(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string format);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendStringWithLength")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringAppendStringWithLength(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string stringToAppend, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendString")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringAppendString(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string stringToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendATString")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringAppendATString(global::System.IntPtr @string, global::System.IntPtr stringToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringCopy(global::System.IntPtr destination, global::System.IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATStringIsEqual(global::System.IntPtr string1, global::System.IntPtr string2);

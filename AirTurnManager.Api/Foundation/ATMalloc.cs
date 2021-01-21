@@ -55,55 +55,55 @@ namespace AirTurnManager.Api.Foundation
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATMalloc")]
             internal static extern global::System.IntPtr ATMalloc(ulong size);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATRealloc")]
             internal static extern global::System.IntPtr ATRealloc(global::System.IntPtr pointer, ulong new_size, ulong previous_size);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATFree")]
             internal static extern void ATFree(global::System.IntPtr pointer, ulong size);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATMallocHookRegister")]
             internal static extern void ATMallocHookRegister(global::System.IntPtr mallocHook);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATFreeHookRegister")]
             internal static extern void ATFreeHookRegister(global::System.IntPtr freeHook);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATReallocHookRegister")]
             internal static extern void ATReallocHookRegister(global::System.IntPtr reallocHook);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerRegister")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerRegister(void** pointerToPointerToVariable);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerArrayRegister")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerArrayRegister(void** arrayOfPointersToVariable, ulong length, global::System.IntPtr context, global::System.IntPtr callback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerArrayModifyLength")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerArrayModifyLength(void** arrayOfPointersToVariable, ulong newLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerArrayUnregister")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerArrayUnregister(void** arrayOfPointersToVariable);

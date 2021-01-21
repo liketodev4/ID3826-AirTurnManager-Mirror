@@ -13,7 +13,7 @@ namespace AirTurnManager.Api.Foundation
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATInitialisePointerArray")]
             internal static extern void ATInitialisePointerArray(global::System.IntPtr existingArrayOfSingleType, ulong existingTypeSize, ulong existingArrayCount, global::System.IntPtr destinationPointerArray);
         }

@@ -37,73 +37,73 @@ namespace AirTurnManager.Api.Foundation
             internal ulong count;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATGenericArray@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayNew")]
             internal static extern global::System.IntPtr ATGenericArrayNew(global::System.IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInit")]
             internal static extern global::System.IntPtr ATGenericArrayInit(global::System.IntPtr array, ulong capacity, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInitWithItems")]
             internal static extern global::System.IntPtr ATGenericArrayInitWithItems(global::System.IntPtr array, global::System.IntPtr existingData, ulong length, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInitWithItemsNoCopy")]
             internal static extern global::System.IntPtr ATGenericArrayInitWithItemsNoCopy(global::System.IntPtr array, global::System.IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayGetPointerForItem")]
             internal static extern global::System.IntPtr ATGenericArrayGetPointerForItem(global::System.IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayAppendItem")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayAppendItem(global::System.IntPtr array, global::System.IntPtr itemToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInsertItem")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayInsertItem(global::System.IntPtr array, global::System.IntPtr itemToInsert, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayRemoveItem")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayRemoveItem(global::System.IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayRemoveAllItems")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayRemoveAllItems(global::System.IntPtr array);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayResize")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayResize(global::System.IntPtr array, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayCopy(global::System.IntPtr destination, global::System.IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayIsEqual(global::System.IntPtr array1, global::System.IntPtr array2);
