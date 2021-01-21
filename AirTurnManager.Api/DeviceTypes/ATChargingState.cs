@@ -24,25 +24,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateValidate(global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATChargingState* chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateDescription")]
             internal static extern global::System.IntPtr ATChargingStateDescription(global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState);
         }

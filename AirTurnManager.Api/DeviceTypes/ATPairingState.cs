@@ -21,25 +21,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPairingStateValidate(global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPairingStateParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATPairingState* pairingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPairingStateGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateDescription")]
             internal static extern global::System.IntPtr ATPairingStateDescription(global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState);
         }

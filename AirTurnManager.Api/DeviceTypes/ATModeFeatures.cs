@@ -28,37 +28,37 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeFeaturesValidate(ushort modeFeatures);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeFeaturesParseData(global::System.IntPtr data, ushort* modeFeatures);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeFeaturesGetData(global::System.IntPtr data, ushort modeFeatures);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesParseDataMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeFeaturesParseDataMultiple(global::System.IntPtr data, ushort* modeFeatures, byte maxCount, byte* numParsed);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesGetDataMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeFeaturesGetDataMultiple(global::System.IntPtr data, ushort* modeFeatures, byte count);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesDescription")]
             internal static extern void ATModeFeaturesDescription(global::System.IntPtr @string, ushort modeFeatures);
         }

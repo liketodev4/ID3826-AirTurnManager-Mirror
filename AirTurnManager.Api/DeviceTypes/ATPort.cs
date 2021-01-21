@@ -29,25 +29,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortValidate(global::AirTurnManager.Api.DeviceTypes.ATPort port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATPort* port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATPort port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortDescription")]
             internal static extern global::System.IntPtr ATPortDescription(global::AirTurnManager.Api.DeviceTypes.ATPort port);
         }

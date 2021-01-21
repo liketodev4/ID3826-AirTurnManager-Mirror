@@ -29,25 +29,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeValidate(global::AirTurnManager.Api.DeviceTypes.ATMode mode);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATMode* mode);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATMode mode);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeDescription")]
             internal static extern global::System.IntPtr ATModeDescription(global::AirTurnManager.Api.DeviceTypes.ATMode mode);
         }

@@ -43,18 +43,18 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDDescription")]
             internal static extern global::System.IntPtr ATModelIDDescription(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsBLE113")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModelIDIsBLE113(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsNordic")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModelIDIsNordic(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);

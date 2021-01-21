@@ -19,19 +19,19 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputValueParseData(global::System.IntPtr data, short* analogInputValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputValueGetData(global::System.IntPtr data, short analogInputValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueDescription")]
             internal static extern void ATAnalogInputValueDescription(global::System.IntPtr @string, short analogInputValue);
         }

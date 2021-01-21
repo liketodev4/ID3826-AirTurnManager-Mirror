@@ -21,25 +21,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlValidate(global::AirTurnManager.Api.DeviceTypes.ATConnectionControl connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATConnectionControl* connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATConnectionControl connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlDescription")]
             internal static extern global::System.IntPtr ATConnectionControlDescription(global::AirTurnManager.Api.DeviceTypes.ATConnectionControl connectionControl);
         }

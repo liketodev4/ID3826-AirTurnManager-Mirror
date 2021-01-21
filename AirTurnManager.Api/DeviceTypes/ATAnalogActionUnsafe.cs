@@ -45,11 +45,6 @@ namespace AirTurnManager.Api.DeviceTypes
 
             [FieldOffset(0)]
             internal byte hasMid;
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATAnalogActionParameters@@QEAA@AEBT0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
         }
 
         private ATAnalogActionParameters.__Internal __instance;
@@ -155,36 +150,31 @@ namespace AirTurnManager.Api.DeviceTypes
             internal global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters.__Internal parameters;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATAnalogAction@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionIsPortSpecificAction")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionIsPortSpecificAction(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionType actionType);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionValidate(global::System.IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionParseData(global::System.IntPtr data, global::System.IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionGetData(global::System.IntPtr data, global::System.IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionDescription")]
             internal static extern void ATAnalogActionDescription(global::System.IntPtr @string, global::System.IntPtr analogAction);
         }
