@@ -10,7 +10,7 @@ namespace AirTurnManager.Api.Foundation
 {
     public unsafe partial class ATTypesUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -25,7 +25,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="destinationPointerArray">The array of pointers to set element pointers in</param>
         public static void ATInitialisePointerArray(global::System.IntPtr existingArrayOfSingleType, ulong existingTypeSize, ulong existingArrayCount, global::System.IntPtr destinationPointerArray)
         {
-            __Internal.ATInitialisePointerArray(existingArrayOfSingleType, existingTypeSize, existingArrayCount, destinationPointerArray);
+            _Internal.ATInitialisePointerArray(existingArrayOfSingleType, existingTypeSize, existingArrayCount, destinationPointerArray);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace AirTurnManager.Api.Foundation
     public unsafe partial class ATSwappedFloat32Unsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 4)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal uint v;
@@ -19,59 +19,59 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATSwappedFloat32@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal));
+            *(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATSwappedFloat32Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATSwappedFloat32Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATSwappedFloat32Unsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATSwappedFloat32Unsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATSwappedFloat32Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -81,25 +81,25 @@ namespace AirTurnManager.Api.Foundation
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         public uint V
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal*)__Instance)->v;
+                return ((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance)->v;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal*)__Instance)->v = value;
+                ((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance)->v = value;
             }
         }
     }
@@ -107,7 +107,7 @@ namespace AirTurnManager.Api.Foundation
     public unsafe partial class ATSwappedFloat64Unsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 8)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal ulong v;
@@ -115,59 +115,59 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATSwappedFloat64@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal));
+            *(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATSwappedFloat64Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATSwappedFloat64Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATSwappedFloat64Unsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATSwappedFloat64Unsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATSwappedFloat64Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -177,32 +177,32 @@ namespace AirTurnManager.Api.Foundation
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         public ulong V
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal*)__Instance)->v;
+                return ((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance)->v;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal*)__Instance)->v = value;
+                ((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance)->v = value;
             }
         }
     }
 
     public unsafe partial class ATEndianUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -282,142 +282,142 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatHostToSwapped@@YA?AUATSwappedFloat32@@M@Z")]
-            internal static extern global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal ATConvertFloatHostToSwapped(float arg);
+            internal static extern global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal ATConvertFloatHostToSwapped(float arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatSwappedToHost@@YAMUATSwappedFloat32@@@Z")]
-            internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal arg);
+            internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleHostToSwapped@@YA?AUATSwappedFloat64@@N@Z")]
-            internal static extern global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal ATConvertDoubleHostToSwapped(double arg);
+            internal static extern global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal ATConvertDoubleHostToSwapped(double arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleSwappedToHost@@YANUATSwappedFloat64@@@Z")]
-            internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal arg);
+            internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal arg);
         }
 
         public static ushort ATSwapInt16(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16BigToHost(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16BigToHost(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32BigToHost(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32BigToHost(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64BigToHost(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64BigToHost(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16HostToBig(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16HostToBig(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32HostToBig(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32HostToBig(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64HostToBig(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64HostToBig(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16LittleToHost(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16LittleToHost(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32LittleToHost(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32LittleToHost(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64LittleToHost(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64LittleToHost(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16HostToLittle(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16HostToLittle(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32HostToLittle(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32HostToLittle(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64HostToLittle(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64HostToLittle(arg);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe ATConvertFloatHostToSwapped(float arg)
         {
-            var __ret = __Internal.ATConvertFloatHostToSwapped(arg);
-            return global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__CreateInstance(__ret);
+            var _ret = _Internal.ATConvertFloatHostToSwapped(arg);
+            return global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._CreateInstance(_ret);
         }
 
         public static float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
-            var __arg0 = arg.__Instance;
-            var __ret = __Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe.__Internal*)__arg0);
-            return __ret;
+            var _arg0 = arg._Instance;
+            var _ret = _Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_arg0);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe ATConvertDoubleHostToSwapped(double arg)
         {
-            var __ret = __Internal.ATConvertDoubleHostToSwapped(arg);
-            return global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__CreateInstance(__ret);
+            var _ret = _Internal.ATConvertDoubleHostToSwapped(arg);
+            return global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._CreateInstance(_ret);
         }
 
         public static double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
-            var __arg0 = arg.__Instance;
-            var __ret = __Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe.__Internal*)__arg0);
-            return __ret;
+            var _arg0 = arg._Instance;
+            var _ret = _Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_arg0);
+            return _ret;
         }
     }
 }

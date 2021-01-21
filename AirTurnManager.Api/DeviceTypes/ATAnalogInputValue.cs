@@ -16,7 +16,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATAnalogInputValueUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -44,12 +44,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            fixed (short* __analogInputValue1 = &analogInputValue)
+            var _arg0 = data._Instance;
+            fixed (short* _analogInputValue1 = &analogInputValue)
             {
-                var __arg1 = __analogInputValue1;
-                var __ret = __Internal.ATAnalogInputValueParseData(__arg0, __arg1);
-                return __ret;
+                var _arg1 = _analogInputValue1;
+                var _ret = _Internal.ATAnalogInputValueParseData(_arg0, _arg1);
+                return _ret;
             }
         }
 
@@ -59,9 +59,9 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATAnalogInputValueGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, short analogInputValue)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            var __ret = __Internal.ATAnalogInputValueGetData(__arg0, analogInputValue);
-            return __ret;
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _ret = _Internal.ATAnalogInputValueGetData(_arg0, analogInputValue);
+            return _ret;
         }
 
         /// <summary>Get a description for a analog input value</summary>
@@ -69,8 +69,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="analogInputValue">The analog input value</param>
         public static void ATAnalogInputValueDescription(global::AirTurnManager.Api.DeviceTypes.ATString @string, short analogInputValue)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            __Internal.ATAnalogInputValueDescription(__arg0, analogInputValue);
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            _Internal.ATAnalogInputValueDescription(_arg0, analogInputValue);
         }
     }
 }

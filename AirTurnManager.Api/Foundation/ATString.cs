@@ -13,10 +13,10 @@ namespace AirTurnManager.Api.Foundation
     public unsafe partial class ATStringUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 64)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
-            internal global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal _base;
+            internal global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal _base;
 
             [FieldOffset(32)]
             internal byte _dynamicAllocation;
@@ -33,7 +33,7 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATString@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -120,56 +120,56 @@ namespace AirTurnManager.Api.Foundation
             internal static extern bool ATStringIsEqual(global::System.IntPtr string1, global::System.IntPtr string2);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATStringUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATStringUnsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATStringUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATStringUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATStringUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATStringUnsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATStringUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATStringUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal));
+            *(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATStringUnsafe(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATStringUnsafe(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATStringUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATStringUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATStringUnsafe(global::AirTurnManager.Api.Foundation.ATStringUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -179,13 +179,13 @@ namespace AirTurnManager.Api.Foundation
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATStringUnsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.Foundation.ATStringUnsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         /// <summary>Create a new string</summary>
@@ -193,14 +193,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static global::AirTurnManager.Api.Foundation.ATStringUnsafe ATStringNew(global::AirTurnManager.Api.Foundation.ATStringUnsafe optionalStorage)
         {
-            var __arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage.__Instance;
-            var __ret = __Internal.ATStringNew(__arg0);
-            global::AirTurnManager.Api.Foundation.ATStringUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _ret = _Internal.ATStringNew(_arg0);
+            global::AirTurnManager.Api.Foundation.ATStringUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a string object with dynamic allocation</summary>
@@ -209,14 +209,14 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Dynamic allocation means the object will automatically allocate more space when appending a string that is beyond its capacity</remarks>
         public static global::AirTurnManager.Api.Foundation.ATStringUnsafe ATStringInitWithDynamicAllocation(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringInitWithDynamicAllocation(__arg0);
-            global::AirTurnManager.Api.Foundation.ATStringUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringInitWithDynamicAllocation(_arg0);
+            global::AirTurnManager.Api.Foundation.ATStringUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a string object</summary>
@@ -225,14 +225,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATStringUnsafe ATStringInit(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, ulong maxLength)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringInit(__arg0, maxLength);
-            global::AirTurnManager.Api.Foundation.ATStringUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringInit(_arg0, maxLength);
+            global::AirTurnManager.Api.Foundation.ATStringUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a string object from an existing string</summary>
@@ -242,14 +242,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATStringUnsafe ATStringInitWithStringBuffer(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, string existingString, ulong length)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringInitWithStringBuffer(__arg0, existingString, length);
-            global::AirTurnManager.Api.Foundation.ATStringUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringInitWithStringBuffer(_arg0, existingString, length);
+            global::AirTurnManager.Api.Foundation.ATStringUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a string object from an existing string using the existing buffer without copying</summary>
@@ -260,14 +260,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATStringUnsafe ATStringInitWithStringBufferNoCopy(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, sbyte* existingString, ulong length, ulong capacity)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringInitWithStringBufferNoCopy(__arg0, existingString, length, capacity);
-            global::AirTurnManager.Api.Foundation.ATStringUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringInitWithStringBufferNoCopy(_arg0, existingString, length, capacity);
+            global::AirTurnManager.Api.Foundation.ATStringUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATStringUnsafe)global::AirTurnManager.Api.Foundation.ATStringUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATStringUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Resize a string object's capacity, reallocating memory</summary>
@@ -276,9 +276,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringResizeMaxLength(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, ulong newMaxLength)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringResizeMaxLength(__arg0, newMaxLength);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringResizeMaxLength(_arg0, newMaxLength);
+            return _ret;
         }
 
         /// <summary>Resize a string length</summary>
@@ -287,9 +287,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful, or false if string buffer could not be resized when required</returns>
         public static bool ATStringResize(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, ulong newLength)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringResize(__arg0, newLength);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringResize(_arg0, newLength);
+            return _ret;
         }
 
         /// <summary>Resize the string to fit its length</summary>
@@ -297,17 +297,17 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringResizeMaxLengthToFit(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringResizeMaxLengthToFit(__arg0);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringResizeMaxLengthToFit(_arg0);
+            return _ret;
         }
 
         /// <summary>Reset the string to be empty. Does not reduce the string capacity</summary>
         /// <param name="string">The string object</param>
         public static void ATStringResetToEmpty(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            __Internal.ATStringResetToEmpty(__arg0);
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            _Internal.ATStringResetToEmpty(_arg0);
         }
 
         /// <summary>Append a string of a given format, like `sprintf`</summary>
@@ -317,9 +317,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringAppendFormat(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, string format)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringAppendFormat(__arg0, format);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringAppendFormat(_arg0, format);
+            return _ret;
         }
 
         /// <summary>Append a constant string with a given length</summary>
@@ -329,9 +329,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringAppendStringWithLength(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, string stringToAppend, ulong length)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringAppendStringWithLength(__arg0, stringToAppend, length);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringAppendStringWithLength(_arg0, stringToAppend, length);
+            return _ret;
         }
 
         /// <summary>Append a constant string</summary>
@@ -341,9 +341,9 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will determine the length of the string by finding the null terminating character</remarks>
         public static bool ATStringAppendString(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, string stringToAppend)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __ret = __Internal.ATStringAppendString(__arg0, stringToAppend);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _ret = _Internal.ATStringAppendString(_arg0, stringToAppend);
+            return _ret;
         }
 
         /// <summary>Append an ATString object</summary>
@@ -352,10 +352,10 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringAppendATString(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, global::AirTurnManager.Api.Foundation.ATStringUnsafe stringToAppend)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __arg1 = ReferenceEquals(stringToAppend, null) ? global::System.IntPtr.Zero : stringToAppend.__Instance;
-            var __ret = __Internal.ATStringAppendATString(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg1 = ReferenceEquals(stringToAppend, null) ? global::System.IntPtr.Zero : stringToAppend._Instance;
+            var _ret = _Internal.ATStringAppendATString(_arg0, _arg1);
+            return _ret;
         }
 
         /// <summary>Copy a string object</summary>
@@ -364,10 +364,10 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringCopy(global::AirTurnManager.Api.Foundation.ATStringUnsafe destination, global::AirTurnManager.Api.Foundation.ATStringUnsafe source)
         {
-            var __arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination.__Instance;
-            var __arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source.__Instance;
-            var __ret = __Internal.ATStringCopy(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _ret = _Internal.ATStringCopy(_arg0, _arg1);
+            return _ret;
         }
 
         /// <summary>Determine if two string objects are equal</summary>
@@ -376,24 +376,24 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the strings are equal</returns>
         public static bool ATStringIsEqual(global::AirTurnManager.Api.Foundation.ATStringUnsafe string1, global::AirTurnManager.Api.Foundation.ATStringUnsafe string2)
         {
-            var __arg0 = ReferenceEquals(string1, null) ? global::System.IntPtr.Zero : string1.__Instance;
-            var __arg1 = ReferenceEquals(string2, null) ? global::System.IntPtr.Zero : string2.__Instance;
-            var __ret = __Internal.ATStringIsEqual(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(string1, null) ? global::System.IntPtr.Zero : string1._Instance;
+            var _arg1 = ReferenceEquals(string2, null) ? global::System.IntPtr.Zero : string2._Instance;
+            var _ret = _Internal.ATStringIsEqual(_arg0, _arg1);
+            return _ret;
         }
 
         public global::AirTurnManager.Api.Foundation.ATDataUnsafe Base
         {
             get
             {
-                return global::AirTurnManager.Api.Foundation.ATDataUnsafe.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_base));
+                return global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal*)value.__Instance;
+                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)value._Instance;
             }
         }
 
@@ -401,12 +401,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_dynamicAllocation != 0;
+                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->_dynamicAllocation != 0;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_dynamicAllocation = (byte)(value ? 1 : 0);
+                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->_dynamicAllocation = (byte)(value ? 1 : 0);
             }
         }
 
@@ -414,12 +414,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->maxLength;
+                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->maxLength;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->maxLength = value;
+                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->maxLength = value;
             }
         }
 
@@ -427,12 +427,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->length;
+                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->length;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->length = value;
+                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->length = value;
             }
         }
 
@@ -440,12 +440,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return (sbyte*)((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->@string;
+                return (sbyte*)((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->@string;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->@string = (global::System.IntPtr)value;
+                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe._Internal*)_Instance)->@string = (global::System.IntPtr)value;
             }
         }
     }

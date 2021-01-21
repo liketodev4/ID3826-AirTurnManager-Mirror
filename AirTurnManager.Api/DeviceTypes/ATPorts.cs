@@ -23,7 +23,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATPortsUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -65,8 +65,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if valid</returns>
         public static bool ATPortsValidate(byte ports)
         {
-            var __ret = __Internal.ATPortsValidate(ports);
-            return __ret;
+            var _ret = _Internal.ATPortsValidate(ports);
+            return _ret;
         }
 
         /// <summary>Get a digital port state value from data</summary>
@@ -77,9 +77,9 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            var __ret = __Internal.ATPortsParseData(__arg0, ports);
-            return __ret;
+            var _arg0 = data._Instance;
+            var _ret = _Internal.ATPortsParseData(_arg0, ports);
+            return _ret;
         }
 
         /// <summary>Get the data for a digital port state value</summary>
@@ -88,9 +88,9 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATPortsGetData(global::AirTurnManager.Api.Foundation.ATMutableBytes data, byte ports)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            var __ret = __Internal.ATPortsGetData(__arg0, ports);
-            return __ret;
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _ret = _Internal.ATPortsGetData(_arg0, ports);
+            return _ret;
         }
 
         /// <summary>Determine if a port is set in the port state</summary>
@@ -99,8 +99,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if set</returns>
         public static bool ATPortsIsPortSet(byte ports, global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
-            var __ret = __Internal.ATPortsIsPortSet(ports, port);
-            return __ret;
+            var _ret = _Internal.ATPortsIsPortSet(ports, port);
+            return _ret;
         }
 
         /// <summary>Get the ports value for a port</summary>
@@ -108,8 +108,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if set</returns>
         public static byte ATPortsGetPortsForPort(global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
-            var __ret = __Internal.ATPortsGetPortsForPort(port);
-            return __ret;
+            var _ret = _Internal.ATPortsGetPortsForPort(port);
+            return _ret;
         }
 
         /// <summary>Get a description for a digital port state value</summary>
@@ -117,8 +117,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="ports">The digital port state value</param>
         public static void ATPortsDescription(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, byte ports)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            __Internal.ATPortsDescription(__arg0, ports);
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            _Internal.ATPortsDescription(_arg0, ports);
         }
     }
 

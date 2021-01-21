@@ -16,7 +16,7 @@ namespace AirTurnManager.Api.DeviceTypes
     public unsafe partial class ATAssociatedModePortDataUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 24)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal global::AirTurnManager.Api.DeviceTypes.ATMode mode;
@@ -25,64 +25,64 @@ namespace AirTurnManager.Api.DeviceTypes
             internal global::AirTurnManager.Api.DeviceTypes.ATPort port;
 
             [FieldOffset(8)]
-            internal global::AirTurnManager.Api.DeviceTypes.ATBytes.__Internal associatedData;
+            internal global::AirTurnManager.Api.DeviceTypes.ATBytes._Internal associatedData;
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATAssociatedModePortDataStruct@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe __CreateInstance(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe _CreateInstance(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal));
-            *(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal));
+            *(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATAssociatedModePortDataUnsafe(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATAssociatedModePortDataUnsafe(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATAssociatedModePortDataUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATAssociatedModePortDataUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATAssociatedModePortDataUnsafe(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -92,25 +92,25 @@ namespace AirTurnManager.Api.DeviceTypes
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         public global::AirTurnManager.Api.DeviceTypes.ATMode Mode
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance)->mode;
+                return ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->mode;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance)->mode = value;
+                ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->mode = value;
             }
         }
 
@@ -118,12 +118,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance)->port;
+                return ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->port;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance)->port = value;
+                ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->port = value;
             }
         }
 
@@ -131,14 +131,14 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return global::AirTurnManager.Api.DeviceTypes.ATBytes.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance)->associatedData));
+                return global::AirTurnManager.Api.DeviceTypes.ATBytes._CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->associatedData));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe.__Internal*)__Instance)->associatedData = *(global::AirTurnManager.Api.DeviceTypes.ATBytes.__Internal*)value.__Instance;
+                ((global::AirTurnManager.Api.DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->associatedData = *(global::AirTurnManager.Api.DeviceTypes.ATBytes._Internal*)value._Instance;
             }
         }
     }

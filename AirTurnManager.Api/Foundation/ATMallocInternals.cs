@@ -10,7 +10,7 @@ namespace AirTurnManager.Api.Foundation
 {
     public unsafe partial class ATMallocInternalsUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -20,7 +20,7 @@ namespace AirTurnManager.Api.Foundation
 
         public static void ATWeakPointerFreePointerReferencesArray()
         {
-            __Internal.ATWeakPointerFreePointerReferencesArray();
+            _Internal.ATWeakPointerFreePointerReferencesArray();
         }
     }
 }

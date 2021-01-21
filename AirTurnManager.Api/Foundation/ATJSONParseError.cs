@@ -26,7 +26,7 @@ namespace AirTurnManager.Api.Foundation
     public unsafe partial class ATJSONParseErrorUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 101)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal fixed sbyte keyPath[100];
@@ -37,7 +37,7 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATJSONParseError@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -60,56 +60,56 @@ namespace AirTurnManager.Api.Foundation
             internal static extern global::System.IntPtr ATJSONParseErrorGetLast();
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal));
+            *(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATJSONParseErrorUnsafe(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATJSONParseErrorUnsafe(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATJSONParseErrorUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATJSONParseErrorUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATJSONParseErrorUnsafe(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -119,19 +119,19 @@ namespace AirTurnManager.Api.Foundation
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         /// <summary>Reset the last JSON parse error</summary>
         public static void ATJSONParseErrorLastReset()
         {
-            __Internal.ATJSONParseErrorLastReset();
+            _Internal.ATJSONParseErrorLastReset();
         }
 
         /// <summary>Push a key at the front of the key path</summary>
@@ -139,28 +139,28 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="keyLength">The length of the key</param>
         public static void ATJSONParseErrorLastPushKeyAtFront(string key, uint keyLength)
         {
-            __Internal.ATJSONParseErrorLastPushKeyAtFront(key, keyLength);
+            _Internal.ATJSONParseErrorLastPushKeyAtFront(key, keyLength);
         }
 
         /// <summary>Push an array index at the front of the key path</summary>
         /// <param name="arrayIndex">The array index to push</param>
         public static void ATJSONParseErrorLastPushArrayIndexAtFront(int arrayIndex)
         {
-            __Internal.ATJSONParseErrorLastPushArrayIndexAtFront(arrayIndex);
+            _Internal.ATJSONParseErrorLastPushArrayIndexAtFront(arrayIndex);
         }
 
         public sbyte[] KeyPath
         {
             get
             {
-                sbyte[] __value = null;
-                if (((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)__Instance)->keyPath != null)
+                sbyte[] _value = null;
+                if (((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_Instance)->keyPath != null)
                 {
-                    __value = new sbyte[100];
+                    _value = new sbyte[100];
                     for (int i = 0; i < 100; i++)
-                        __value[i] = ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)__Instance)->keyPath[i];
+                        _value[i] = ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_Instance)->keyPath[i];
                 }
-                return __value;
+                return _value;
             }
 
             set
@@ -168,7 +168,7 @@ namespace AirTurnManager.Api.Foundation
                 if (value != null)
                 {
                     for (int i = 0; i < 100; i++)
-                        ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)__Instance)->keyPath[i] = value[i];
+                        ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_Instance)->keyPath[i] = value[i];
                 }
             }
         }
@@ -177,12 +177,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)__Instance)->code;
+                return ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_Instance)->code;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__Internal*)__Instance)->code = value;
+                ((global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._Internal*)_Instance)->code = value;
             }
         }
 
@@ -192,13 +192,13 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                var __ret = __Internal.ATJSONParseErrorGetLast();
-                global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe __result0;
-                if (__ret == IntPtr.Zero) __result0 = null;
-                else if (global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                    __result0 = (global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe)global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.NativeToManagedMap[__ret];
-                else __result0 = global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.__CreateInstance(__ret);
-                return __result0;
+                var _ret = _Internal.ATJSONParseErrorGetLast();
+                global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe _result0;
+                if (_ret == IntPtr.Zero) _result0 = null;
+                else if (global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                    _result0 = (global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe)global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe.NativeToManagedMap[_ret];
+                else _result0 = global::AirTurnManager.Api.Foundation.ATJSONParseErrorUnsafe._CreateInstance(_ret);
+                return _result0;
             }
         }
     }

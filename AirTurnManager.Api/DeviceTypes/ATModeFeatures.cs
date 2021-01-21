@@ -25,7 +25,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATModeFeaturesUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -68,8 +68,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if valid</returns>
         public static bool ATModeFeaturesValidate(ushort modeFeatures)
         {
-            var __ret = __Internal.ATModeFeaturesValidate(modeFeatures);
-            return __ret;
+            var _ret = _Internal.ATModeFeaturesValidate(modeFeatures);
+            return _ret;
         }
 
         /// <summary>Get a mode features value from data</summary>
@@ -80,12 +80,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            fixed (ushort* __modeFeatures1 = &modeFeatures)
+            var _arg0 = data._Instance;
+            fixed (ushort* _modeFeatures1 = &modeFeatures)
             {
-                var __arg1 = __modeFeatures1;
-                var __ret = __Internal.ATModeFeaturesParseData(__arg0, __arg1);
-                return __ret;
+                var _arg1 = _modeFeatures1;
+                var _ret = _Internal.ATModeFeaturesParseData(_arg0, _arg1);
+                return _ret;
             }
         }
 
@@ -95,9 +95,9 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATModeFeaturesGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, ushort modeFeatures)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            var __ret = __Internal.ATModeFeaturesGetData(__arg0, modeFeatures);
-            return __ret;
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _ret = _Internal.ATModeFeaturesGetData(_arg0, modeFeatures);
+            return _ret;
         }
 
         /// <summary>Get a mode features values from data. Will parse maxCount mode features</summary>
@@ -110,12 +110,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            fixed (ushort* __modeFeatures1 = &modeFeatures)
+            var _arg0 = data._Instance;
+            fixed (ushort* _modeFeatures1 = &modeFeatures)
             {
-                var __arg1 = __modeFeatures1;
-                var __ret = __Internal.ATModeFeaturesParseDataMultiple(__arg0, __arg1, maxCount, numParsed);
-                return __ret;
+                var _arg1 = _modeFeatures1;
+                var _ret = _Internal.ATModeFeaturesParseDataMultiple(_arg0, _arg1, maxCount, numParsed);
+                return _ret;
             }
         }
 
@@ -126,12 +126,12 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATModeFeaturesGetDataMultiple(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, ref ushort modeFeatures, byte count)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            fixed (ushort* __modeFeatures1 = &modeFeatures)
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            fixed (ushort* _modeFeatures1 = &modeFeatures)
             {
-                var __arg1 = __modeFeatures1;
-                var __ret = __Internal.ATModeFeaturesGetDataMultiple(__arg0, __arg1, count);
-                return __ret;
+                var _arg1 = _modeFeatures1;
+                var _ret = _Internal.ATModeFeaturesGetDataMultiple(_arg0, _arg1, count);
+                return _ret;
             }
         }
 
@@ -140,8 +140,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="modeFeatures">The mode features value</param>
         public static void ATModeFeaturesDescription(global::AirTurnManager.Api.DeviceTypes.ATString @string, ushort modeFeatures)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            __Internal.ATModeFeaturesDescription(__arg0, modeFeatures);
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            _Internal.ATModeFeaturesDescription(_arg0, modeFeatures);
         }
     }
 }

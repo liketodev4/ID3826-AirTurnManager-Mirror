@@ -11,7 +11,7 @@ namespace AirTurnManager.Api.DeviceDefaults
     public unsafe partial class ATDeviceDefaults : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 24)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal global::System.IntPtr defaultPortConfig;
@@ -52,7 +52,7 @@ namespace AirTurnManager.Api.DeviceDefaults
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATDeviceDefaults@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -132,22 +132,22 @@ namespace AirTurnManager.Api.DeviceDefaults
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatHostToSwapped@@YA?AUATSwappedFloat32@@M@Z")]
-            internal static extern global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32.__Internal ATConvertFloatHostToSwapped(float arg);
+            internal static extern global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32._Internal ATConvertFloatHostToSwapped(float arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatSwappedToHost@@YAMUATSwappedFloat32@@@Z")]
-            internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32.__Internal arg);
+            internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32._Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleHostToSwapped@@YA?AUATSwappedFloat64@@N@Z")]
-            internal static extern global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64.__Internal ATConvertDoubleHostToSwapped(double arg);
+            internal static extern global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64._Internal ATConvertDoubleHostToSwapped(double arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleSwappedToHost@@YANUATSwappedFloat64@@@Z")]
-            internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64.__Internal arg);
+            internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64._Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -155,56 +155,56 @@ namespace AirTurnManager.Api.DeviceDefaults
             internal static extern void ATDeviceDefaultsGetDefaultPortConfig(global::System.IntPtr @return, global::System.IntPtr deviceDefaults, global::AirTurnManager.Api.DeviceDefaults.ATMode mode, global::AirTurnManager.Api.DeviceDefaults.ATPort port);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults __CreateInstance(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults _CreateInstance(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal));
-            *(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal));
+            *(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATDeviceDefaults(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATDeviceDefaults(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATDeviceDefaults(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATDeviceDefaults()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATDeviceDefaults(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance) = *((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance) = *((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -214,153 +214,153 @@ namespace AirTurnManager.Api.DeviceDefaults
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         public static ushort ATSwapInt16(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16BigToHost(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16BigToHost(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32BigToHost(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32BigToHost(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64BigToHost(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64BigToHost(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16HostToBig(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16HostToBig(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32HostToBig(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32HostToBig(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64HostToBig(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64HostToBig(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16LittleToHost(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16LittleToHost(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32LittleToHost(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32LittleToHost(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64LittleToHost(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64LittleToHost(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16HostToLittle(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16HostToLittle(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32HostToLittle(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32HostToLittle(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64HostToLittle(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64HostToLittle(arg);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32 ATConvertFloatHostToSwapped(float arg)
         {
-            var __ret = __Internal.ATConvertFloatHostToSwapped(arg);
-            return global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32.__CreateInstance(__ret);
+            var _ret = _Internal.ATConvertFloatHostToSwapped(arg);
+            return global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32._CreateInstance(_ret);
         }
 
         public static float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32 arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
-            var __arg0 = arg.__Instance;
-            var __ret = __Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32.__Internal*)__arg0);
-            return __ret;
+            var _arg0 = arg._Instance;
+            var _ret = _Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32._Internal*)_arg0);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64 ATConvertDoubleHostToSwapped(double arg)
         {
-            var __ret = __Internal.ATConvertDoubleHostToSwapped(arg);
-            return global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64.__CreateInstance(__ret);
+            var _ret = _Internal.ATConvertDoubleHostToSwapped(arg);
+            return global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64._CreateInstance(_ret);
         }
 
         public static double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64 arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
-            var __arg0 = arg.__Instance;
-            var __ret = __Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64.__Internal*)__arg0);
-            return __ret;
+            var _arg0 = arg._Instance;
+            var _ret = _Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64._Internal*)_arg0);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.DeviceDefaults.ATBytes ATDeviceDefaultsGetDefaultPortConfig(global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults deviceDefaults, global::AirTurnManager.Api.DeviceDefaults.ATMode mode, global::AirTurnManager.Api.DeviceDefaults.ATPort port)
         {
-            var __arg0 = ReferenceEquals(deviceDefaults, null) ? global::System.IntPtr.Zero : deviceDefaults.__Instance;
-            var __ret = new global::AirTurnManager.Api.DeviceDefaults.ATBytes.__Internal();
-            __Internal.ATDeviceDefaultsGetDefaultPortConfig(new IntPtr(&__ret), __arg0, mode, port);
-            return global::AirTurnManager.Api.DeviceDefaults.ATBytes.__CreateInstance(__ret);
+            var _arg0 = ReferenceEquals(deviceDefaults, null) ? global::System.IntPtr.Zero : deviceDefaults._Instance;
+            var _ret = new global::AirTurnManager.Api.DeviceDefaults.ATBytes._Internal();
+            _Internal.ATDeviceDefaultsGetDefaultPortConfig(new IntPtr(&_ret), _arg0, mode, port);
+            return global::AirTurnManager.Api.DeviceDefaults.ATBytes._CreateInstance(_ret);
         }
 
         public byte* DefaultPortConfig
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->defaultPortConfig;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->defaultPortConfig;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->defaultPortConfig = (global::System.IntPtr)value;
+                ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->defaultPortConfig = (global::System.IntPtr)value;
             }
         }
 
@@ -368,7 +368,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->portConfigMinMode;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->portConfigMinMode;
             }
         }
 
@@ -376,7 +376,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->portConfigNumModes;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->portConfigNumModes;
             }
         }
 
@@ -384,7 +384,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->portConfigMinPort;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->portConfigMinPort;
             }
         }
 
@@ -392,7 +392,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->portConfigNumPorts;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->portConfigNumPorts;
             }
         }
 
@@ -400,7 +400,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->portConfigBytesLength;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->portConfigBytesLength;
             }
         }
 
@@ -408,7 +408,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->delayBeforeRepeat;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->delayBeforeRepeat;
             }
         }
 
@@ -416,7 +416,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->repeatRate;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->repeatRate;
             }
         }
 
@@ -424,7 +424,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->idlePowerOff;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->idlePowerOff;
             }
         }
 
@@ -432,7 +432,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->connectionConfiguration;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->connectionConfiguration;
             }
         }
 
@@ -440,7 +440,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->pairingMethod;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->pairingMethod;
             }
         }
 
@@ -448,7 +448,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults.__Internal*)__Instance)->debounceTime;
+                return ((global::AirTurnManager.Api.DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->debounceTime;
             }
         }
     }

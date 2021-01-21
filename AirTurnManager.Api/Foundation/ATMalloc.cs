@@ -52,7 +52,7 @@ namespace AirTurnManager.Api.Foundation
 
     public unsafe partial class ATMallocUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -114,8 +114,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the allocated memory, or `NULL` if unsuccessful</returns>
         public static global::System.IntPtr ATMalloc_(ulong size)
         {
-            var __ret = __Internal.ATMalloc(size);
-            return __ret;
+            var _ret = _Internal.ATMalloc(size);
+            return _ret;
         }
 
         /// <summary>Reallocate memory</summary>
@@ -126,8 +126,8 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>If unsuccessful, the original pointer will remain valid</remarks>
         public static global::System.IntPtr ATRealloc(global::System.IntPtr pointer, ulong new_size, ulong previous_size)
         {
-            var __ret = __Internal.ATRealloc(pointer, new_size, previous_size);
-            return __ret;
+            var _ret = _Internal.ATRealloc(pointer, new_size, previous_size);
+            return _ret;
         }
 
         /// <summary>Free memory</summary>
@@ -135,28 +135,28 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="size">The size of the allocated memory</param>
         public static void ATFree(global::System.IntPtr pointer, ulong size)
         {
-            __Internal.ATFree(pointer, size);
+            _Internal.ATFree(pointer, size);
         }
 
         /// <summary>Allows the user to register a function that will get called when the module calls malloc().</summary>
         public static void ATMallocHookRegister(global::AirTurnManager.Api.Foundation.Delegates.Func_IntPtr_ulong mallocHook)
         {
-            var __arg0 = mallocHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(mallocHook);
-            __Internal.ATMallocHookRegister(__arg0);
+            var _arg0 = mallocHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(mallocHook);
+            _Internal.ATMallocHookRegister(_arg0);
         }
 
         /// <summary>Allows the user to register a function that will get called when the module calls free().</summary>
         public static void ATFreeHookRegister(global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong freeHook)
         {
-            var __arg0 = freeHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(freeHook);
-            __Internal.ATFreeHookRegister(__arg0);
+            var _arg0 = freeHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(freeHook);
+            _Internal.ATFreeHookRegister(_arg0);
         }
 
         /// <summary>Allows the user to register a function that will get called when the module calls realloc().</summary>
         public static void ATReallocHookRegister(global::AirTurnManager.Api.Foundation.Delegates.Func_IntPtr_IntPtr_ulong_ulong reallocHook)
         {
-            var __arg0 = reallocHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(reallocHook);
-            __Internal.ATReallocHookRegister(__arg0);
+            var _arg0 = reallocHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(reallocHook);
+            _Internal.ATReallocHookRegister(_arg0);
         }
 
         /// <summary>Register a weak pointer. When the memory the pointer is pointed to is free'd, the pointer is set to NULL</summary>
@@ -164,8 +164,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if registration was successful</returns>
         public static bool ATWeakPointerRegister(void** pointerToPointerToVariable)
         {
-            var __ret = __Internal.ATWeakPointerRegister(pointerToPointerToVariable);
-            return __ret;
+            var _ret = _Internal.ATWeakPointerRegister(pointerToPointerToVariable);
+            return _ret;
         }
 
         /// <summary>Register an array of weak pointers</summary>
@@ -177,9 +177,9 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>When an array of pointers is registered, if any of the memory pointed to by any of the pointers is free'd, the pointer to that memory will be removed from the array and the callback will be called. Call `ATWeakPointerArrayUnregister` when the array is deallocated</remarks>
         public static bool ATWeakPointerArrayRegister(void** arrayOfPointersToVariable, ulong length, global::System.IntPtr context, global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong_IntPtr callback)
         {
-            var __arg3 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
-            var __ret = __Internal.ATWeakPointerArrayRegister(arrayOfPointersToVariable, length, context, __arg3);
-            return __ret;
+            var _arg3 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
+            var _ret = _Internal.ATWeakPointerArrayRegister(arrayOfPointersToVariable, length, context, _arg3);
+            return _ret;
         }
 
         /// <summary>Modify the length of a weak pointer array</summary>
@@ -189,8 +189,8 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>call when the array length is modified externally</remarks>
         public static bool ATWeakPointerArrayModifyLength(void** arrayOfPointersToVariable, ulong newLength)
         {
-            var __ret = __Internal.ATWeakPointerArrayModifyLength(arrayOfPointersToVariable, newLength);
-            return __ret;
+            var _ret = _Internal.ATWeakPointerArrayModifyLength(arrayOfPointersToVariable, newLength);
+            return _ret;
         }
 
         /// <summary>Unregister an array of pointers</summary>
@@ -199,8 +199,8 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Should be called when the array is deallocated</remarks>
         public static bool ATWeakPointerArrayUnregister(void** arrayOfPointersToVariable)
         {
-            var __ret = __Internal.ATWeakPointerArrayUnregister(arrayOfPointersToVariable);
-            return __ret;
+            var _ret = _Internal.ATWeakPointerArrayUnregister(arrayOfPointersToVariable);
+            return _ret;
         }
     }
 }

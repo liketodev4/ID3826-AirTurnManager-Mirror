@@ -26,7 +26,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATInputTypeUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -36,8 +36,8 @@ namespace AirTurnManager.Api.DeviceTypes
 
         public static global::AirTurnManager.Api.DeviceTypes.ATInputType ATInputTypeFromModelID(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
         {
-            var __ret = __Internal.ATInputTypeFromModelID(modelID);
-            return __ret;
+            var _ret = _Internal.ATInputTypeFromModelID(modelID);
+            return _ret;
         }
     }
 }

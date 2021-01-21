@@ -18,7 +18,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATPairingStateUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -49,8 +49,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if valid</returns>
         public static bool ATPairingStateValidate(global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
         {
-            var __ret = __Internal.ATPairingStateValidate(pairingState);
-            return __ret;
+            var _ret = _Internal.ATPairingStateValidate(pairingState);
+            return _ret;
         }
 
         /// <summary>Get a pairing state value from data</summary>
@@ -61,12 +61,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            fixed (global::AirTurnManager.Api.DeviceTypes.ATPairingState* __pairingState1 = &pairingState)
+            var _arg0 = data._Instance;
+            fixed (global::AirTurnManager.Api.DeviceTypes.ATPairingState* _pairingState1 = &pairingState)
             {
-                var __arg1 = __pairingState1;
-                var __ret = __Internal.ATPairingStateParseData(__arg0, __arg1);
-                return __ret;
+                var _arg1 = _pairingState1;
+                var _ret = _Internal.ATPairingStateParseData(_arg0, _arg1);
+                return _ret;
             }
         }
 
@@ -76,9 +76,9 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATPairingStateGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            var __ret = __Internal.ATPairingStateGetData(__arg0, pairingState);
-            return __ret;
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _ret = _Internal.ATPairingStateGetData(_arg0, pairingState);
+            return _ret;
         }
 
         /// <summary>Get a description for a pairing state value</summary>
@@ -86,13 +86,13 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>A null-terminated constant string</returns>
         public static string ATPairingStateDescription(global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
         {
-            var __ret = __Internal.ATPairingStateDescription(pairingState);
-            if (__ret == global::System.IntPtr.Zero)
+            var _ret = _Internal.ATPairingStateDescription(pairingState);
+            if (_ret == global::System.IntPtr.Zero)
                 return default(string);
-            var __retPtr = (byte*)__ret;
-            int __length = 0;
-            while (*(__retPtr++) != 0) __length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)__ret, __length);
+            var _retPtr = (byte*)_ret;
+            int _length = 0;
+            while (*(_retPtr++) != 0) _length += sizeof(byte);
+            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
     }
 }

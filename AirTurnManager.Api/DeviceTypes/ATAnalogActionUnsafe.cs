@@ -32,7 +32,7 @@ namespace AirTurnManager.Api.DeviceTypes
     public unsafe partial struct ATAnalogActionParameters
     {
         [StructLayout(LayoutKind.Explicit, Size = 1)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal global::AirTurnManager.Api.DeviceTypes.ATPort associatedAxis;
@@ -47,38 +47,38 @@ namespace AirTurnManager.Api.DeviceTypes
             internal byte hasMid;
         }
 
-        private ATAnalogActionParameters.__Internal __instance;
-        internal ATAnalogActionParameters.__Internal __Instance { get { return __instance; } }
+        private ATAnalogActionParameters._Internal _instance;
+        internal ATAnalogActionParameters._Internal _Instance { get { return _instance; } }
 
-        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters __CreateInstance(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters _CreateInstance(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters(native, skipVTables);
         }
 
-        private ATAnalogActionParameters(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters.__Internal native, bool skipVTables = false)
+        private ATAnalogActionParameters(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters._Internal native, bool skipVTables = false)
             : this()
         {
-            __instance = native;
+            _instance = native;
         }
 
         private ATAnalogActionParameters(void* native, bool skipVTables = false) : this()
         {
-            __instance = *(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters.__Internal*)native;
+            _instance = *(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters._Internal*)native;
         }
 
         public ATAnalogActionParameters(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters _0)
             : this()
         {
-            var ____arg0 = _0.__Instance;
-            var __arg0 = new global::System.IntPtr(&____arg0);
-            fixed (__Internal* __instancePtr = &__instance)
+            var __arg0 = _0._Instance;
+            var _arg0 = new global::System.IntPtr(&__arg0);
+            fixed (_Internal* _instancePtr = &_instance)
             {
-                __Internal.cctor(new global::System.IntPtr(__instancePtr), __arg0);
+                _Internal.cctor(new global::System.IntPtr(_instancePtr), _arg0);
             }
         }
 
@@ -86,12 +86,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return __instance.associatedAxis;
+                return _instance.associatedAxis;
             }
 
             set
             {
-                __instance.associatedAxis = value;
+                _instance.associatedAxis = value;
             }
         }
 
@@ -99,12 +99,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return __instance.enabled != 0;
+                return _instance.enabled != 0;
             }
 
             set
             {
-                __instance.enabled = (byte)(value ? 1 : 0);
+                _instance.enabled = (byte)(value ? 1 : 0);
             }
         }
 
@@ -112,12 +112,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return __instance.forceProprietary != 0;
+                return _instance.forceProprietary != 0;
             }
 
             set
             {
-                __instance.forceProprietary = (byte)(value ? 1 : 0);
+                _instance.forceProprietary = (byte)(value ? 1 : 0);
             }
         }
 
@@ -125,12 +125,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return __instance.hasMid != 0;
+                return _instance.hasMid != 0;
             }
 
             set
             {
-                __instance.hasMid = (byte)(value ? 1 : 0);
+                _instance.hasMid = (byte)(value ? 1 : 0);
             }
         }
     }
@@ -138,7 +138,7 @@ namespace AirTurnManager.Api.DeviceTypes
     public unsafe partial class ATAnalogActionUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 3)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [FieldOffset(0)]
             internal global::AirTurnManager.Api.DeviceTypes.ATAnalogActionType action;
@@ -147,7 +147,7 @@ namespace AirTurnManager.Api.DeviceTypes
             internal global::AirTurnManager.Api.DeviceTypes.ATPort port;
 
             [FieldOffset(2)]
-            internal global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters.__Internal parameters;
+            internal global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters._Internal parameters;
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -179,56 +179,56 @@ namespace AirTurnManager.Api.DeviceTypes
             internal static extern void ATAnalogActionDescription(global::System.IntPtr @string, global::System.IntPtr analogAction);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe __CreateInstance(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe _CreateInstance(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal));
-            *(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal));
+            *(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATAnalogActionUnsafe(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATAnalogActionUnsafe(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATAnalogActionUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATAnalogActionUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATAnalogActionUnsafe(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -238,13 +238,13 @@ namespace AirTurnManager.Api.DeviceTypes
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         /// <summary>Determine if an action type is associated with a specific port</summary>
@@ -252,8 +252,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if action is associated with a specific port</returns>
         public static bool ATAnalogActionIsPortSpecificAction(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionType actionType)
         {
-            var __ret = __Internal.ATAnalogActionIsPortSpecificAction(actionType);
-            return __ret;
+            var _ret = _Internal.ATAnalogActionIsPortSpecificAction(actionType);
+            return _ret;
         }
 
         /// <summary>Validate an analog action</summary>
@@ -261,9 +261,9 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if valid</returns>
         public static bool ATAnalogActionValidate(global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
-            var __arg0 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction.__Instance;
-            var __ret = __Internal.ATAnalogActionValidate(__arg0);
-            return __ret;
+            var _arg0 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _ret = _Internal.ATAnalogActionValidate(_arg0);
+            return _ret;
         }
 
         /// <summary>Get an analog action from data</summary>
@@ -274,10 +274,10 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            var __arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction.__Instance;
-            var __ret = __Internal.ATAnalogActionParseData(__arg0, __arg1);
-            return __ret;
+            var _arg0 = data._Instance;
+            var _arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _ret = _Internal.ATAnalogActionParseData(_arg0, _arg1);
+            return _ret;
         }
 
         /// <summary>Get the data for an analog action</summary>
@@ -286,10 +286,10 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATAnalogActionGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            var __arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction.__Instance;
-            var __ret = __Internal.ATAnalogActionGetData(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _ret = _Internal.ATAnalogActionGetData(_arg0, _arg1);
+            return _ret;
         }
 
         /// <summary>Get a description for a analog action</summary>
@@ -297,21 +297,21 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="analogAction">The analog action</param>
         public static void ATAnalogActionDescription(global::AirTurnManager.Api.DeviceTypes.ATString @string, global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
-            var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
-            var __arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction.__Instance;
-            __Internal.ATAnalogActionDescription(__arg0, __arg1);
+            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            _Internal.ATAnalogActionDescription(_arg0, _arg1);
         }
 
         public global::AirTurnManager.Api.DeviceTypes.ATAnalogActionType Action
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance)->action;
+                return ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance)->action;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance)->action = value;
+                ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance)->action = value;
             }
         }
 
@@ -319,12 +319,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance)->port;
+                return ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance)->port;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance)->port = value;
+                ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance)->port = value;
             }
         }
 
@@ -332,12 +332,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters.__CreateInstance(((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance)->parameters);
+                return global::AirTurnManager.Api.DeviceTypes.ATAnalogActionParameters._CreateInstance(((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance)->parameters);
             }
 
             set
             {
-                ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe.__Internal*)__Instance)->parameters = value.__Instance;
+                ((global::AirTurnManager.Api.DeviceTypes.ATAnalogActionUnsafe._Internal*)_Instance)->parameters = value._Instance;
             }
         }
     }

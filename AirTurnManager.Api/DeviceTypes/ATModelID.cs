@@ -40,7 +40,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATModelIDUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -65,13 +65,13 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>A null-terminated constant string</returns>
         public static string ATModelIDDescription(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
         {
-            var __ret = __Internal.ATModelIDDescription(modelID);
-            if (__ret == global::System.IntPtr.Zero)
+            var _ret = _Internal.ATModelIDDescription(modelID);
+            if (_ret == global::System.IntPtr.Zero)
                 return default(string);
-            var __retPtr = (byte*)__ret;
-            int __length = 0;
-            while (*(__retPtr++) != 0) __length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)__ret, __length);
+            var _retPtr = (byte*)_ret;
+            int _length = 0;
+            while (*(_retPtr++) != 0) _length += sizeof(byte);
+            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
 
         /// <summary>Determines if a given model ID is a BLE113 based model</summary>
@@ -79,8 +79,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if model is a BLE113 model</returns>
         public static bool ATModelIDIsBLE113(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
         {
-            var __ret = __Internal.ATModelIDIsBLE113(modelID);
-            return __ret;
+            var _ret = _Internal.ATModelIDIsBLE113(modelID);
+            return _ret;
         }
 
         /// <summary>Determines if a given model ID is a Nordic based model</summary>
@@ -88,8 +88,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if model is a Nordic model</returns>
         public static bool ATModelIDIsNordic(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
         {
-            var __ret = __Internal.ATModelIDIsNordic(modelID);
-            return __ret;
+            var _ret = _Internal.ATModelIDIsNordic(modelID);
+            return _ret;
         }
     }
 }

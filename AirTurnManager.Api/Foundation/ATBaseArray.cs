@@ -11,16 +11,16 @@ namespace AirTurnManager.Api.Foundation
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
     public unsafe delegate void ATBaseArrayWeakElementRemovedCallback(global::System.IntPtr baseArray, ulong index);
 
-    /// <summary>The struct for ATBaseArray objects. ATBaseArray is an array of objects based on ATBaseRef. Objects are retained when added and released when removed. If initialised as a weak array, objects are not retained when added and when they are deallocated they are removed from the array and the callback is called.</summary>
+    // The struct for ATBaseArray objects. ATBaseArray is an array of objects based on ATBaseRef. Objects are retained when added and released when removed. If initialised as a weak array, objects are not retained when added and when they are deallocated they are removed from the array and the callback is called.
     public unsafe partial class ATBaseArrayUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 104)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             // PRIVATE - DO NOT USE
             // The super-struct
             [FieldOffset(0)]
-            internal global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal _base;
+            internal global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal _base;
 
             // Are the array items weakly stored
             [FieldOffset(64)]
@@ -42,11 +42,6 @@ namespace AirTurnManager.Api.Foundation
             // The array count
             [FieldOffset(96)]
             internal ulong count;
-
-            //[SuppressUnmanagedCodeSecurity]
-            //[DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            //    EntryPoint = "??0ATBaseArray@@QEAA@AEBU0@@Z")]
-            //internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -116,56 +111,56 @@ namespace AirTurnManager.Api.Foundation
             internal static extern bool ATBaseArrayIsEqual(global::System.IntPtr array1, global::System.IntPtr array2);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal));
+            *(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATBaseArrayUnsafe(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATBaseArrayUnsafe(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATBaseArrayUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATBaseArrayUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATBaseArrayUnsafe(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -175,13 +170,13 @@ namespace AirTurnManager.Api.Foundation
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         /// <summary>Create a new base array object</summary>
@@ -189,14 +184,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe ATBaseArrayNew(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe optionalStorage)
         {
-            var __arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage.__Instance;
-            var __ret = __Internal.ATBaseArrayNew(__arg0);
-            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _ret = _Internal.ATBaseArrayNew(_arg0);
+            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a new base array object</summary>
@@ -207,15 +202,15 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe ATBaseArrayInit(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, ulong capacity, bool weak, global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong weakElementRemovedCallback)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __arg3 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
-            var __ret = __Internal.ATBaseArrayInit(__arg0, capacity, weak, __arg3);
-            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg3 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
+            var _ret = _Internal.ATBaseArrayInit(_arg0, capacity, weak, _arg3);
+            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a new base array object with existing objects</summary>
@@ -227,15 +222,15 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe ATBaseArrayInitWithObjects(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, void** existingObjects, ulong length, bool weak, global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong weakElementRemovedCallback)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __arg4 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
-            var __ret = __Internal.ATBaseArrayInitWithObjects(__arg0, existingObjects, length, weak, __arg4);
-            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg4 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
+            var _ret = _Internal.ATBaseArrayInitWithObjects(_arg0, existingObjects, length, weak, _arg4);
+            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a new base array object with existing objects using the original buffer without copying</summary>
@@ -248,15 +243,15 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe ATBaseArrayInitWithObjectsNoCopy(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, void** existingObjects, ulong length, ulong capacity, bool weak, global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong weakElementRemovedCallback)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __arg5 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
-            var __ret = __Internal.ATBaseArrayInitWithObjectsNoCopy(__arg0, existingObjects, length, capacity, weak, __arg5);
-            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg5 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
+            var _ret = _Internal.ATBaseArrayInitWithObjectsNoCopy(_arg0, existingObjects, length, capacity, weak, _arg5);
+            global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe)global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Get a pointer to an object in the array</summary>
@@ -265,9 +260,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the object</returns>
         public static global::System.IntPtr ATBaseArrayGetObjectAtIndex(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, ulong index)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATBaseArrayGetObjectAtIndex(__arg0, index);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATBaseArrayGetObjectAtIndex(_arg0, index);
+            return _ret;
         }
 
         /// <summary>Append an object to the array</summary>
@@ -276,9 +271,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATBaseArrayAppendObject(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, global::System.IntPtr objectToAppend)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATBaseArrayAppendObject(__arg0, objectToAppend);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATBaseArrayAppendObject(_arg0, objectToAppend);
+            return _ret;
         }
 
         /// <summary>Insert an object into the array at a given index</summary>
@@ -288,9 +283,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATBaseArrayInsertObject(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, global::System.IntPtr objectToInsert, ulong index)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATBaseArrayInsertObject(__arg0, objectToInsert, index);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATBaseArrayInsertObject(_arg0, objectToInsert, index);
+            return _ret;
         }
 
         /// <summary>Remove an object from the array at a given index</summary>
@@ -300,9 +295,9 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out object pointers above new count</remarks>
         public static bool ATBaseArrayRemoveObject(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, ulong index)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATBaseArrayRemoveObject(__arg0, index);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATBaseArrayRemoveObject(_arg0, index);
+            return _ret;
         }
 
         /// <summary>Remove all objects</summary>
@@ -311,9 +306,9 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out object pointers removed</remarks>
         public static bool ATBaseArrayRemoveAllObjects(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATBaseArrayRemoveAllObjects(__arg0);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATBaseArrayRemoveAllObjects(_arg0);
+            return _ret;
         }
 
         /// <summary>Resize an array</summary>
@@ -322,9 +317,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATBaseArrayResize(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array, ulong newCapacity)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATBaseArrayResize(__arg0, newCapacity);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATBaseArrayResize(_arg0, newCapacity);
+            return _ret;
         }
 
         /// <summary>Copy an array, retaining all objects for the destination array</summary>
@@ -333,10 +328,10 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATBaseArrayCopy(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe destination, global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe source)
         {
-            var __arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination.__Instance;
-            var __arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source.__Instance;
-            var __ret = __Internal.ATBaseArrayCopy(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _ret = _Internal.ATBaseArrayCopy(_arg0, _arg1);
+            return _ret;
         }
 
         /// <summary>Determine if two arrays are equal</summary>
@@ -345,24 +340,24 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the arrays are equal (the pointers in the array are equal)</returns>
         public static bool ATBaseArrayIsEqual(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array1, global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe array2)
         {
-            var __arg0 = ReferenceEquals(array1, null) ? global::System.IntPtr.Zero : array1.__Instance;
-            var __arg1 = ReferenceEquals(array2, null) ? global::System.IntPtr.Zero : array2.__Instance;
-            var __ret = __Internal.ATBaseArrayIsEqual(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(array1, null) ? global::System.IntPtr.Zero : array1._Instance;
+            var _arg1 = ReferenceEquals(array2, null) ? global::System.IntPtr.Zero : array2._Instance;
+            var _ret = _Internal.ATBaseArrayIsEqual(_arg0, _arg1);
+            return _ret;
         }
 
         public global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe Base
         {
             get
             {
-                return global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->_base));
+                return global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)value.__Instance;
+                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)value._Instance;
             }
         }
 
@@ -370,12 +365,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->_isWeak != 0;
+                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_isWeak != 0;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->_isWeak = (byte)(value ? 1 : 0);
+                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_isWeak = (byte)(value ? 1 : 0);
             }
         }
 
@@ -383,13 +378,13 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                var __ptr0 = ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->_weakCallback;
-                return __ptr0 == IntPtr.Zero ? null : (global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong));
+                var _ptr0 = ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_weakCallback;
+                return _ptr0 == IntPtr.Zero ? null : (global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong));
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->_weakCallback = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_weakCallback = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
@@ -397,12 +392,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->capacity;
+                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->capacity;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->capacity = value;
+                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->capacity = value;
             }
         }
 
@@ -410,12 +405,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->items;
+                return (void**)((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->items;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->items = value;
+                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->items = (IntPtr)value;
             }
         }
 
@@ -423,12 +418,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->count;
+                return ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->count;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe.__Internal*)__Instance)->count = value;
+                ((global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->count = value;
             }
         }
     }

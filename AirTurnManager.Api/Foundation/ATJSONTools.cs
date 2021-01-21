@@ -9,7 +9,7 @@ namespace AirTurnManager.Api.Foundation
 {
     public unsafe partial class ATJSONToolsUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -89,22 +89,22 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatHostToSwapped@@YA?AUATSwappedFloat32@@M@Z")]
-            internal static extern global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe.__Internal ATConvertFloatHostToSwapped(float arg);
+            internal static extern global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe._Internal ATConvertFloatHostToSwapped(float arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatSwappedToHost@@YAMUATSwappedFloat32@@@Z")]
-            internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe.__Internal arg);
+            internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe._Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleHostToSwapped@@YA?AUATSwappedFloat64@@N@Z")]
-            internal static extern global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe.__Internal ATConvertDoubleHostToSwapped(double arg);
+            internal static extern global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe._Internal ATConvertDoubleHostToSwapped(double arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleSwappedToHost@@YANUATSwappedFloat64@@@Z")]
-            internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe.__Internal arg);
+            internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe._Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -162,205 +162,205 @@ namespace AirTurnManager.Api.Foundation
 
         public static ushort ATSwapInt16(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16BigToHost(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16BigToHost(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32BigToHost(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32BigToHost(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64BigToHost(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64BigToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64BigToHost(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16HostToBig(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16HostToBig(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32HostToBig(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32HostToBig(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64HostToBig(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64HostToBig(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64HostToBig(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16LittleToHost(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16LittleToHost(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32LittleToHost(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32LittleToHost(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64LittleToHost(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64LittleToHost(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64LittleToHost(arg);
+            return _ret;
         }
 
         public static ushort ATSwapInt16HostToLittle(ushort arg)
         {
-            var __ret = __Internal.ATSwapInt16HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt16HostToLittle(arg);
+            return _ret;
         }
 
         public static uint ATSwapInt32HostToLittle(uint arg)
         {
-            var __ret = __Internal.ATSwapInt32HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt32HostToLittle(arg);
+            return _ret;
         }
 
         public static ulong ATSwapInt64HostToLittle(ulong arg)
         {
-            var __ret = __Internal.ATSwapInt64HostToLittle(arg);
-            return __ret;
+            var _ret = _Internal.ATSwapInt64HostToLittle(arg);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe ATConvertFloatHostToSwapped(float arg)
         {
-            var __ret = __Internal.ATConvertFloatHostToSwapped(arg);
-            return global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe.__CreateInstance(__ret);
+            var _ret = _Internal.ATConvertFloatHostToSwapped(arg);
+            return global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe._CreateInstance(_ret);
         }
 
         public static float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
-            var __arg0 = arg.__Instance;
-            var __ret = __Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe.__Internal*)__arg0);
-            return __ret;
+            var _arg0 = arg._Instance;
+            var _ret = _Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe._Internal*)_arg0);
+            return _ret;
         }
 
         public static global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe ATConvertDoubleHostToSwapped(double arg)
         {
-            var __ret = __Internal.ATConvertDoubleHostToSwapped(arg);
-            return global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe.__CreateInstance(__ret);
+            var _ret = _Internal.ATConvertDoubleHostToSwapped(arg);
+            return global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe._CreateInstance(_ret);
         }
 
         public static double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
-            var __arg0 = arg.__Instance;
-            var __ret = __Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe.__Internal*)__arg0);
-            return __ret;
+            var _arg0 = arg._Instance;
+            var _ret = _Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe._Internal*)_arg0);
+            return _ret;
         }
 
         public static bool ATJSONParseBool(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref bool val)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            fixed (bool* __val2 = &val)
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            fixed (bool* _val2 = &val)
             {
-                var __arg2 = __val2;
-                var __ret = __Internal.ATJSONParseBool(json, __arg1, __arg2);
-                return __ret;
+                var _arg2 = _val2;
+                var _ret = _Internal.ATJSONParseBool(json, _arg1, _arg2);
+                return _ret;
             }
         }
 
         public static bool ATJSONStringEquals(string json, global::AirTurnManager.Api.Foundation.Jsmntok tok, string s)
         {
-            var __arg1 = ReferenceEquals(tok, null) ? global::System.IntPtr.Zero : tok.__Instance;
-            var __ret = __Internal.ATJSONStringEquals(json, __arg1, s);
-            return __ret;
+            var _arg1 = ReferenceEquals(tok, null) ? global::System.IntPtr.Zero : tok._Instance;
+            var _ret = _Internal.ATJSONStringEquals(json, _arg1, s);
+            return _ret;
         }
 
         public static bool ATJSONParseUInt8(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, byte* val)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            var __ret = __Internal.ATJSONParseUInt8(json, __arg1, val);
-            return __ret;
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            var _ret = _Internal.ATJSONParseUInt8(json, _arg1, val);
+            return _ret;
         }
 
         public static bool ATJSONParseUInt16(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref ushort val)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            fixed (ushort* __val2 = &val)
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            fixed (ushort* _val2 = &val)
             {
-                var __arg2 = __val2;
-                var __ret = __Internal.ATJSONParseUInt16(json, __arg1, __arg2);
-                return __ret;
+                var _arg2 = _val2;
+                var _ret = _Internal.ATJSONParseUInt16(json, _arg1, _arg2);
+                return _ret;
             }
         }
 
         public static bool ATJSONParseInt8(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, sbyte* val)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            var __ret = __Internal.ATJSONParseInt8(json, __arg1, val);
-            return __ret;
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            var _ret = _Internal.ATJSONParseInt8(json, _arg1, val);
+            return _ret;
         }
 
         public static bool ATJSONParseInt16(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref short val)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            fixed (short* __val2 = &val)
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            fixed (short* _val2 = &val)
             {
-                var __arg2 = __val2;
-                var __ret = __Internal.ATJSONParseInt16(json, __arg1, __arg2);
-                return __ret;
+                var _arg2 = _val2;
+                var _ret = _Internal.ATJSONParseInt16(json, _arg1, _arg2);
+                return _ret;
             }
         }
 
         public static bool ATJSONParseLong(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref long val)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            fixed (long* __val2 = &val)
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            fixed (long* _val2 = &val)
             {
-                var __arg2 = __val2;
-                var __ret = __Internal.ATJSONParseLong(json, __arg1, __arg2);
-                return __ret;
+                var _arg2 = _val2;
+                var _ret = _Internal.ATJSONParseLong(json, _arg1, _arg2);
+                return _ret;
             }
         }
 
         public static bool ATJSONParseHexBytes(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, byte* bytes, ulong maxSize, ref ulong parsedBytesLength)
         {
-            var __arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            fixed (ulong* __parsedBytesLength4 = &parsedBytesLength)
+            var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            fixed (ulong* _parsedBytesLength4 = &parsedBytesLength)
             {
-                var __arg4 = __parsedBytesLength4;
-                var __ret = __Internal.ATJSONParseHexBytes(json, __arg1, bytes, maxSize, __arg4);
-                return __ret;
+                var _arg4 = _parsedBytesLength4;
+                var _ret = _Internal.ATJSONParseHexBytes(json, _arg1, bytes, maxSize, _arg4);
+                return _ret;
             }
         }
 
         public static int ATJSONNumTokensInValue(global::AirTurnManager.Api.Foundation.Jsmntok token)
         {
-            var __arg0 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token.__Instance;
-            var __ret = __Internal.ATJSONNumTokensInValue(__arg0);
-            return __ret;
+            var _arg0 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
+            var _ret = _Internal.ATJSONNumTokensInValue(_arg0);
+            return _ret;
         }
     }
 }

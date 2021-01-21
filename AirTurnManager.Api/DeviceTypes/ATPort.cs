@@ -26,7 +26,7 @@ namespace AirTurnManager.Api.DeviceTypes
 
     public unsafe partial class ATPortUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -57,8 +57,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if valid</returns>
         public static bool ATPortValidate(global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
-            var __ret = __Internal.ATPortValidate(port);
-            return __ret;
+            var _ret = _Internal.ATPortValidate(port);
+            return _ret;
         }
 
         /// <summary>Get a port value from data</summary>
@@ -69,12 +69,12 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
-            var __arg0 = data.__Instance;
-            fixed (global::AirTurnManager.Api.DeviceTypes.ATPort* __port1 = &port)
+            var _arg0 = data._Instance;
+            fixed (global::AirTurnManager.Api.DeviceTypes.ATPort* _port1 = &port)
             {
-                var __arg1 = __port1;
-                var __ret = __Internal.ATPortParseData(__arg0, __arg1);
-                return __ret;
+                var _arg1 = _port1;
+                var _ret = _Internal.ATPortParseData(_arg0, _arg1);
+                return _ret;
             }
         }
 
@@ -84,9 +84,9 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATPortGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
-            var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
-            var __ret = __Internal.ATPortGetData(__arg0, port);
-            return __ret;
+            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _ret = _Internal.ATPortGetData(_arg0, port);
+            return _ret;
         }
 
         /// <summary>Get a description for a port value</summary>
@@ -94,13 +94,13 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>A null-terminated constant string</returns>
         public static string ATPortDescription(global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
-            var __ret = __Internal.ATPortDescription(port);
-            if (__ret == global::System.IntPtr.Zero)
+            var _ret = _Internal.ATPortDescription(port);
+            if (_ret == global::System.IntPtr.Zero)
                 return default(string);
-            var __retPtr = (byte*)__ret;
-            int __length = 0;
-            while (*(__retPtr++) != 0) __length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)__ret, __length);
+            var _retPtr = (byte*)_ret;
+            int _length = 0;
+            while (*(_retPtr++) != 0) _length += sizeof(byte);
+            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
     }
 }

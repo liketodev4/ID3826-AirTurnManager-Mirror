@@ -10,7 +10,7 @@ namespace AirTurnManager.Api.Foundation
 {
     public unsafe partial class ATGenericArrayInternalUnsafe
     {
-        public partial struct __Internal
+        public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -24,14 +24,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A new object subclassing `ATData` of the type and size specified</returns>
         public static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe ATGenericArraySubclassNew(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type)
         {
-            var __arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage.__Instance;
-            var __ret = __Internal.ATGenericArraySubclassNew(__arg0, type);
-            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _ret = _Internal.ATGenericArraySubclassNew(_arg0, type);
+            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
     }
 }

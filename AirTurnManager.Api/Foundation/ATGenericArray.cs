@@ -12,12 +12,12 @@ namespace AirTurnManager.Api.Foundation
     public unsafe partial class ATGenericArrayUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 64)]
-        public partial struct __Internal
+        public partial struct _Internal
         {
             // PRIVATE - DO NOT USE
             // The super-struct
             [FieldOffset(0)]
-            internal global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal _base;
+            internal global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal _base;
 
             //The number of bytes per item
             [FieldOffset(32)]
@@ -39,7 +39,7 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "??0ATGenericArray@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -109,56 +109,56 @@ namespace AirTurnManager.Api.Foundation
             internal static extern bool ATGenericArrayIsEqual(global::System.IntPtr array1, global::System.IntPtr array2);
         }
 
-        public global::System.IntPtr __Instance { get; protected set; }
+        public global::System.IntPtr _Instance { get; protected set; }
 
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe>();
 
-        protected bool __ownsNativeInstance;
+        protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal native, bool skipVTables = false)
         {
             return new global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal native)
+        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal));
+            *(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATGenericArrayUnsafe(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
+        private ATGenericArrayUnsafe(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal native, bool skipVTables = false)
+            : this(_CopyValue(native), skipVTables)
         {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         protected ATGenericArrayUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            __Instance = new global::System.IntPtr(native);
+            _Instance = new global::System.IntPtr(native);
         }
 
         public ATGenericArrayUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
         }
 
         public ATGenericArrayUnsafe(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal));
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)_0.__Instance);
+            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal));
+            _ownsNativeInstance = true;
+            NativeToManagedMap[_Instance] = this;
+            *((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -168,13 +168,13 @@ namespace AirTurnManager.Api.Foundation
 
         public virtual void Dispose(bool disposing)
         {
-            if (__Instance == IntPtr.Zero)
+            if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __dummy;
-            NativeToManagedMap.TryRemove(__Instance, out __dummy);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
+            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _dummy;
+            NativeToManagedMap.TryRemove(_Instance, out _dummy);
+            if (_ownsNativeInstance)
+                Marshal.FreeHGlobal(_Instance);
+            _Instance = IntPtr.Zero;
         }
 
         /// <summary>Create a new generic array object</summary>
@@ -182,14 +182,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe ATGenericArrayNew(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe optionalStorage)
         {
-            var __arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage.__Instance;
-            var __ret = __Internal.ATGenericArrayNew(__arg0);
-            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _ret = _Internal.ATGenericArrayNew(_arg0);
+            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a new generic array object</summary>
@@ -199,14 +199,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe ATGenericArrayInit(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, ulong capacity, ulong bytesPerItem)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayInit(__arg0, capacity, bytesPerItem);
-            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayInit(_arg0, capacity, bytesPerItem);
+            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a new generic array object from existing data</summary>
@@ -217,14 +217,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe ATGenericArrayInitWithItems(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, global::System.IntPtr existingData, ulong length, ulong bytesPerItem)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayInitWithItems(__arg0, existingData, length, bytesPerItem);
-            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayInitWithItems(_arg0, existingData, length, bytesPerItem);
+            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Initialize a new generic array object from existing data by storing a pointer to the data without copying it</summary>
@@ -236,14 +236,14 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe ATGenericArrayInitWithItemsNoCopy(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, global::System.IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayInitWithItemsNoCopy(__arg0, existingData, length, capacity, bytesPerItem);
-            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__CreateInstance(__ret);
-            return __result0;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayInitWithItemsNoCopy(_arg0, existingData, length, capacity, bytesPerItem);
+            global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe _result0;
+            if (_ret == IntPtr.Zero) _result0 = null;
+            else if (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe)global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.NativeToManagedMap[_ret];
+            else _result0 = global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._CreateInstance(_ret);
+            return _result0;
         }
 
         /// <summary>Get a pointer to an item in the array</summary>
@@ -252,9 +252,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the item</returns>
         public static global::System.IntPtr ATGenericArrayGetPointerForItem(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, ulong index)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayGetPointerForItem(__arg0, index);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayGetPointerForItem(_arg0, index);
+            return _ret;
         }
 
         /// <summary>Append an item to the array</summary>
@@ -263,9 +263,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATGenericArrayAppendItem(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, global::System.IntPtr itemToAppend)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayAppendItem(__arg0, itemToAppend);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayAppendItem(_arg0, itemToAppend);
+            return _ret;
         }
 
         /// <summary>Insert an item into the array at a given index</summary>
@@ -275,9 +275,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATGenericArrayInsertItem(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, global::System.IntPtr itemToInsert, ulong index)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayInsertItem(__arg0, itemToInsert, index);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayInsertItem(_arg0, itemToInsert, index);
+            return _ret;
         }
 
         /// <summary>Remove an item from the array at a given index</summary>
@@ -287,9 +287,9 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out items above new length</remarks>
         public static bool ATGenericArrayRemoveItem(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, ulong index)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayRemoveItem(__arg0, index);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayRemoveItem(_arg0, index);
+            return _ret;
         }
 
         /// <summary>Remove all items</summary>
@@ -298,9 +298,9 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out items removed</remarks>
         public static bool ATGenericArrayRemoveAllItems(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayRemoveAllItems(__arg0);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayRemoveAllItems(_arg0);
+            return _ret;
         }
 
         /// <summary>Resize an array</summary>
@@ -309,9 +309,9 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATGenericArrayResize(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array, ulong newCapacity)
         {
-            var __arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array.__Instance;
-            var __ret = __Internal.ATGenericArrayResize(__arg0, newCapacity);
-            return __ret;
+            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _ret = _Internal.ATGenericArrayResize(_arg0, newCapacity);
+            return _ret;
         }
 
         /// <summary>Copy an array. Will attempt to resize destination if destination capacity is less than source length</summary>
@@ -320,10 +320,10 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATGenericArrayCopy(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe destination, global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe source)
         {
-            var __arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination.__Instance;
-            var __arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source.__Instance;
-            var __ret = __Internal.ATGenericArrayCopy(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _ret = _Internal.ATGenericArrayCopy(_arg0, _arg1);
+            return _ret;
         }
 
         /// <summary>Determine if two arrays are equal</summary>
@@ -332,24 +332,24 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the arrays are equal (the contents of the array are equal)</returns>
         public static bool ATGenericArrayIsEqual(global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array1, global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe array2)
         {
-            var __arg0 = ReferenceEquals(array1, null) ? global::System.IntPtr.Zero : array1.__Instance;
-            var __arg1 = ReferenceEquals(array2, null) ? global::System.IntPtr.Zero : array2.__Instance;
-            var __ret = __Internal.ATGenericArrayIsEqual(__arg0, __arg1);
-            return __ret;
+            var _arg0 = ReferenceEquals(array1, null) ? global::System.IntPtr.Zero : array1._Instance;
+            var _arg1 = ReferenceEquals(array2, null) ? global::System.IntPtr.Zero : array2._Instance;
+            var _ret = _Internal.ATGenericArrayIsEqual(_arg0, _arg1);
+            return _ret;
         }
 
         public global::AirTurnManager.Api.Foundation.ATDataUnsafe Base
         {
             get
             {
-                return global::AirTurnManager.Api.Foundation.ATDataUnsafe.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_base));
+                return global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal*)value.__Instance;
+                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)value._Instance;
             }
         }
 
@@ -357,12 +357,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_bytesPerItem;
+                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_bytesPerItem;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_bytesPerItem = value;
+                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_bytesPerItem = value;
             }
         }
 
@@ -370,12 +370,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->capacity;
+                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->capacity;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->capacity = value;
+                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->capacity = value;
             }
         }
 
@@ -383,12 +383,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->items;
+                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->items;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->items = (global::System.IntPtr)value;
+                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->items = (global::System.IntPtr)value;
             }
         }
 
@@ -396,12 +396,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->count;
+                return ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->count;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->count = value;
+                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->count = value;
             }
         }
     }
