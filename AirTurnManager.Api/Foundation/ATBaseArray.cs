@@ -44,73 +44,73 @@ namespace AirTurnManager.Api.Foundation
             internal ulong count;
 
             //[SuppressUnmanagedCodeSecurity]
-            //[DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            //[DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             //    EntryPoint = "??0ATBaseArray@@QEAA@AEBU0@@Z")]
             //internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayNew")]
             internal static extern global::System.IntPtr ATBaseArrayNew(global::System.IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInit")]
             internal static extern global::System.IntPtr ATBaseArrayInit(global::System.IntPtr array, ulong capacity, bool weak, global::System.IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInitWithObjects")]
             internal static extern global::System.IntPtr ATBaseArrayInitWithObjects(global::System.IntPtr array, void** existingObjects, ulong length, bool weak, global::System.IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInitWithObjectsNoCopy")]
             internal static extern global::System.IntPtr ATBaseArrayInitWithObjectsNoCopy(global::System.IntPtr array, void** existingObjects, ulong length, ulong capacity, bool weak, global::System.IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayGetObjectAtIndex")]
             internal static extern global::System.IntPtr ATBaseArrayGetObjectAtIndex(global::System.IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayAppendObject")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayAppendObject(global::System.IntPtr array, global::System.IntPtr objectToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInsertObject")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayInsertObject(global::System.IntPtr array, global::System.IntPtr objectToInsert, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayRemoveObject")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayRemoveObject(global::System.IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayRemoveAllObjects")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayRemoveAllObjects(global::System.IntPtr array);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayResize")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayResize(global::System.IntPtr array, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayCopy(global::System.IntPtr destination, global::System.IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayIsEqual(global::System.IntPtr array1, global::System.IntPtr array2);

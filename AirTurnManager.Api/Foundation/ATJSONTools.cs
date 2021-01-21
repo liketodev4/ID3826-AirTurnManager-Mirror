@@ -12,150 +12,150 @@ namespace AirTurnManager.Api.Foundation
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt16@@YAGG@Z")]
             internal static extern ushort ATSwapInt16(ushort arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt32@@YAII@Z")]
             internal static extern uint ATSwapInt32(uint arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt64@@YA_K_K@Z")]
             internal static extern ulong ATSwapInt64(ulong arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt16BigToHost@@YAGG@Z")]
             internal static extern ushort ATSwapInt16BigToHost(ushort arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt32BigToHost@@YAII@Z")]
             internal static extern uint ATSwapInt32BigToHost(uint arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt64BigToHost@@YA_K_K@Z")]
             internal static extern ulong ATSwapInt64BigToHost(ulong arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt16HostToBig@@YAGG@Z")]
             internal static extern ushort ATSwapInt16HostToBig(ushort arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt32HostToBig@@YAII@Z")]
             internal static extern uint ATSwapInt32HostToBig(uint arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt64HostToBig@@YA_K_K@Z")]
             internal static extern ulong ATSwapInt64HostToBig(ulong arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt16LittleToHost@@YAGG@Z")]
             internal static extern ushort ATSwapInt16LittleToHost(ushort arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt32LittleToHost@@YAII@Z")]
             internal static extern uint ATSwapInt32LittleToHost(uint arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt64LittleToHost@@YA_K_K@Z")]
             internal static extern ulong ATSwapInt64LittleToHost(ulong arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt16HostToLittle@@YAGG@Z")]
             internal static extern ushort ATSwapInt16HostToLittle(ushort arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt32HostToLittle@@YAII@Z")]
             internal static extern uint ATSwapInt32HostToLittle(uint arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATSwapInt64HostToLittle@@YA_K_K@Z")]
             internal static extern ulong ATSwapInt64HostToLittle(ulong arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatHostToSwapped@@YA?AUATSwappedFloat32@@M@Z")]
             internal static extern global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe.__Internal ATConvertFloatHostToSwapped(float arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertFloatSwappedToHost@@YAMUATSwappedFloat32@@@Z")]
             internal static extern float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat32Unsafe.__Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleHostToSwapped@@YA?AUATSwappedFloat64@@N@Z")]
             internal static extern global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe.__Internal ATConvertDoubleHostToSwapped(double arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "?ATConvertDoubleSwappedToHost@@YANUATSwappedFloat64@@@Z")]
             internal static extern double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.Helpers.ATSwappedFloat64Unsafe.__Internal arg);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseBool")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseBool([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, bool* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONStringEquals")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONStringEquals([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr tok, [MarshalAs(UnmanagedType.LPUTF8Str)] string s);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseUInt8")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseUInt8([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, byte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseUInt16")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseUInt16([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, ushort* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseInt8")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseInt8([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, sbyte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseInt16")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseInt16([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, short* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseLong")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseLong([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, long* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseHexBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseHexBytes([MarshalAs(UnmanagedType.LPUTF8Str)] string json, global::System.IntPtr token, byte* bytes, ulong maxSize, ulong* parsedBytesLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONNumTokensInValue")]
             internal static extern int ATJSONNumTokensInValue(global::System.IntPtr token);
         }

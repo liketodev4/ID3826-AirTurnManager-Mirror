@@ -44,7 +44,7 @@ namespace AirTurnManager.Api.Foundation
             internal global::System.IntPtr debugDescription;
 
             //[SuppressUnmanagedCodeSecurity]
-            //[DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            //[DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             //    EntryPoint = "??0ATObjectDefinition@@QEAA@AEBU0@@Z")]
             //internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
         }
@@ -191,17 +191,17 @@ namespace AirTurnManager.Api.Foundation
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseSubclassNew")]
             internal static extern global::System.IntPtr ATBaseSubclassNew(global::System.IntPtr optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseResizeObject")]
             internal static extern global::System.IntPtr ATBaseResizeObject(global::System.IntPtr @object, ulong newSize);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("Constants.ATSC_API", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseRegisterSubclass")]
             internal static extern void ATBaseRegisterSubclass(global::AirTurnManager.Api.Foundation.ATObjectType type, global::System.IntPtr definition);
         }
