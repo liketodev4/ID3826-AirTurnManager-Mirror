@@ -73,7 +73,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="ports">On return, contains the digital port state value</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPortsParseData(global::AirTurnManager.Api.DeviceTypes.ATBytes data, byte* ports)
+        public static bool ATPortsParseData(global::AirTurnManager.Api.Foundation.ATBytesUnsafe data, byte* ports)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -86,7 +86,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="ports">The digital port state value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPortsGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, byte ports)
+        public static bool ATPortsGetData(global::AirTurnManager.Api.Foundation.ATMutableBytes data, byte ports)
         {
             var __arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data.__Instance;
             var __ret = __Internal.ATPortsGetData(__arg0, ports);
@@ -115,7 +115,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Get a description for a digital port state value</summary>
         /// <param name="string">The string to append the description to</param>
         /// <param name="ports">The digital port state value</param>
-        public static void ATPortsDescription(global::AirTurnManager.Api.DeviceTypes.ATString @string, byte ports)
+        public static void ATPortsDescription(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, byte ports)
         {
             var __arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
             __Internal.ATPortsDescription(__arg0, ports);

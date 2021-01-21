@@ -113,7 +113,7 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATMutableStringPointer.__Internal*)__Instance)->@string;
+                return (sbyte*)((global::AirTurnManager.Api.Foundation.ATMutableStringPointer.__Internal*)__Instance)->@string;
             }
 
             set

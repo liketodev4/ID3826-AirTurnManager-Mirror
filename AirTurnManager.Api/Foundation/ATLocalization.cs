@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AirTurnManager.Api.Foundation
 {
-    public class ATLocalization
-    {
-        // TODO !!!
-    }
+    //public class ATLocalization
+    //{
+    //    // TODO !!!
+    //}
 }

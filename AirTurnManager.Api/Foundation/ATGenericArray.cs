@@ -17,7 +17,7 @@ namespace AirTurnManager.Api.Foundation
             // PRIVATE - DO NOT USE
             // The super-struct
             [FieldOffset(0)]
-            internal global::AirTurnManager.Api.Foundation.ATDataEnum.__Internal _base;
+            internal global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal _base;
 
             //The number of bytes per item
             [FieldOffset(32)]
@@ -338,18 +338,18 @@ namespace AirTurnManager.Api.Foundation
             return __ret;
         }
 
-        public global::AirTurnManager.Api.Foundation.ATDataEnum Base
+        public global::AirTurnManager.Api.Foundation.ATDataUnsafe Base
         {
             get
             {
-                return global::AirTurnManager.Api.Foundation.ATDataEnum.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_base));
+                return global::AirTurnManager.Api.Foundation.ATDataUnsafe.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataEnum.__Internal*)value.__Instance;
+                ((global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal*)value.__Instance;
             }
         }
 

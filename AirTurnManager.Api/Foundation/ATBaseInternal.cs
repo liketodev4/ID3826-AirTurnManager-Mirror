@@ -206,26 +206,26 @@ namespace AirTurnManager.Api.Foundation
             internal static extern void ATBaseRegisterSubclass(global::AirTurnManager.Api.Foundation.ATObjectType type, global::System.IntPtr definition);
         }
 
-        public static global::AirTurnManager.Api.Foundation.ATBase ATBaseSubclassNew(global::AirTurnManager.Api.Foundation.ATBase optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type)
+        public static global::AirTurnManager.Api.Foundation.ATBaseUnsafe ATBaseSubclassNew(global::AirTurnManager.Api.Foundation.ATBaseUnsafe optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type)
         {
             var __arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage.__Instance;
             var __ret = __Internal.ATBaseSubclassNew(__arg0, type);
-            global::AirTurnManager.Api.Foundation.ATBase __result0;
+            global::AirTurnManager.Api.Foundation.ATBaseUnsafe __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBase.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATBase)global::AirTurnManager.Api.Foundation.ATBase.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATBase.__CreateInstance(__ret);
+            else if (global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::AirTurnManager.Api.Foundation.ATBaseUnsafe)global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap[__ret];
+            else __result0 = global::AirTurnManager.Api.Foundation.ATBaseUnsafe.__CreateInstance(__ret);
             return __result0;
         }
 
-        public static global::AirTurnManager.Api.Foundation.ATBase ATBaseResizeObject(global::System.IntPtr @object, ulong newSize)
+        public static global::AirTurnManager.Api.Foundation.ATBaseUnsafe ATBaseResizeObject(global::System.IntPtr @object, ulong newSize)
         {
             var __ret = __Internal.ATBaseResizeObject(@object, newSize);
-            global::AirTurnManager.Api.Foundation.ATBase __result0;
+            global::AirTurnManager.Api.Foundation.ATBaseUnsafe __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBase.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::AirTurnManager.Api.Foundation.ATBase)global::AirTurnManager.Api.Foundation.ATBase.NativeToManagedMap[__ret];
-            else __result0 = global::AirTurnManager.Api.Foundation.ATBase.__CreateInstance(__ret);
+            else if (global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::AirTurnManager.Api.Foundation.ATBaseUnsafe)global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap[__ret];
+            else __result0 = global::AirTurnManager.Api.Foundation.ATBaseUnsafe.__CreateInstance(__ret);
             return __result0;
         }
 

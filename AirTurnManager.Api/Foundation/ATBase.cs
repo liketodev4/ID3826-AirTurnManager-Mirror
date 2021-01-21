@@ -54,10 +54,10 @@ namespace AirTurnManager.Api.Foundation
             [FieldOffset(3)]
             internal global::AirTurnManager.Api.Foundation.ATObjectType _type;
 
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATBase@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
+            //[SuppressUnmanagedCodeSecurity]
+            //[DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            //    EntryPoint = "??0ATBase@@QEAA@AEBU0@@Z")]
+            //internal static extern global::System.IntPtr cctor(global::System.IntPtr __instance, global::System.IntPtr _0);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("AirTurnManager.Api.Foundation.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -318,7 +318,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="object">The object</param>
         /// <param name="string">The string to populate with a description</param>
         /// <returns>`true` if the object could be described successfully</returns>
-        public static bool ATGetDescription(global::System.IntPtr @object, global::AirTurnManager.Api.Foundation.ATString @string)
+        public static bool ATGetDescription(global::System.IntPtr @object, global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
         {
             var __arg1 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
             var __ret = __Internal.ATGetDescription(@object, __arg1);
@@ -329,7 +329,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="object">The object</param>
         /// <param name="string">The string to populate with a description</param>
         /// <returns>`true` if the object could be described successfully</returns>
-        public static bool ATGetDebugDescription(global::System.IntPtr @object, global::AirTurnManager.Api.Foundation.ATString @string)
+        public static bool ATGetDebugDescription(global::System.IntPtr @object, global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
         {
             var __arg1 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string.__Instance;
             var __ret = __Internal.ATGetDebugDescription(@object, __arg1);

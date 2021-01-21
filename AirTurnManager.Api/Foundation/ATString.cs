@@ -16,7 +16,7 @@ namespace AirTurnManager.Api.Foundation
         public partial struct __Internal
         {
             [FieldOffset(0)]
-            internal global::AirTurnManager.Api.Foundation.ATDataEnum.__Internal _base;
+            internal global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal _base;
 
             [FieldOffset(32)]
             internal byte _dynamicAllocation;
@@ -382,18 +382,18 @@ namespace AirTurnManager.Api.Foundation
             return __ret;
         }
 
-        public global::AirTurnManager.Api.Foundation.ATDataEnum Base
+        public global::AirTurnManager.Api.Foundation.ATDataUnsafe Base
         {
             get
             {
-                return global::AirTurnManager.Api.Foundation.ATDataEnum.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_base));
+                return global::AirTurnManager.Api.Foundation.ATDataUnsafe.__CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataEnum.__Internal*)value.__Instance;
+                ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATDataUnsafe.__Internal*)value.__Instance;
             }
         }
 
@@ -440,7 +440,7 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->@string;
+                return (sbyte*)((global::AirTurnManager.Api.Foundation.ATStringUnsafe.__Internal*)__Instance)->@string;
             }
 
             set

@@ -22,7 +22,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="optionalStorage">Optionally, a pointer to a struct or memory where the object can be stored</param>
         /// <param name="type">The type of object we are creating</param>
         /// <returns>A new object subclassing `ATData` of the type and size specified</returns>
-        public static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe ATBaseArraySubclassNew(global::AirTurnManager.Api.Foundation.ATBaseArray optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type)
+        public static global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe ATBaseArraySubclassNew(global::AirTurnManager.Api.Foundation.ATBaseArrayUnsafe optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type)
         {
             var __arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage.__Instance;
             var __ret = __Internal.ATBaseArraySubclassNew(__arg0, type);

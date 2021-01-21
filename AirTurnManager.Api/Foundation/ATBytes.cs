@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AirTurnManager.Api.Foundation
 {
     /// <summary>A constant data struct without the overhead of ATData</summary>
-    public unsafe partial class ATBytes : IDisposable
+    public unsafe partial class ATBytesUnsafe : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 16)]
         public partial struct __Internal
@@ -33,54 +33,54 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr __Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBytes> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBytes>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBytesUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBytesUnsafe>();
 
         protected bool __ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATBytes __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATBytesUnsafe __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATBytes(native.ToPointer(), skipVTables);
+            return new global::AirTurnManager.Api.Foundation.ATBytesUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATBytes __CreateInstance(global::AirTurnManager.Api.Foundation.ATBytes.__Internal native, bool skipVTables = false)
+        internal static global::AirTurnManager.Api.Foundation.ATBytesUnsafe __CreateInstance(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATBytes(native, skipVTables);
+            return new global::AirTurnManager.Api.Foundation.ATBytesUnsafe(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATBytes.__Internal native)
+        private static void* __CopyValue(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBytes.__Internal));
-            *(global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal));
+            *(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATBytes(global::AirTurnManager.Api.Foundation.ATBytes.__Internal native, bool skipVTables = false)
+        private ATBytesUnsafe(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        protected ATBytes(void* native, bool skipVTables = false)
+        protected ATBytesUnsafe(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
             __Instance = new global::System.IntPtr(native);
         }
 
-        public ATBytes()
+        public ATBytesUnsafe()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBytes.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public ATBytes(global::AirTurnManager.Api.Foundation.ATBytes _0)
+        public ATBytesUnsafe(global::AirTurnManager.Api.Foundation.ATBytesUnsafe _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBytes.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)_0.__Instance);
+            *((global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)__Instance) = *((global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)_0.__Instance);
         }
 
         public void Dispose()
@@ -92,14 +92,14 @@ namespace AirTurnManager.Api.Foundation
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATBytes __dummy;
+            global::AirTurnManager.Api.Foundation.ATBytesUnsafe __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
             __Instance = IntPtr.Zero;
         }
 
-        public static string ATBytesDescription(global::AirTurnManager.Api.Foundation.ATBytes data, sbyte* buffer, ulong bufferCapacity)
+        public static string ATBytesDescription(global::AirTurnManager.Api.Foundation.ATBytesUnsafe data, sbyte* buffer, ulong bufferCapacity)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -117,12 +117,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)__Instance)->bytes;
+                return (byte*)((global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)__Instance)->bytes;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)__Instance)->bytes = (global::System.IntPtr)value;
+                ((global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)__Instance)->bytes = (global::System.IntPtr)value;
             }
         }
 
@@ -130,12 +130,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)__Instance)->length;
+                return ((global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)__Instance)->length;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBytes.__Internal*)__Instance)->length = value;
+                ((global::AirTurnManager.Api.Foundation.ATBytesUnsafe.__Internal*)__Instance)->length = value;
             }
         }
     }

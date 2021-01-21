@@ -351,7 +351,7 @@ namespace AirTurnManager.Api.Foundation
             return __ret;
         }
 
-        public global::AirTurnManager.Api.Foundation.ATGenericArray Base
+        public global::AirTurnManager.Api.Foundation.ATGenericArrayUnsafe Base
         {
             get
             {
