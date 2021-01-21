@@ -57,7 +57,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="pairingState">On return, contains the pairing state value</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPairingStateParseData(global::AirTurnManager.Api.DeviceTypes.ATBytes data, ref global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
+        public static bool ATPairingStateParseData(global::AirTurnManager.Api.Foundation.ATBytes data, ref global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -74,7 +74,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="pairingState">The pairing state value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPairingStateGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
+        public static bool ATPairingStateGetData(global::AirTurnManager.Api.Foundation.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATPairingState pairingState)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATPairingStateGetData(_arg0, pairingState);

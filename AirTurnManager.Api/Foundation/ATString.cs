@@ -32,11 +32,6 @@ namespace AirTurnManager.Api.Foundation
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATString@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringNew")]
             internal static extern global::System.IntPtr ATStringNew(global::System.IntPtr optionalStorage);
 

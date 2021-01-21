@@ -26,36 +26,36 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsValidate(byte ports);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsParseData(global::System.IntPtr data, byte* ports);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsGetData(global::System.IntPtr data, byte ports);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsIsPortSet")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsIsPortSet(byte ports, global::AirTurnManager.Api.DeviceTypes.ATPort port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsGetPortsForPort")]
             internal static extern byte ATPortsGetPortsForPort(global::AirTurnManager.Api.DeviceTypes.ATPort port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Net.Api.DeviceTypes.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsDescription")]
             internal static extern void ATPortsDescription(global::System.IntPtr @string, byte ports);
         }

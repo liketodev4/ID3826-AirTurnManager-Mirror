@@ -65,7 +65,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="port">On return, contains the port value</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPortParseData(global::AirTurnManager.Api.DeviceTypes.ATBytes data, ref global::AirTurnManager.Api.DeviceTypes.ATPort port)
+        public static bool ATPortParseData(global::AirTurnManager.Api.Foundation.ATBytesUnsafe data, ref global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -82,7 +82,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="port">The port value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPortGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATPort port)
+        public static bool ATPortGetData(global::AirTurnManager.Api.Foundation.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATPort port)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATPortGetData(_arg0, port);

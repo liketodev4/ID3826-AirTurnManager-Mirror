@@ -18,11 +18,6 @@ namespace AirTurnManager.Api.Foundation
 
             [FieldOffset(8)]
             internal int code;
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATError@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
         }
 
         public global::System.IntPtr _Instance { get; protected set; }

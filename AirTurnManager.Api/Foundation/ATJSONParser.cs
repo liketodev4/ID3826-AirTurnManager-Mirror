@@ -112,11 +112,6 @@ namespace AirTurnManager.Api.Foundation
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATJSONParser@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserNew")]
             internal static extern global::System.IntPtr ATJSONParserNew(global::System.IntPtr optionalStorage);
 

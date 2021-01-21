@@ -26,11 +26,6 @@ namespace AirTurnManager.Api.DeviceTypes
 
             [FieldOffset(8)]
             internal global::AirTurnManager.Api.DeviceTypes.ATBytes._Internal associatedData;
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "??0ATAssociatedModePortDataStruct@@QEAA@AEBU0@@Z")]
-            internal static extern global::System.IntPtr cctor(global::System.IntPtr _instance, global::System.IntPtr _0);
         }
 
         public global::System.IntPtr _Instance { get; protected set; }
