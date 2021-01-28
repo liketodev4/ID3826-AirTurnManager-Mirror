@@ -29,25 +29,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModeValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeValidate(DeviceTypes.ATMode mode);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModeParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeParseData(IntPtr data, DeviceTypes.ATMode* mode);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModeGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeGetData(IntPtr data, DeviceTypes.ATMode mode);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModeDescription")]
             internal static extern IntPtr ATModeDescription(DeviceTypes.ATMode mode);
         }

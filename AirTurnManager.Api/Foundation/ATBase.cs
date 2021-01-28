@@ -57,77 +57,77 @@ namespace AirTurnManager.Api.Foundation
             internal Foundation.ATObjectType _type;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseNew")]
             internal static extern IntPtr ATBaseNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseInit")]
             internal static extern IntPtr ATBaseInit(IntPtr @base);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATRetain")]
             internal static extern IntPtr ATRetain(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATRelease")]
             internal static extern IntPtr ATRelease(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGetType")]
             internal static extern Foundation.ATObjectType ATGetType(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGetRetainCount")]
             internal static extern byte ATGetRetainCount(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATObjectIsInitialized")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATObjectIsInitialized(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATObjectIsShared")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATObjectIsShared(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGetDescriptionForType")]
             internal static extern IntPtr ATGetDescriptionForType(Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGetDescription")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGetDescription(IntPtr @object, IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGetDebugDescription")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGetDebugDescription(IntPtr @object, IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPrintDescription")]
             internal static extern void ATPrintDescription(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPrintDebugDescription")]
             internal static extern void ATPrintDebugDescription(IntPtr @object);
         }

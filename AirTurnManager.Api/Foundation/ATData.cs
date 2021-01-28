@@ -37,114 +37,114 @@ namespace AirTurnManager.Api.Foundation
             internal ulong length;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataNew")]
             internal static extern IntPtr ATDataNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataInit")]
             internal static extern IntPtr ATDataInit(IntPtr data);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataInitWithCapacity")]
             internal static extern IntPtr ATDataInitWithCapacity(IntPtr data, ulong capacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataInitWithBytes")]
             internal static extern IntPtr ATDataInitWithBytes(IntPtr data, IntPtr existingData, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataInitWithBytesNoCopy")]
             internal static extern IntPtr ATDataInitWithBytesNoCopy(IntPtr data, IntPtr existingData, ulong length, ulong capacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataAdoptStorage")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataAdoptStorage(IntPtr data, IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataAppendBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataAppendBytes(IntPtr data, IntPtr bytesToAppend, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataInsertBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataInsertBytes(IntPtr data, IntPtr bytesToInsert, ulong length, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataRemoveBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataRemoveBytes(IntPtr data, ulong length, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataResetToEmpty")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataResetToEmpty(IntPtr data);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataGetBytes")]
             internal static extern void ATDataGetBytes(IntPtr data, IntPtr bytes, ulong maxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataGetBytesAtOffset")]
             internal static extern void ATDataGetBytesAtOffset(IntPtr data, IntPtr bytes, ulong offset, ulong maxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataResizeCapacity")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataResizeCapacity(IntPtr data, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataResize")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataResize(IntPtr data, ulong newLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataIncreaseLength")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataIncreaseLength(IntPtr data, ulong extraLength, byte fillWith);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataSubdataWithRange")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataSubdataWithRange(IntPtr data, IntPtr subData, ulong offset, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataSubdataNoCopyWithRange")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataSubdataNoCopyWithRange(IntPtr data, IntPtr subData, ulong offset, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataIsEqual(IntPtr data1, IntPtr data2);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDataOwnsStorage")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATDataOwnsStorage(IntPtr data);

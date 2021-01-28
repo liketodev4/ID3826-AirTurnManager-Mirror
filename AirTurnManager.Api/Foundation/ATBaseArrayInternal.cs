@@ -13,7 +13,7 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArraySubclassNew")]
             internal static extern IntPtr ATBaseArraySubclassNew(IntPtr optionalStorage, Foundation.ATObjectType type);
         }

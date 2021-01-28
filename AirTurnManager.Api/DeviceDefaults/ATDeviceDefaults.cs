@@ -50,7 +50,7 @@ namespace AirTurnManager.Api.DeviceDefaults
             internal ushort debounceTime;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATDeviceDefaultsGetDefaultPortConfig")]
             internal static extern void ATDeviceDefaultsGetDefaultPortConfig(IntPtr @return, IntPtr deviceDefaults, DeviceDefaults.ATMode mode, DeviceDefaults.ATPort port);
         }

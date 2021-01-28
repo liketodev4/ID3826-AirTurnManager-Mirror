@@ -223,101 +223,101 @@ namespace AirTurnManager.Api.DeviceConfiguration
             internal byte forceProprietary;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigNew")]
             internal static extern IntPtr ATAnalogInputConfigNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigInit")]
             internal static extern IntPtr ATAnalogInputConfigInit(IntPtr inputConfig);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigInitWithData")]
             internal static extern IntPtr ATAnalogInputConfigInitWithData(IntPtr inputConfig, IntPtr data, ulong* lengthParsed);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigParseData(IntPtr inputConfig, IntPtr data, ulong* lengthParsed);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigGetData")]
             internal static extern IntPtr ATAnalogInputConfigGetData(IntPtr inputConfig, IntPtr optionalDataToFill, bool includeLimits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigIsEqual(IntPtr inputConfig1, IntPtr inputConfig2);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigParseMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigParseMultiple(IntPtr data, IntPtr[] configStorage, byte portsAvailable);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigGetDataMultiple")]
             internal static extern IntPtr ATAnalogInputConfigGetDataMultiple(IntPtr optionalDataToFill, IntPtr[] configStorage, byte portsAvailable, bool includeLimits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetAvailable")]
             internal static extern void ATAnalogInputConfigSetAvailable(IntPtr inputConfig, bool available);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetCalibrated")]
             internal static extern void ATAnalogInputConfigSetCalibrated(IntPtr inputConfig, bool calibrated);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetEnabled")]
             internal static extern void ATAnalogInputConfigSetEnabled(IntPtr inputConfig, bool enabled);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetForceProprietary")]
             internal static extern void ATAnalogInputConfigSetForceProprietary(IntPtr inputConfig, bool forceProprietary);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetInverted")]
             internal static extern void ATAnalogInputConfigSetInverted(IntPtr inputConfig, bool inverted);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetAxisAssociation")]
             internal static extern void ATAnalogInputConfigSetAxisAssociation(IntPtr inputConfig, DeviceTypes.ATPortUnsafe axisAssociation);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigClearAxisAssociation")]
             internal static extern void ATAnalogInputConfigClearAxisAssociation(IntPtr inputConfig);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetLimits")]
             internal static extern void ATAnalogInputConfigSetLimits(IntPtr inputConfig, IntPtr limits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigSetCalibrationState")]
             internal static extern void ATAnalogInputConfigSetCalibrationState(IntPtr inputConfig, byte calibrationState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigApplyAnalogAction")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigApplyAnalogAction(IntPtr inputConfig, IntPtr action, short currentValue);

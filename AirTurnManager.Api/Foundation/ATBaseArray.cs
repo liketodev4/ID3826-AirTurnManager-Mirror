@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AirTurnManager.Api.Foundation
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void ATBaseArrayWeakElementRemovedCallback(IntPtr baseArray, ulong index);
 
     // The struct for ATBaseArray objects. ATBaseArray is an array of objects based on ATBaseRef. Objects are retained when added and released when removed. If initialised as a weak array, objects are not retained when added and when they are deallocated they are removed from the array and the callback is called.
@@ -44,68 +44,68 @@ namespace AirTurnManager.Api.Foundation
             internal ulong count;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayNew")]
             internal static extern IntPtr ATBaseArrayNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInit")]
             internal static extern IntPtr ATBaseArrayInit(IntPtr array, ulong capacity, bool weak, IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInitWithObjects")]
             internal static extern IntPtr ATBaseArrayInitWithObjects(IntPtr array, void** existingObjects, ulong length, bool weak, IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInitWithObjectsNoCopy")]
             internal static extern IntPtr ATBaseArrayInitWithObjectsNoCopy(IntPtr array, void** existingObjects, ulong length, ulong capacity, bool weak, IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayGetObjectAtIndex")]
             internal static extern IntPtr ATBaseArrayGetObjectAtIndex(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayAppendObject")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayAppendObject(IntPtr array, IntPtr objectToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInsertObject")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayInsertObject(IntPtr array, IntPtr objectToInsert, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayRemoveObject")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayRemoveObject(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayRemoveAllObjects")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayRemoveAllObjects(IntPtr array);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayResize")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayResize(IntPtr array, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATBaseArrayIsEqual(IntPtr array1, IntPtr array2);

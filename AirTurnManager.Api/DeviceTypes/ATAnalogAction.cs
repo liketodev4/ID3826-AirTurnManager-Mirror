@@ -150,31 +150,31 @@ namespace AirTurnManager.Api.DeviceTypes
             internal DeviceTypes.ATAnalogActionParameters._Internal parameters;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionIsPortSpecificAction")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionIsPortSpecificAction(DeviceTypes.ATAnalogActionType actionType);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionValidate(IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionParseData(IntPtr data, IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionGetData(IntPtr data, IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionDescription")]
             internal static extern void ATAnalogActionDescription(IntPtr @string, IntPtr analogAction);
         }

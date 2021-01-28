@@ -43,18 +43,18 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDDescription")]
             internal static extern IntPtr ATModelIDDescription(DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsBLE113")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModelIDIsBLE113(DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsNordic")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModelIDIsNordic(DeviceTypes.ATModelID modelID);

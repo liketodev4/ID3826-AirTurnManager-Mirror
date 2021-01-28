@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace AirTurnManager.Api.Foundation.Delegates
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void Action_IntPtr(IntPtr @object);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void Action_IntPtr_IntPtr(IntPtr @object, IntPtr @string);
 }
 
 namespace AirTurnManager.Api.Foundation
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void ATBaseFreeFunction(IntPtr @object);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void ATBaseDescriptionFunction(IntPtr @object, IntPtr @string);
 
     public unsafe partial class ATObjectDefinition : IDisposable
@@ -187,17 +187,17 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseSubclassNew")]
             internal static extern IntPtr ATBaseSubclassNew(IntPtr optionalStorage, Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseResizeObject")]
             internal static extern IntPtr ATBaseResizeObject(IntPtr @object, ulong newSize);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBaseRegisterSubclass")]
             internal static extern void ATBaseRegisterSubclass(Foundation.ATObjectType type, IntPtr definition);
         }

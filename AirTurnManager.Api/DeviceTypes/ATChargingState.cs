@@ -24,25 +24,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateValidate(DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateParseData(IntPtr data, DeviceTypes.ATChargingState* chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateGetData(IntPtr data, DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateDescription")]
             internal static extern IntPtr ATChargingStateDescription(DeviceTypes.ATChargingState chargingState);
         }

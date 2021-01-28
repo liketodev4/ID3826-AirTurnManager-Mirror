@@ -35,22 +35,22 @@ namespace AirTurnManager.Api.Foundation
             internal Foundation.ATJSONParseErrorCode code;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseErrorLastReset")]
             internal static extern void ATJSONParseErrorLastReset();
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseErrorLastPushKeyAtFront")]
             internal static extern void ATJSONParseErrorLastPushKeyAtFront([MarshalAs(UnmanagedType.LPUTF8Str)] string key, uint keyLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseErrorLastPushArrayIndexAtFront")]
             internal static extern void ATJSONParseErrorLastPushArrayIndexAtFront(int arrayIndex);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "_ATJSONParseErrorGetLast")]
             internal static extern IntPtr ATJSONParseErrorGetLast();
         }

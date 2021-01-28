@@ -23,7 +23,7 @@ namespace AirTurnManager.Api.Foundation
             internal ulong capacity;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATMutableStringPointerAddStringWithFormat")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATMutableStringPointerAddStringWithFormat(IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string format);

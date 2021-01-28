@@ -37,68 +37,68 @@ namespace AirTurnManager.Api.Foundation
             internal ulong count;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayNew")]
             internal static extern IntPtr ATGenericArrayNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInit")]
             internal static extern IntPtr ATGenericArrayInit(IntPtr array, ulong capacity, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInitWithItems")]
             internal static extern IntPtr ATGenericArrayInitWithItems(IntPtr array, IntPtr existingData, ulong length, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInitWithItemsNoCopy")]
             internal static extern IntPtr ATGenericArrayInitWithItemsNoCopy(IntPtr array, IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayGetPointerForItem")]
             internal static extern IntPtr ATGenericArrayGetPointerForItem(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayAppendItem")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayAppendItem(IntPtr array, IntPtr itemToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInsertItem")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayInsertItem(IntPtr array, IntPtr itemToInsert, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayRemoveItem")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayRemoveItem(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayRemoveAllItems")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayRemoveAllItems(IntPtr array);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayResize")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayResize(IntPtr array, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATGenericArrayIsEqual(IntPtr array1, IntPtr array2);

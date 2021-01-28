@@ -29,7 +29,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATInputTypeFromModelID")]
             internal static extern DeviceTypes.ATInputType ATInputTypeFromModelID(DeviceTypes.ATModelID modelID);
         }

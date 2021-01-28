@@ -21,7 +21,7 @@ namespace AirTurnManager.Api.Foundation
             internal ulong length;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATBytesDescription")]
             internal static extern IntPtr ATBytesDescription(IntPtr data, sbyte* buffer, ulong bufferCapacity);
         }

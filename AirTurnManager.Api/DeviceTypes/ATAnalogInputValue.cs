@@ -19,19 +19,19 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputValueParseData(IntPtr data, short* analogInputValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputValueGetData(IntPtr data, short analogInputValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueDescription")]
             internal static extern void ATAnalogInputValueDescription(IntPtr @string, short analogInputValue);
         }

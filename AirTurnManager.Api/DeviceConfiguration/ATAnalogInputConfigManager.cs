@@ -20,19 +20,19 @@ namespace AirTurnManager.Api.DeviceConfiguration
 
             // Stored input configs
             [FieldOffset(8)]
-            internal fixed byte _inputConfigsStored[(int)DeviceTypes.ATPort.ATPortMaxNumberOfPorts];
+            internal fixed byte _inputConfigsStored[(int)DeviceTypes.ATPortEnum.ATPortMaxNumberOfPorts];
 
             // flags indicating if input config storage needs updating
             [FieldOffset(392)]
-            internal fixed byte _inputConfigStorageNeedsUpdate[(int)DeviceTypes.ATPort.ATPortMaxNumberOfPorts];
+            internal fixed byte _inputConfigStorageNeedsUpdate[(int)DeviceTypes.ATPortEnum.ATPortMaxNumberOfPorts];
 
             // flags indicating if input port config need clearing
             [FieldOffset(400)]
-            internal fixed byte _portConfigNeedsClearing[(int)DeviceTypes.ATPort.ATPortMaxNumberOfPorts];
+            internal fixed byte _portConfigNeedsClearing[(int)DeviceTypes.ATPortEnum.ATPortMaxNumberOfPorts];
 
             // Active input configs
             [FieldOffset(408)]
-            internal fixed byte _inputConfigsActive[(int)DeviceTypes.ATPort.ATPortMaxNumberOfPorts];
+            internal fixed byte _inputConfigsActive[(int)DeviceTypes.ATPortEnum.ATPortMaxNumberOfPorts];
 
             // Ports available on this device
             [FieldOffset(792)]
@@ -48,79 +48,79 @@ namespace AirTurnManager.Api.DeviceConfiguration
             internal DeviceTypes.ATPortUnsafe currentlyCalibrating;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerNew")]
             internal static extern IntPtr ATAnalogInputConfigManagerNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerInit")]
             internal static extern IntPtr ATAnalogInputConfigManagerInit(IntPtr inputConfigManager, byte portsAvailable);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigManagerParseData(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, IntPtr data, ulong* lengthParsed);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerGetData")]
             internal static extern IntPtr ATAnalogInputConfigManagerGetData(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, IntPtr optionalDataToFill, bool includeLimits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerParseMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigManagerParseMultiple(IntPtr inputConfigManager, IntPtr data);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerGetDataMultiple")]
             internal static extern IntPtr ATAnalogInputConfigManagerGetDataMultiple(IntPtr inputConfigManager, IntPtr optionalDataToFill, bool includeLimits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerApplyAnalogAction")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigManagerApplyAnalogAction(IntPtr inputConfigManager, IntPtr action, short currentValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerGetInputConfig")]
             internal static extern IntPtr ATAnalogInputConfigManagerGetInputConfig(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, bool active);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerResetToStored")]
             internal static extern void ATAnalogInputConfigManagerResetToStored(IntPtr inputConfigManager);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerStorageNeedsUpdate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigManagerStorageNeedsUpdate(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerStorageUpdated")]
             internal static extern void ATAnalogInputConfigManagerStorageUpdated(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerPortConfigNeedsClearing")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogInputConfigManagerPortConfigNeedsClearing(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerPortConfigCleared")]
             internal static extern void ATAnalogInputConfigManagerPortConfigCleared(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
         }
 
         public IntPtr _Instance { get; protected set; }
 
-        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe>();
+        internal static readonly System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe> NativeToManagedMap = new System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe>();
 
         protected bool _ownsNativeInstance;
 
@@ -307,9 +307,9 @@ namespace AirTurnManager.Api.DeviceConfiguration
             var _ret = _Internal.ATAnalogInputConfigManagerGetInputConfig(_arg0, port, active);
             DeviceConfiguration.ATAnalogInputConfigUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (.ATAnalogInputConfig.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (.ATAnalogInputConfig).ATAnalogInputConfig.NativeToManagedMap[_ret];
-            else _result0 = .ATAnalogInputConfig._CreateInstance(_ret);
+            else if (DeviceConfiguration.ATAnalogInputConfigUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (DeviceConfiguration.ATAnalogInputConfigUnsafe)DeviceConfiguration.ATAnalogInputConfigUnsafe.NativeToManagedMap[_ret];
+            else _result0 = DeviceConfiguration.ATAnalogInputConfigUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
@@ -365,27 +365,27 @@ namespace AirTurnManager.Api.DeviceConfiguration
         {
             get
             {
-                return .ATBase._CreateInstance(new IntPtr(&((.ATAnalogInputConfigManager._Internal*)_Instance)->_base));
+                return Foundation.ATBaseUnsafe._CreateInstance(new IntPtr(&((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((.ATAnalogInputConfigManager._Internal*)_Instance)->_base = *(.ATBase._Internal*)value._Instance;
+                ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_base = *(Foundation.ATBaseUnsafe._Internal*)value._Instance;
             }
         }
 
-        public .ATAnalogInputConfig[] InputConfigsStored
+        public DeviceConfiguration.ATAnalogInputConfigUnsafe[] InputConfigsStored
         {
             get
             {
-                .ATAnalogInputConfig[] _value = null;
-                if (((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigsStored != null)
+                DeviceConfiguration.ATAnalogInputConfigUnsafe[] _value = null;
+                if (((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigsStored != null)
                 {
-                    _value = new .ATAnalogInputConfig[8];
+                    _value = new DeviceConfiguration.ATAnalogInputConfigUnsafe[8];
                     for (int i = 0; i < 8; i++)
-                        _value[i] = .ATAnalogInputConfig._CreateInstance(*((.ATAnalogInputConfig._Internal*)&(((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigsStored[i * sizeof(.ATAnalogInputConfig._Internal)])));
+                        _value[i] = DeviceConfiguration.ATAnalogInputConfigUnsafe._CreateInstance(*((DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal*)&(((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigsStored[i * sizeof(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal)])));
                 }
                 return _value;
             }
@@ -397,7 +397,7 @@ namespace AirTurnManager.Api.DeviceConfiguration
                     if (value.Length != 8)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 8; i++)
-                        *(.ATAnalogInputConfig._Internal*)&((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigsStored[i * sizeof(.ATAnalogInputConfig._Internal)] = *(.ATAnalogInputConfig._Internal*)value[i]._Instance;
+                        *(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal*)&((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigsStored[i * sizeof(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal)] = *(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal*)value[i]._Instance;
                 }
             }
         }
@@ -407,11 +407,11 @@ namespace AirTurnManager.Api.DeviceConfiguration
             get
             {
                 bool[] _value = null;
-                if (((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigStorageNeedsUpdate != null)
+                if (((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigStorageNeedsUpdate != null)
                 {
                     _value = new bool[8];
                     for (int i = 0; i < 8; i++)
-                        _value[i] = ((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigStorageNeedsUpdate[i] != 0;
+                        _value[i] = ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigStorageNeedsUpdate[i] != 0;
                 }
                 return _value;
             }
@@ -421,7 +421,7 @@ namespace AirTurnManager.Api.DeviceConfiguration
                 if (value != null)
                 {
                     for (int i = 0; i < 8; i++)
-                        ((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigStorageNeedsUpdate[i] = (byte)(value[i] ? 1 : 0);
+                        ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigStorageNeedsUpdate[i] = (byte)(value[i] ? 1 : 0);
                 }
             }
         }
@@ -431,11 +431,11 @@ namespace AirTurnManager.Api.DeviceConfiguration
             get
             {
                 bool[] _value = null;
-                if (((.ATAnalogInputConfigManager._Internal*)_Instance)->_portConfigNeedsClearing != null)
+                if (((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_portConfigNeedsClearing != null)
                 {
                     _value = new bool[8];
                     for (int i = 0; i < 8; i++)
-                        _value[i] = ((.ATAnalogInputConfigManager._Internal*)_Instance)->_portConfigNeedsClearing[i] != 0;
+                        _value[i] = ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_portConfigNeedsClearing[i] != 0;
                 }
                 return _value;
             }
@@ -445,21 +445,21 @@ namespace AirTurnManager.Api.DeviceConfiguration
                 if (value != null)
                 {
                     for (int i = 0; i < 8; i++)
-                        ((.ATAnalogInputConfigManager._Internal*)_Instance)->_portConfigNeedsClearing[i] = (byte)(value[i] ? 1 : 0);
+                        ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_portConfigNeedsClearing[i] = (byte)(value[i] ? 1 : 0);
                 }
             }
         }
 
-        public .ATAnalogInputConfig[] InputConfigsActive
+        public DeviceConfiguration.ATAnalogInputConfigUnsafe[] InputConfigsActive
         {
             get
             {
-                .ATAnalogInputConfig[] _value = null;
-                if (((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigsActive != null)
+                DeviceConfiguration.ATAnalogInputConfigUnsafe[] _value = null;
+                if (((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigsActive != null)
                 {
-                    _value = new .ATAnalogInputConfig[8];
+                    _value = new DeviceConfiguration.ATAnalogInputConfigUnsafe[8];
                     for (int i = 0; i < 8; i++)
-                        _value[i] = .ATAnalogInputConfig._CreateInstance(*((.ATAnalogInputConfig._Internal*)&(((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigsActive[i * sizeof(.ATAnalogInputConfig._Internal)])));
+                        _value[i] = DeviceConfiguration.ATAnalogInputConfigUnsafe._CreateInstance(*((DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal*)&(((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigsActive[i * sizeof(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal)])));
                 }
                 return _value;
             }
@@ -471,7 +471,7 @@ namespace AirTurnManager.Api.DeviceConfiguration
                     if (value.Length != 8)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 8; i++)
-                        *(.ATAnalogInputConfig._Internal*)&((.ATAnalogInputConfigManager._Internal*)_Instance)->_inputConfigsActive[i * sizeof(.ATAnalogInputConfig._Internal)] = *(.ATAnalogInputConfig._Internal*)value[i]._Instance;
+                        *(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal*)&((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_inputConfigsActive[i * sizeof(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal)] = *(DeviceConfiguration.ATAnalogInputConfigUnsafe._Internal*)value[i]._Instance;
                 }
             }
         }
@@ -480,12 +480,12 @@ namespace AirTurnManager.Api.DeviceConfiguration
         {
             get
             {
-                return ((.ATAnalogInputConfigManager._Internal*)_Instance)->_portsAvailable;
+                return ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_portsAvailable;
             }
 
             set
             {
-                ((.ATAnalogInputConfigManager._Internal*)_Instance)->_portsAvailable = value;
+                ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->_portsAvailable = value;
             }
         }
 
@@ -493,25 +493,25 @@ namespace AirTurnManager.Api.DeviceConfiguration
         {
             get
             {
-                return ((.ATAnalogInputConfigManager._Internal*)_Instance)->storageNeedsUpdate != 0;
+                return ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->storageNeedsUpdate != 0;
             }
 
             set
             {
-                ((.ATAnalogInputConfigManager._Internal*)_Instance)->storageNeedsUpdate = (byte)(value ? 1 : 0);
+                ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->storageNeedsUpdate = (byte)(value ? 1 : 0);
             }
         }
 
-        public .ATPort CurrentlyCalibrating
+        public DeviceTypes.ATPortUnsafe CurrentlyCalibrating
         {
             get
             {
-                return ((.ATAnalogInputConfigManager._Internal*)_Instance)->currentlyCalibrating;
+                return ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->currentlyCalibrating;
             }
 
             set
             {
-                ((.ATAnalogInputConfigManager._Internal*)_Instance)->currentlyCalibrating = value;
+                ((DeviceConfiguration.ATAnalogInputConfigManagerUnsafe._Internal*)_Instance)->currentlyCalibrating = value;
             }
         }
     }

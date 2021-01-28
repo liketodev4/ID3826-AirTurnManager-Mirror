@@ -21,25 +21,25 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlValidate(DeviceTypes.ATConnectionControl connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlParseData(IntPtr data, DeviceTypes.ATConnectionControl* connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlGetData(IntPtr data, DeviceTypes.ATConnectionControl connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlDescription")]
             internal static extern IntPtr ATConnectionControlDescription(DeviceTypes.ATConnectionControl connectionControl);
         }

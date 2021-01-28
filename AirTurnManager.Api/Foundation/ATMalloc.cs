@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace AirTurnManager.Api.Foundation.Delegates
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate IntPtr Func_IntPtr_ulong(ulong size);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void Action_IntPtr_ulong(IntPtr ptr, ulong size);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate IntPtr Func_IntPtr_IntPtr_ulong_ulong(IntPtr ptr, ulong new_size, ulong prev_size);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void Action_IntPtr_ulong_IntPtr(IntPtr reference, ulong index, IntPtr context);
 }
 
@@ -26,13 +26,13 @@ namespace AirTurnManager.Api.Foundation
     /// <summary>Hook called when the module calls malloc() to allocate memory.</summary>
     /// <param name="size">- number of bytes</param>
     /// <returns>- Pointer to the allocated memory</returns>
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate IntPtr ATMallocHook(ulong size);
 
     /// <summary>Hook called when the module calls free() to free memory.</summary>
     /// <param name="ptr">The pointer to the memory to free</param>
     /// <param name="size">The number of bytes that were previously allocated</param>
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void ATFreeHook(IntPtr ptr, ulong size);
 
     /// <summary>Hook called when the module calls realloc() to reallocate memory.</summary>
@@ -40,14 +40,14 @@ namespace AirTurnManager.Api.Foundation
     /// <param name="new_size">The desired new size of the allocated memory</param>
     /// <param name="prev_size">The previous size of the allocated memory</param>
     /// <returns>- Pointer to the reallocated memory</returns>
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate IntPtr ATReallocHook(IntPtr ptr, ulong new_size, ulong prev_size);
 
     /// <summary>A function definition for a weak pointer array element free'd callback</summary>
     /// <param name="reference">A pointer to the memory that has just been free'd</param>
     /// <param name="index">The index of the object in its array</param>
     /// <param name="context">Context provided when registering the callback</param>
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void ATWeakPointerArrayElementFreedCallback(IntPtr reference, ulong index, IntPtr context);
 
     public unsafe partial class ATMallocUnsafe
@@ -55,55 +55,55 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATMalloc")]
             internal static extern IntPtr ATMalloc(ulong size);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATRealloc")]
             internal static extern IntPtr ATRealloc(IntPtr pointer, ulong new_size, ulong previous_size);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATFree")]
             internal static extern void ATFree(IntPtr pointer, ulong size);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATMallocHookRegister")]
             internal static extern void ATMallocHookRegister(IntPtr mallocHook);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATFreeHookRegister")]
             internal static extern void ATFreeHookRegister(IntPtr freeHook);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATReallocHookRegister")]
             internal static extern void ATReallocHookRegister(IntPtr reallocHook);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerRegister")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerRegister(void** pointerToPointerToVariable);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerArrayRegister")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerArrayRegister(void** arrayOfPointersToVariable, ulong length, IntPtr context, IntPtr callback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerArrayModifyLength")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerArrayModifyLength(void** arrayOfPointersToVariable, ulong newLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATWeakPointerArrayUnregister")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATWeakPointerArrayUnregister(void** arrayOfPointersToVariable);

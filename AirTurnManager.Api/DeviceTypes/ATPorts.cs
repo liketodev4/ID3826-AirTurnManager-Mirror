@@ -26,36 +26,36 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPortsValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsValidate(byte ports);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPortsParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsParseData(IntPtr data, byte* ports);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPortsGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsGetData(IntPtr data, byte ports);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPortsIsPortSet")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPortsIsPortSet(byte ports, DeviceTypes.ATPortEnum port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPortsGetPortsForPort")]
             internal static extern byte ATPortsGetPortsForPort(DeviceTypes.ATPortEnum port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATPortsDescription")]
             internal static extern void ATPortsDescription(IntPtr @string, byte ports);
         }

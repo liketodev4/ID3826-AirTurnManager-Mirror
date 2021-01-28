@@ -12,55 +12,55 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseBool")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseBool([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, bool* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONStringEquals")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONStringEquals([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr tok, [MarshalAs(UnmanagedType.LPUTF8Str)] string s);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseUInt8")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseUInt8([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, byte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseUInt16")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseUInt16([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, ushort* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseInt8")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseInt8([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, sbyte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseInt16")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseInt16([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, short* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseLong")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseLong([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, long* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParseHexBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATJSONParseHexBytes([MarshalAs(UnmanagedType.LPUTF8Str)] string json, IntPtr token, byte* bytes, ulong maxSize, ulong* parsedBytesLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "ATJSONNumTokensInValue")]
             internal static extern int ATJSONNumTokensInValue(IntPtr token);
         }
