@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace AirTurnManager.Api.Foundation
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
-    public unsafe delegate void ATBaseArrayWeakElementRemovedCallback(global::System.IntPtr baseArray, ulong index);
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    public unsafe delegate void ATBaseArrayWeakElementRemovedCallback(IntPtr baseArray, ulong index);
 
     // The struct for ATBaseArray objects. ATBaseArray is an array of objects based on ATBaseRef. Objects are retained when added and released when removed. If initialised as a weak array, objects are not retained when added and when they are deallocated they are removed from the array and the callback is called.
     public unsafe partial class ATBaseArrayUnsafe : IDisposable
@@ -28,7 +28,7 @@ namespace AirTurnManager.Api.Foundation
 
             // The callback when a weak item is removed due to deallocation
             [FieldOffset(72)]
-            internal global::System.IntPtr _weakCallback;
+            internal IntPtr _weakCallback;
 
             // PUBLIC
             // The capacity of the array
@@ -37,87 +37,87 @@ namespace AirTurnManager.Api.Foundation
 
             // A pointer to the array items storage
             [FieldOffset(88)]
-            internal global::System.IntPtr items;
+            internal IntPtr items;
 
             // The array count
             [FieldOffset(96)]
             internal ulong count;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayNew")]
-            internal static extern global::System.IntPtr ATBaseArrayNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATBaseArrayNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInit")]
-            internal static extern global::System.IntPtr ATBaseArrayInit(global::System.IntPtr array, ulong capacity, bool weak, global::System.IntPtr weakElementRemovedCallback);
+            internal static extern IntPtr ATBaseArrayInit(IntPtr array, ulong capacity, bool weak, IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInitWithObjects")]
-            internal static extern global::System.IntPtr ATBaseArrayInitWithObjects(global::System.IntPtr array, void** existingObjects, ulong length, bool weak, global::System.IntPtr weakElementRemovedCallback);
+            internal static extern IntPtr ATBaseArrayInitWithObjects(IntPtr array, void** existingObjects, ulong length, bool weak, IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInitWithObjectsNoCopy")]
-            internal static extern global::System.IntPtr ATBaseArrayInitWithObjectsNoCopy(global::System.IntPtr array, void** existingObjects, ulong length, ulong capacity, bool weak, global::System.IntPtr weakElementRemovedCallback);
+            internal static extern IntPtr ATBaseArrayInitWithObjectsNoCopy(IntPtr array, void** existingObjects, ulong length, ulong capacity, bool weak, IntPtr weakElementRemovedCallback);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayGetObjectAtIndex")]
-            internal static extern global::System.IntPtr ATBaseArrayGetObjectAtIndex(global::System.IntPtr array, ulong index);
+            internal static extern IntPtr ATBaseArrayGetObjectAtIndex(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayAppendObject")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayAppendObject(global::System.IntPtr array, global::System.IntPtr objectToAppend);
+            internal static extern bool ATBaseArrayAppendObject(IntPtr array, IntPtr objectToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayInsertObject")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayInsertObject(global::System.IntPtr array, global::System.IntPtr objectToInsert, ulong index);
+            internal static extern bool ATBaseArrayInsertObject(IntPtr array, IntPtr objectToInsert, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayRemoveObject")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayRemoveObject(global::System.IntPtr array, ulong index);
+            internal static extern bool ATBaseArrayRemoveObject(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayRemoveAllObjects")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayRemoveAllObjects(global::System.IntPtr array);
+            internal static extern bool ATBaseArrayRemoveAllObjects(IntPtr array);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayResize")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayResize(global::System.IntPtr array, ulong newCapacity);
+            internal static extern bool ATBaseArrayResize(IntPtr array, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayCopy(global::System.IntPtr destination, global::System.IntPtr source);
+            internal static extern bool ATBaseArrayCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArrayIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseArrayIsEqual(global::System.IntPtr array1, global::System.IntPtr array2);
+            internal static extern bool ATBaseArrayIsEqual(IntPtr array1, IntPtr array2);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseArrayUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseArrayUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseArrayUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseArrayUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATBaseArrayUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATBaseArrayUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATBaseArrayUnsafe(native.ToPointer(), skipVTables);
         }
@@ -145,7 +145,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATBaseArrayUnsafe()
@@ -184,7 +184,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static Foundation.ATBaseArrayUnsafe ATBaseArrayNew(Foundation.ATBaseArrayUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATBaseArrayNew(_arg0);
             Foundation.ATBaseArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -202,8 +202,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATBaseArrayUnsafe ATBaseArrayInit(Foundation.ATBaseArrayUnsafe array, ulong capacity, bool weak, Foundation.Delegates.Action_IntPtr_ulong weakElementRemovedCallback)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
-            var _arg3 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
+            var _arg3 = weakElementRemovedCallback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
             var _ret = _Internal.ATBaseArrayInit(_arg0, capacity, weak, _arg3);
             Foundation.ATBaseArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -222,8 +222,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATBaseArrayUnsafe ATBaseArrayInitWithObjects(Foundation.ATBaseArrayUnsafe array, void** existingObjects, ulong length, bool weak, Foundation.Delegates.Action_IntPtr_ulong weakElementRemovedCallback)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
-            var _arg4 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
+            var _arg4 = weakElementRemovedCallback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
             var _ret = _Internal.ATBaseArrayInitWithObjects(_arg0, existingObjects, length, weak, _arg4);
             Foundation.ATBaseArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -243,8 +243,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATBaseArrayUnsafe ATBaseArrayInitWithObjectsNoCopy(Foundation.ATBaseArrayUnsafe array, void** existingObjects, ulong length, ulong capacity, bool weak, Foundation.Delegates.Action_IntPtr_ulong weakElementRemovedCallback)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
-            var _arg5 = weakElementRemovedCallback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
+            var _arg5 = weakElementRemovedCallback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(weakElementRemovedCallback);
             var _ret = _Internal.ATBaseArrayInitWithObjectsNoCopy(_arg0, existingObjects, length, capacity, weak, _arg5);
             Foundation.ATBaseArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -258,9 +258,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="array">The array</param>
         /// <param name="index">The index of the object to retrieve</param>
         /// <returns>A pointer to the object</returns>
-        public static global::System.IntPtr ATBaseArrayGetObjectAtIndex(Foundation.ATBaseArrayUnsafe array, ulong index)
+        public static IntPtr ATBaseArrayGetObjectAtIndex(Foundation.ATBaseArrayUnsafe array, ulong index)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATBaseArrayGetObjectAtIndex(_arg0, index);
             return _ret;
         }
@@ -269,9 +269,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="array">The array</param>
         /// <param name="objectToAppend">A pointer to the item to append</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATBaseArrayAppendObject(Foundation.ATBaseArrayUnsafe array, global::System.IntPtr objectToAppend)
+        public static bool ATBaseArrayAppendObject(Foundation.ATBaseArrayUnsafe array, IntPtr objectToAppend)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATBaseArrayAppendObject(_arg0, objectToAppend);
             return _ret;
         }
@@ -281,9 +281,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="objectToInsert">The object to insert</param>
         /// <param name="index">The index to insert the object at</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATBaseArrayInsertObject(Foundation.ATBaseArrayUnsafe array, global::System.IntPtr objectToInsert, ulong index)
+        public static bool ATBaseArrayInsertObject(Foundation.ATBaseArrayUnsafe array, IntPtr objectToInsert, ulong index)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATBaseArrayInsertObject(_arg0, objectToInsert, index);
             return _ret;
         }
@@ -295,7 +295,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out object pointers above new count</remarks>
         public static bool ATBaseArrayRemoveObject(Foundation.ATBaseArrayUnsafe array, ulong index)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATBaseArrayRemoveObject(_arg0, index);
             return _ret;
         }
@@ -306,7 +306,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out object pointers removed</remarks>
         public static bool ATBaseArrayRemoveAllObjects(Foundation.ATBaseArrayUnsafe array)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATBaseArrayRemoveAllObjects(_arg0);
             return _ret;
         }
@@ -317,7 +317,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATBaseArrayResize(Foundation.ATBaseArrayUnsafe array, ulong newCapacity)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATBaseArrayResize(_arg0, newCapacity);
             return _ret;
         }
@@ -328,8 +328,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATBaseArrayCopy(Foundation.ATBaseArrayUnsafe destination, Foundation.ATBaseArrayUnsafe source)
         {
-            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
-            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _arg0 = ReferenceEquals(destination, null) ? IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? IntPtr.Zero : source._Instance;
             var _ret = _Internal.ATBaseArrayCopy(_arg0, _arg1);
             return _ret;
         }
@@ -340,8 +340,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the arrays are equal (the pointers in the array are equal)</returns>
         public static bool ATBaseArrayIsEqual(Foundation.ATBaseArrayUnsafe array1, Foundation.ATBaseArrayUnsafe array2)
         {
-            var _arg0 = ReferenceEquals(array1, null) ? global::System.IntPtr.Zero : array1._Instance;
-            var _arg1 = ReferenceEquals(array2, null) ? global::System.IntPtr.Zero : array2._Instance;
+            var _arg0 = ReferenceEquals(array1, null) ? IntPtr.Zero : array1._Instance;
+            var _arg1 = ReferenceEquals(array2, null) ? IntPtr.Zero : array2._Instance;
             var _ret = _Internal.ATBaseArrayIsEqual(_arg0, _arg1);
             return _ret;
         }
@@ -350,13 +350,13 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return Foundation.ATGenericArrayUnsafe._CreateInstance(new global::System.IntPtr(&((Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_base));
+                return Foundation.ATGenericArrayUnsafe._CreateInstance(new IntPtr(&((Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_base = *(Foundation.ATGenericArrayUnsafe._Internal*)value._Instance;
             }
         }
@@ -384,7 +384,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_weakCallback = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATBaseArrayUnsafe._Internal*)_Instance)->_weakCallback = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 

@@ -22,19 +22,19 @@ namespace AirTurnManager.Api.DeviceTypes
             internal DeviceTypes.ATMode mode;
 
             [FieldOffset(1)]
-            internal DeviceTypes.ATPort port;
+            internal DeviceTypes.ATPortEnum port;
 
             [FieldOffset(8)]
             internal DeviceTypes.ATBytes._Internal associatedData;
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAssociatedModePortDataUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAssociatedModePortDataUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAssociatedModePortDataUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAssociatedModePortDataUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static DeviceTypes.ATAssociatedModePortDataUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static DeviceTypes.ATAssociatedModePortDataUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new DeviceTypes.ATAssociatedModePortDataUnsafe(native.ToPointer(), skipVTables);
         }
@@ -62,7 +62,7 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATAssociatedModePortDataUnsafe()
@@ -109,7 +109,7 @@ namespace AirTurnManager.Api.DeviceTypes
             }
         }
 
-        public DeviceTypes.ATPort Port
+        public DeviceTypes.ATPortEnum Port
         {
             get
             {
@@ -126,13 +126,13 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             get
             {
-                return DeviceTypes.ATBytes._CreateInstance(new global::System.IntPtr(&((DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->associatedData));
+                return DeviceTypes.ATBytes._CreateInstance(new IntPtr(&((DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->associatedData));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((DeviceTypes.ATAssociatedModePortDataUnsafe._Internal*)_Instance)->associatedData = *(DeviceTypes.ATBytes._Internal*)value._Instance;
             }
         }

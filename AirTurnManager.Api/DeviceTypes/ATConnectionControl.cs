@@ -21,27 +21,27 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATConnectionControlValidate(DeviceTypes.ATConnectionControl connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATConnectionControlParseData(global::System.IntPtr data, DeviceTypes.ATConnectionControl* connectionControl);
+            internal static extern bool ATConnectionControlParseData(IntPtr data, DeviceTypes.ATConnectionControl* connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATConnectionControlGetData(global::System.IntPtr data, DeviceTypes.ATConnectionControl connectionControl);
+            internal static extern bool ATConnectionControlGetData(IntPtr data, DeviceTypes.ATConnectionControl connectionControl);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATConnectionControlDescription")]
-            internal static extern global::System.IntPtr ATConnectionControlDescription(DeviceTypes.ATConnectionControl connectionControl);
+            internal static extern IntPtr ATConnectionControlDescription(DeviceTypes.ATConnectionControl connectionControl);
         }
 
         /// <summary>Validate a connection control value</summary>
@@ -60,7 +60,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATConnectionControlParseData(DeviceTypes.ATBytes data, ref DeviceTypes.ATConnectionControl connectionControl)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
             fixed (DeviceTypes.ATConnectionControl* _connectionControl1 = &connectionControl)
             {
@@ -76,7 +76,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATConnectionControlGetData(DeviceTypes.ATMutableBytes data, DeviceTypes.ATConnectionControl connectionControl)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATConnectionControlGetData(_arg0, connectionControl);
             return _ret;
         }
@@ -87,12 +87,12 @@ namespace AirTurnManager.Api.DeviceTypes
         public static string ATConnectionControlDescription(DeviceTypes.ATConnectionControl connectionControl)
         {
             var _ret = _Internal.ATConnectionControlDescription(connectionControl);
-            if (_ret == global::System.IntPtr.Zero)
+            if (_ret == IntPtr.Zero)
                 return default(string);
             var _retPtr = (byte*)_ret;
             int _length = 0;
             while (*(_retPtr++) != 0) _length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
+            return Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
     }
 }

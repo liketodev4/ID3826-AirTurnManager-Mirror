@@ -28,39 +28,39 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModeFeaturesValidate(ushort modeFeatures);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeFeaturesParseData(global::System.IntPtr data, ushort* modeFeatures);
+            internal static extern bool ATModeFeaturesParseData(IntPtr data, ushort* modeFeatures);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeFeaturesGetData(global::System.IntPtr data, ushort modeFeatures);
+            internal static extern bool ATModeFeaturesGetData(IntPtr data, ushort modeFeatures);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesParseDataMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeFeaturesParseDataMultiple(global::System.IntPtr data, ushort* modeFeatures, byte maxCount, byte* numParsed);
+            internal static extern bool ATModeFeaturesParseDataMultiple(IntPtr data, ushort* modeFeatures, byte maxCount, byte* numParsed);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesGetDataMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeFeaturesGetDataMultiple(global::System.IntPtr data, ushort* modeFeatures, byte count);
+            internal static extern bool ATModeFeaturesGetDataMultiple(IntPtr data, ushort* modeFeatures, byte count);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeFeaturesDescription")]
-            internal static extern void ATModeFeaturesDescription(global::System.IntPtr @string, ushort modeFeatures);
+            internal static extern void ATModeFeaturesDescription(IntPtr @string, ushort modeFeatures);
         }
 
         /// <summary>Validate a mode features value</summary>
@@ -79,7 +79,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATModeFeaturesParseData(DeviceTypes.ATBytes data, ref ushort modeFeatures)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
             fixed (ushort* _modeFeatures1 = &modeFeatures)
             {
@@ -95,7 +95,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATModeFeaturesGetData(DeviceTypes.ATMutableBytes data, ushort modeFeatures)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATModeFeaturesGetData(_arg0, modeFeatures);
             return _ret;
         }
@@ -109,7 +109,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATModeFeaturesParseDataMultiple(DeviceTypes.ATBytes data, ref ushort modeFeatures, byte maxCount, byte* numParsed)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
             fixed (ushort* _modeFeatures1 = &modeFeatures)
             {
@@ -126,7 +126,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATModeFeaturesGetDataMultiple(DeviceTypes.ATMutableBytes data, ref ushort modeFeatures, byte count)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             fixed (ushort* _modeFeatures1 = &modeFeatures)
             {
                 var _arg1 = _modeFeatures1;
@@ -140,7 +140,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="modeFeatures">The mode features value</param>
         public static void ATModeFeaturesDescription(DeviceTypes.ATString @string, ushort modeFeatures)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             _Internal.ATModeFeaturesDescription(_arg0, modeFeatures);
         }
     }

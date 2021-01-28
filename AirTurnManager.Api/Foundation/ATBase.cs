@@ -57,88 +57,88 @@ namespace AirTurnManager.Api.Foundation
             internal Foundation.ATObjectType _type;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseNew")]
-            internal static extern global::System.IntPtr ATBaseNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATBaseNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseInit")]
-            internal static extern global::System.IntPtr ATBaseInit(global::System.IntPtr @base);
+            internal static extern IntPtr ATBaseInit(IntPtr @base);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATBaseCopy(global::System.IntPtr destination, global::System.IntPtr source);
+            internal static extern bool ATBaseCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATRetain")]
-            internal static extern global::System.IntPtr ATRetain(global::System.IntPtr @object);
+            internal static extern IntPtr ATRetain(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATRelease")]
-            internal static extern global::System.IntPtr ATRelease(global::System.IntPtr @object);
+            internal static extern IntPtr ATRelease(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetType")]
-            internal static extern Foundation.ATObjectType ATGetType(global::System.IntPtr @object);
+            internal static extern Foundation.ATObjectType ATGetType(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetRetainCount")]
-            internal static extern byte ATGetRetainCount(global::System.IntPtr @object);
+            internal static extern byte ATGetRetainCount(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATObjectIsInitialized")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATObjectIsInitialized(global::System.IntPtr @object);
+            internal static extern bool ATObjectIsInitialized(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATObjectIsShared")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATObjectIsShared(global::System.IntPtr @object);
+            internal static extern bool ATObjectIsShared(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetDescriptionForType")]
-            internal static extern global::System.IntPtr ATGetDescriptionForType(Foundation.ATObjectType type);
+            internal static extern IntPtr ATGetDescriptionForType(Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetDescription")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGetDescription(global::System.IntPtr @object, global::System.IntPtr @string);
+            internal static extern bool ATGetDescription(IntPtr @object, IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetDebugDescription")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGetDebugDescription(global::System.IntPtr @object, global::System.IntPtr @string);
+            internal static extern bool ATGetDebugDescription(IntPtr @object, IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPrintDescription")]
-            internal static extern void ATPrintDescription(global::System.IntPtr @object);
+            internal static extern void ATPrintDescription(IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPrintDebugDescription")]
-            internal static extern void ATPrintDebugDescription(global::System.IntPtr @object);
+            internal static extern void ATPrintDebugDescription(IntPtr @object);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATBaseUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATBaseUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATBaseUnsafe(native.ToPointer(), skipVTables);
         }
@@ -166,7 +166,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATBaseUnsafe()
@@ -205,7 +205,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static Foundation.ATBaseUnsafe ATBaseNew(Foundation.ATBaseUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATBaseNew(_arg0);
             Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -220,7 +220,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATBaseUnsafe ATBaseInit(Foundation.ATBaseUnsafe @base)
         {
-            var _arg0 = ReferenceEquals(@base, null) ? global::System.IntPtr.Zero : @base._Instance;
+            var _arg0 = ReferenceEquals(@base, null) ? IntPtr.Zero : @base._Instance;
             var _ret = _Internal.ATBaseInit(_arg0);
             Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -236,8 +236,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if copying was successful. Will fail if either pointer is `NULL` or the type of the objects is not the same.</returns>
         public static bool ATBaseCopy(Foundation.ATBaseUnsafe destination, Foundation.ATBaseUnsafe source)
         {
-            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
-            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _arg0 = ReferenceEquals(destination, null) ? IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? IntPtr.Zero : source._Instance;
             var _ret = _Internal.ATBaseCopy(_arg0, _arg1);
             return _ret;
         }
@@ -245,7 +245,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Retain an object for storage in your own code</summary>
         /// <param name="object">The object to retain, or NULL (for convenience)</param>
         /// <returns>The object, or NULL if the passed object was NULL or not an ATBase object</returns>
-        public static global::System.IntPtr ATRetain(global::System.IntPtr @object)
+        public static IntPtr ATRetain(IntPtr @object)
         {
             var _ret = _Internal.ATRetain(@object);
             return _ret;
@@ -254,7 +254,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Release an object when you have finished using it in your own code</summary>
         /// <param name="object">The object to release, or NULL (for convenience)</param>
         /// <returns>Always NULL for convenience (e.g. storedVar = ATRelease(storedVar) to ensure storedVar is NULL and released)</returns>
-        public static global::System.IntPtr ATRelease(global::System.IntPtr @object)
+        public static IntPtr ATRelease(IntPtr @object)
         {
             var _ret = _Internal.ATRelease(@object);
             return _ret;
@@ -263,7 +263,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Get the type of an object</summary>
         /// <param name="object">The object</param>
         /// <returns>The type of the object</returns>
-        public static Foundation.ATObjectType ATGetType(global::System.IntPtr @object)
+        public static Foundation.ATObjectType ATGetType(IntPtr @object)
         {
             var _ret = _Internal.ATGetType(@object);
             return _ret;
@@ -272,7 +272,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Get the current retain count of the object</summary>
         /// <param name="object">The object</param>
         /// <returns>The object's retain count</returns>
-        public static byte ATGetRetainCount(global::System.IntPtr @object)
+        public static byte ATGetRetainCount(IntPtr @object)
         {
             var _ret = _Internal.ATGetRetainCount(@object);
             return _ret;
@@ -281,7 +281,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Determine if the object has been initialized and is ready to use</summary>
         /// <param name="object">The object</param>
         /// <returns>`true` if the object has been initiated</returns>
-        public static bool ATObjectIsInitialized(global::System.IntPtr @object)
+        public static bool ATObjectIsInitialized(IntPtr @object)
         {
             var _ret = _Internal.ATObjectIsInitialized(@object);
             return _ret;
@@ -291,7 +291,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="object">The object</param>
         /// <returns>`true` if the object is shared and owns its own memory</returns>
         /// <remarks>If an object is shared you can depend on the object to exist throughout the duration of the application as long as its retain count is above 0. If it is not shared, the storage of the object may be free'd by the application elsewhere, or the storage may be removed from the stack.</remarks>
-        public static bool ATObjectIsShared(global::System.IntPtr @object)
+        public static bool ATObjectIsShared(IntPtr @object)
         {
             var _ret = _Internal.ATObjectIsShared(@object);
             return _ret;
@@ -303,21 +303,21 @@ namespace AirTurnManager.Api.Foundation
         public static string ATGetDescriptionForType(Foundation.ATObjectType type)
         {
             var _ret = _Internal.ATGetDescriptionForType(type);
-            if (_ret == global::System.IntPtr.Zero)
+            if (_ret == IntPtr.Zero)
                 return default(string);
             var _retPtr = (byte*)_ret;
             int _length = 0;
             while (*(_retPtr++) != 0) _length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
+            return Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
 
         /// <summary>Get a description for an object</summary>
         /// <param name="object">The object</param>
         /// <param name="string">The string to populate with a description</param>
         /// <returns>`true` if the object could be described successfully</returns>
-        public static bool ATGetDescription(global::System.IntPtr @object, Foundation.ATStringUnsafe @string)
+        public static bool ATGetDescription(IntPtr @object, Foundation.ATStringUnsafe @string)
         {
-            var _arg1 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg1 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATGetDescription(@object, _arg1);
             return _ret;
         }
@@ -326,23 +326,23 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="object">The object</param>
         /// <param name="string">The string to populate with a description</param>
         /// <returns>`true` if the object could be described successfully</returns>
-        public static bool ATGetDebugDescription(global::System.IntPtr @object, Foundation.ATStringUnsafe @string)
+        public static bool ATGetDebugDescription(IntPtr @object, Foundation.ATStringUnsafe @string)
         {
-            var _arg1 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg1 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATGetDebugDescription(@object, _arg1);
             return _ret;
         }
 
         /// <summary>Print a description of an object to stdout</summary>
         /// <param name="object">The object</param>
-        public static void ATPrintDescription(global::System.IntPtr @object)
+        public static void ATPrintDescription(IntPtr @object)
         {
             _Internal.ATPrintDescription(@object);
         }
 
         /// <summary>Print a debug description of an object to stdout</summary>
         /// <param name="object">The object</param>
-        public static void ATPrintDebugDescription(global::System.IntPtr @object)
+        public static void ATPrintDebugDescription(IntPtr @object)
         {
             _Internal.ATPrintDebugDescription(@object);
         }

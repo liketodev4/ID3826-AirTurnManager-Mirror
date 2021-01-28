@@ -28,100 +28,100 @@ namespace AirTurnManager.Api.Foundation
             internal ulong length;
 
             [FieldOffset(56)]
-            internal global::System.IntPtr @string;
+            internal IntPtr @string;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringNew")]
-            internal static extern global::System.IntPtr ATStringNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATStringNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInitWithDynamicAllocation")]
-            internal static extern global::System.IntPtr ATStringInitWithDynamicAllocation(global::System.IntPtr @string);
+            internal static extern IntPtr ATStringInitWithDynamicAllocation(IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInit")]
-            internal static extern global::System.IntPtr ATStringInit(global::System.IntPtr @string, ulong maxLength);
+            internal static extern IntPtr ATStringInit(IntPtr @string, ulong maxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInitWithStringBuffer")]
-            internal static extern global::System.IntPtr ATStringInitWithStringBuffer(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string existingString, ulong length);
+            internal static extern IntPtr ATStringInitWithStringBuffer(IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string existingString, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringInitWithStringBufferNoCopy")]
-            internal static extern global::System.IntPtr ATStringInitWithStringBufferNoCopy(global::System.IntPtr @string, sbyte* existingString, ulong length, ulong capacity);
+            internal static extern IntPtr ATStringInitWithStringBufferNoCopy(IntPtr @string, sbyte* existingString, ulong length, ulong capacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResizeMaxLength")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringResizeMaxLength(global::System.IntPtr @string, ulong newMaxLength);
+            internal static extern bool ATStringResizeMaxLength(IntPtr @string, ulong newMaxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResize")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringResize(global::System.IntPtr @string, ulong newLength);
+            internal static extern bool ATStringResize(IntPtr @string, ulong newLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResizeMaxLengthToFit")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringResizeMaxLengthToFit(global::System.IntPtr @string);
+            internal static extern bool ATStringResizeMaxLengthToFit(IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringResetToEmpty")]
-            internal static extern void ATStringResetToEmpty(global::System.IntPtr @string);
+            internal static extern void ATStringResetToEmpty(IntPtr @string);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendFormat")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringAppendFormat(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string format);
+            internal static extern bool ATStringAppendFormat(IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string format);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendStringWithLength")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringAppendStringWithLength(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string stringToAppend, ulong length);
+            internal static extern bool ATStringAppendStringWithLength(IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string stringToAppend, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendString")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringAppendString(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string stringToAppend);
+            internal static extern bool ATStringAppendString(IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string stringToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringAppendATString")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringAppendATString(global::System.IntPtr @string, global::System.IntPtr stringToAppend);
+            internal static extern bool ATStringAppendATString(IntPtr @string, IntPtr stringToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringCopy(global::System.IntPtr destination, global::System.IntPtr source);
+            internal static extern bool ATStringCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATStringIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATStringIsEqual(global::System.IntPtr string1, global::System.IntPtr string2);
+            internal static extern bool ATStringIsEqual(IntPtr string1, IntPtr string2);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATStringUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATStringUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATStringUnsafe(native.ToPointer(), skipVTables);
         }
@@ -149,7 +149,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATStringUnsafe()
@@ -188,7 +188,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static Foundation.ATStringUnsafe ATStringNew(Foundation.ATStringUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATStringNew(_arg0);
             Foundation.ATStringUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -204,7 +204,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Dynamic allocation means the object will automatically allocate more space when appending a string that is beyond its capacity</remarks>
         public static Foundation.ATStringUnsafe ATStringInitWithDynamicAllocation(Foundation.ATStringUnsafe @string)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringInitWithDynamicAllocation(_arg0);
             Foundation.ATStringUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -220,7 +220,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATStringUnsafe ATStringInit(Foundation.ATStringUnsafe @string, ulong maxLength)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringInit(_arg0, maxLength);
             Foundation.ATStringUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -237,7 +237,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATStringUnsafe ATStringInitWithStringBuffer(Foundation.ATStringUnsafe @string, string existingString, ulong length)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringInitWithStringBuffer(_arg0, existingString, length);
             Foundation.ATStringUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -255,7 +255,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATStringUnsafe ATStringInitWithStringBufferNoCopy(Foundation.ATStringUnsafe @string, sbyte* existingString, ulong length, ulong capacity)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringInitWithStringBufferNoCopy(_arg0, existingString, length, capacity);
             Foundation.ATStringUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -271,7 +271,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringResizeMaxLength(Foundation.ATStringUnsafe @string, ulong newMaxLength)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringResizeMaxLength(_arg0, newMaxLength);
             return _ret;
         }
@@ -282,7 +282,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful, or false if string buffer could not be resized when required</returns>
         public static bool ATStringResize(Foundation.ATStringUnsafe @string, ulong newLength)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringResize(_arg0, newLength);
             return _ret;
         }
@@ -292,7 +292,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringResizeMaxLengthToFit(Foundation.ATStringUnsafe @string)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringResizeMaxLengthToFit(_arg0);
             return _ret;
         }
@@ -301,7 +301,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="string">The string object</param>
         public static void ATStringResetToEmpty(Foundation.ATStringUnsafe @string)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             _Internal.ATStringResetToEmpty(_arg0);
         }
 
@@ -312,7 +312,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringAppendFormat(Foundation.ATStringUnsafe @string, string format)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringAppendFormat(_arg0, format);
             return _ret;
         }
@@ -324,7 +324,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringAppendStringWithLength(Foundation.ATStringUnsafe @string, string stringToAppend, ulong length)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringAppendStringWithLength(_arg0, stringToAppend, length);
             return _ret;
         }
@@ -336,7 +336,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will determine the length of the string by finding the null terminating character</remarks>
         public static bool ATStringAppendString(Foundation.ATStringUnsafe @string, string stringToAppend)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATStringAppendString(_arg0, stringToAppend);
             return _ret;
         }
@@ -347,8 +347,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringAppendATString(Foundation.ATStringUnsafe @string, Foundation.ATStringUnsafe stringToAppend)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
-            var _arg1 = ReferenceEquals(stringToAppend, null) ? global::System.IntPtr.Zero : stringToAppend._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
+            var _arg1 = ReferenceEquals(stringToAppend, null) ? IntPtr.Zero : stringToAppend._Instance;
             var _ret = _Internal.ATStringAppendATString(_arg0, _arg1);
             return _ret;
         }
@@ -359,8 +359,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATStringCopy(Foundation.ATStringUnsafe destination, Foundation.ATStringUnsafe source)
         {
-            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
-            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _arg0 = ReferenceEquals(destination, null) ? IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? IntPtr.Zero : source._Instance;
             var _ret = _Internal.ATStringCopy(_arg0, _arg1);
             return _ret;
         }
@@ -371,8 +371,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the strings are equal</returns>
         public static bool ATStringIsEqual(Foundation.ATStringUnsafe string1, Foundation.ATStringUnsafe string2)
         {
-            var _arg0 = ReferenceEquals(string1, null) ? global::System.IntPtr.Zero : string1._Instance;
-            var _arg1 = ReferenceEquals(string2, null) ? global::System.IntPtr.Zero : string2._Instance;
+            var _arg0 = ReferenceEquals(string1, null) ? IntPtr.Zero : string1._Instance;
+            var _arg1 = ReferenceEquals(string2, null) ? IntPtr.Zero : string2._Instance;
             var _ret = _Internal.ATStringIsEqual(_arg0, _arg1);
             return _ret;
         }
@@ -381,13 +381,13 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return Foundation.ATDataUnsafe._CreateInstance(new global::System.IntPtr(&((Foundation.ATStringUnsafe._Internal*)_Instance)->_base));
+                return Foundation.ATDataUnsafe._CreateInstance(new IntPtr(&((Foundation.ATStringUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((Foundation.ATStringUnsafe._Internal*)_Instance)->_base = *(Foundation.ATDataUnsafe._Internal*)value._Instance;
             }
         }
@@ -440,7 +440,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATStringUnsafe._Internal*)_Instance)->@string = (global::System.IntPtr)value;
+                ((Foundation.ATStringUnsafe._Internal*)_Instance)->@string = (IntPtr)value;
             }
         }
     }

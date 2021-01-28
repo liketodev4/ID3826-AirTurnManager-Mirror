@@ -14,19 +14,19 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [FieldOffset(0)]
-            internal global::System.IntPtr @string;
+            internal IntPtr @string;
 
             [FieldOffset(8)]
             internal ulong length;
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringPointerUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringPointerUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringPointerUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATStringPointerUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATStringPointerUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATStringPointerUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATStringPointerUnsafe(native.ToPointer(), skipVTables);
         }
@@ -54,7 +54,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATStringPointerUnsafe()
@@ -92,20 +92,20 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                if (((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string == global::System.IntPtr.Zero)
+                if (((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string == IntPtr.Zero)
                     return default(string);
                 var _retPtr = (byte*)((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string;
                 int _length = 0;
                 while (*(_retPtr++) != 0) _length += sizeof(byte);
-                return global::System.Text.Encoding.UTF8.GetString((byte*)((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string, _length);
+                return Text.Encoding.UTF8.GetString((byte*)((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string, _length);
             }
 
             set
             {
-                byte[] _bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
+                byte[] _bytes0 = Text.Encoding.UTF8.GetBytes(value);
                 fixed (byte* _bytePtr0 = _bytes0)
                 {
-                    ((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
+                    ((Foundation.ATStringPointerUnsafe._Internal*)_Instance)->@string = (IntPtr)new IntPtr(_bytePtr0);
                 }
             }
         }

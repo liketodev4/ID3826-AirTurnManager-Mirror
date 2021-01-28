@@ -14,7 +14,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         public partial struct _Internal
         {
             [FieldOffset(0)]
-            internal global::System.IntPtr defaultPortConfig;
+            internal IntPtr defaultPortConfig;
 
             [FieldOffset(8)]
             internal DeviceTypes.ATModeUnsafe portConfigMinMode;
@@ -23,7 +23,7 @@ namespace AirTurnManager.Api.DeviceDefaults
             internal byte portConfigNumModes;
 
             [FieldOffset(10)]
-            internal DeviceTypes.ATPort portConfigMinPort;
+            internal DeviceTypes.ATPortEnum portConfigMinPort;
 
             [FieldOffset(11)]
             internal byte portConfigNumPorts;
@@ -50,18 +50,18 @@ namespace AirTurnManager.Api.DeviceDefaults
             internal ushort debounceTime;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport("AirTurnManager.Api.DeviceDefaults.dll", CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDeviceDefaultsGetDefaultPortConfig")]
-            internal static extern void ATDeviceDefaultsGetDefaultPortConfig(global::System.IntPtr @return, global::System.IntPtr deviceDefaults, DeviceDefaults.ATMode mode, DeviceDefaults.ATPort port);
+            internal static extern void ATDeviceDefaultsGetDefaultPortConfig(IntPtr @return, IntPtr deviceDefaults, DeviceDefaults.ATMode mode, DeviceDefaults.ATPort port);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceDefaults.ATDeviceDefaults> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceDefaults.ATDeviceDefaults>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceDefaults.ATDeviceDefaults> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceDefaults.ATDeviceDefaults>();
 
         protected bool _ownsNativeInstance;
 
-        internal static DeviceDefaults.ATDeviceDefaults _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static DeviceDefaults.ATDeviceDefaults _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new DeviceDefaults.ATDeviceDefaults(native.ToPointer(), skipVTables);
         }
@@ -89,7 +89,7 @@ namespace AirTurnManager.Api.DeviceDefaults
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATDeviceDefaults()
@@ -125,7 +125,7 @@ namespace AirTurnManager.Api.DeviceDefaults
 
         public static DeviceDefaults.ATBytes ATDeviceDefaultsGetDefaultPortConfig(DeviceDefaults.ATDeviceDefaults deviceDefaults, DeviceDefaults.ATMode mode, DeviceDefaults.ATPort port)
         {
-            var _arg0 = ReferenceEquals(deviceDefaults, null) ? global::System.IntPtr.Zero : deviceDefaults._Instance;
+            var _arg0 = ReferenceEquals(deviceDefaults, null) ? IntPtr.Zero : deviceDefaults._Instance;
             var _ret = new DeviceDefaults.ATBytes._Internal();
             _Internal.ATDeviceDefaultsGetDefaultPortConfig(new IntPtr(&_ret), _arg0, mode, port);
             return DeviceDefaults.ATBytes._CreateInstance(_ret);
@@ -140,7 +140,7 @@ namespace AirTurnManager.Api.DeviceDefaults
 
             set
             {
-                ((DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->defaultPortConfig = (global::System.IntPtr)value;
+                ((DeviceDefaults.ATDeviceDefaults._Internal*)_Instance)->defaultPortConfig = (IntPtr)value;
             }
         }
 

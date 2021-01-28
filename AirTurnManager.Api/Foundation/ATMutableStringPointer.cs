@@ -14,7 +14,7 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [FieldOffset(0)]
-            internal global::System.IntPtr @string;
+            internal IntPtr @string;
 
             [FieldOffset(8)]
             internal ulong length;
@@ -23,19 +23,19 @@ namespace AirTurnManager.Api.Foundation
             internal ulong capacity;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATMutableStringPointerAddStringWithFormat")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATMutableStringPointerAddStringWithFormat(global::System.IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string format);
+            internal static extern bool ATMutableStringPointerAddStringWithFormat(IntPtr @string, [MarshalAs(UnmanagedType.LPUTF8Str)] string format);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATMutableStringPointer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATMutableStringPointer>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATMutableStringPointer> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATMutableStringPointer>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATMutableStringPointer _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATMutableStringPointer _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATMutableStringPointer(native.ToPointer(), skipVTables);
         }
@@ -63,7 +63,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATMutableStringPointer()
@@ -99,7 +99,7 @@ namespace AirTurnManager.Api.Foundation
 
         public static bool ATMutableStringPointerAddStringWithFormat(Foundation.ATMutableStringPointer @string, string format)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATMutableStringPointerAddStringWithFormat(_arg0, format);
             return _ret;
         }
@@ -113,7 +113,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATMutableStringPointer._Internal*)_Instance)->@string = (global::System.IntPtr)value;
+                ((Foundation.ATMutableStringPointer._Internal*)_Instance)->@string = (IntPtr)value;
             }
         }
 

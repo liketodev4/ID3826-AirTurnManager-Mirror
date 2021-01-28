@@ -48,83 +48,83 @@ namespace AirTurnManager.Api.DeviceConfiguration
             internal DeviceTypes.ATPortUnsafe currentlyCalibrating;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerNew")]
-            internal static extern global::System.IntPtr ATAnalogInputConfigManagerNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATAnalogInputConfigManagerNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerInit")]
-            internal static extern global::System.IntPtr ATAnalogInputConfigManagerInit(global::System.IntPtr inputConfigManager, byte portsAvailable);
+            internal static extern IntPtr ATAnalogInputConfigManagerInit(IntPtr inputConfigManager, byte portsAvailable);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputConfigManagerParseData(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, global::System.IntPtr data, ulong* lengthParsed);
+            internal static extern bool ATAnalogInputConfigManagerParseData(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, IntPtr data, ulong* lengthParsed);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerGetData")]
-            internal static extern global::System.IntPtr ATAnalogInputConfigManagerGetData(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, global::System.IntPtr optionalDataToFill, bool includeLimits);
+            internal static extern IntPtr ATAnalogInputConfigManagerGetData(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, IntPtr optionalDataToFill, bool includeLimits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerParseMultiple")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputConfigManagerParseMultiple(global::System.IntPtr inputConfigManager, global::System.IntPtr data);
+            internal static extern bool ATAnalogInputConfigManagerParseMultiple(IntPtr inputConfigManager, IntPtr data);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerGetDataMultiple")]
-            internal static extern global::System.IntPtr ATAnalogInputConfigManagerGetDataMultiple(global::System.IntPtr inputConfigManager, global::System.IntPtr optionalDataToFill, bool includeLimits);
+            internal static extern IntPtr ATAnalogInputConfigManagerGetDataMultiple(IntPtr inputConfigManager, IntPtr optionalDataToFill, bool includeLimits);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerApplyAnalogAction")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputConfigManagerApplyAnalogAction(global::System.IntPtr inputConfigManager, global::System.IntPtr action, short currentValue);
+            internal static extern bool ATAnalogInputConfigManagerApplyAnalogAction(IntPtr inputConfigManager, IntPtr action, short currentValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerGetInputConfig")]
-            internal static extern global::System.IntPtr ATAnalogInputConfigManagerGetInputConfig(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, bool active);
+            internal static extern IntPtr ATAnalogInputConfigManagerGetInputConfig(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port, bool active);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerResetToStored")]
-            internal static extern void ATAnalogInputConfigManagerResetToStored(global::System.IntPtr inputConfigManager);
+            internal static extern void ATAnalogInputConfigManagerResetToStored(IntPtr inputConfigManager);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerStorageNeedsUpdate")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputConfigManagerStorageNeedsUpdate(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
+            internal static extern bool ATAnalogInputConfigManagerStorageNeedsUpdate(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerStorageUpdated")]
-            internal static extern void ATAnalogInputConfigManagerStorageUpdated(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
+            internal static extern void ATAnalogInputConfigManagerStorageUpdated(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerPortConfigNeedsClearing")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputConfigManagerPortConfigNeedsClearing(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
+            internal static extern bool ATAnalogInputConfigManagerPortConfigNeedsClearing(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputConfigManagerPortConfigCleared")]
-            internal static extern void ATAnalogInputConfigManagerPortConfigCleared(global::System.IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
+            internal static extern void ATAnalogInputConfigManagerPortConfigCleared(IntPtr inputConfigManager, DeviceTypes.ATPortUnsafe port);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceConfiguration.ATAnalogInputConfigManagerUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static DeviceConfiguration.ATAnalogInputConfigManagerUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static DeviceConfiguration.ATAnalogInputConfigManagerUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new DeviceConfiguration.ATAnalogInputConfigManagerUnsafe(native.ToPointer(), skipVTables);
         }
@@ -152,7 +152,7 @@ namespace AirTurnManager.Api.DeviceConfiguration
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATAnalogInputConfigManagerUnsafe()
@@ -191,7 +191,7 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static DeviceConfiguration.ATAnalogInputConfigManagerUnsafe ATAnalogInputConfigManagerNew(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerNew(_arg0);
             DeviceConfiguration.ATAnalogInputConfigManagerUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -207,7 +207,7 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static DeviceConfiguration.ATAnalogInputConfigManagerUnsafe ATAnalogInputConfigManagerInit(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, byte portsAvailable)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerInit(_arg0, portsAvailable);
             DeviceConfiguration.ATAnalogInputConfigManagerUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -225,8 +225,8 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static bool ATAnalogInputConfigManagerParseData(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port, Foundation.ATDataUnsafe data, ref ulong lengthParsed)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
-            var _arg2 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
+            var _arg2 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             fixed (ulong* _lengthParsed3 = &lengthParsed)
             {
                 var _arg3 = _lengthParsed3;
@@ -242,8 +242,8 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <returns>The generated data. If `optionalDataToFill` is NULL, returns a data object owned by the analog input config object, otherwise returns `optionalDataToFill`</returns>
         public static Foundation.ATDataUnsafe ATAnalogInputConfigManagerGetData(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port, Foundation.ATDataUnsafe optionalDataToFill, bool includeLimits)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
-            var _arg2 = ReferenceEquals(optionalDataToFill, null) ? global::System.IntPtr.Zero : optionalDataToFill._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
+            var _arg2 = ReferenceEquals(optionalDataToFill, null) ? IntPtr.Zero : optionalDataToFill._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerGetData(_arg0, port, _arg2, includeLimits);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -259,8 +259,8 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <returns>`true` if successful, otherwise `false`.</returns>
         public static bool ATAnalogInputConfigManagerParseMultiple(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, Foundation.ATDataUnsafe data)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
-            var _arg1 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
+            var _arg1 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerParseMultiple(_arg0, _arg1);
             return _ret;
         }
@@ -272,8 +272,8 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <returns>`true` if successful, otherwise `false`</returns>
         public static Foundation.ATDataUnsafe ATAnalogInputConfigManagerGetDataMultiple(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, Foundation.ATDataUnsafe optionalDataToFill, bool includeLimits)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
-            var _arg1 = ReferenceEquals(optionalDataToFill, null) ? global::System.IntPtr.Zero : optionalDataToFill._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
+            var _arg1 = ReferenceEquals(optionalDataToFill, null) ? IntPtr.Zero : optionalDataToFill._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerGetDataMultiple(_arg0, _arg1, includeLimits);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -288,10 +288,10 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <param name="action">The action to apply</param>
         /// <param name="currentValue">The current analog input value for this port, for calibrate now actions. Ignored for other actions</param>
         /// <returns>If successful, `true`, otherwise `false`</returns>
-        public static bool ATAnalogInputConfigManagerApplyAnalogAction(.ATAnalogInputConfigManager inputConfigManager, .ATAnalogAction action, short currentValue)
+        public static bool ATAnalogInputConfigManagerApplyAnalogAction(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATAnalogActionUnsafe action, short currentValue)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
-            var _arg1 = ReferenceEquals(action, null) ? global::System.IntPtr.Zero : action._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
+            var _arg1 = ReferenceEquals(action, null) ? IntPtr.Zero : action._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerApplyAnalogAction(_arg0, _arg1, currentValue);
             return _ret;
         }
@@ -301,11 +301,11 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <param name="port">The port to get the input config for</param>
         /// <param name="active">If `true`, returns the active input config, otherwise returns the stored input config</param>
         /// <returns>The input config, if port is valid, otherwise `NULL`</returns>
-        public static .ATAnalogInputConfig ATAnalogInputConfigManagerGetInputConfig(.ATAnalogInputConfigManager inputConfigManager, .ATPort port, bool active)
+        public static DeviceConfiguration.ATAnalogInputConfigUnsafe ATAnalogInputConfigManagerGetInputConfig(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port, bool active)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerGetInputConfig(_arg0, port, active);
-            .ATAnalogInputConfig _result0;
+            DeviceConfiguration.ATAnalogInputConfigUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
             else if (.ATAnalogInputConfig.NativeToManagedMap.ContainsKey(_ret))
                 _result0 = (.ATAnalogInputConfig).ATAnalogInputConfig.NativeToManagedMap[_ret];
@@ -315,9 +315,9 @@ namespace AirTurnManager.Api.DeviceConfiguration
 
         /// <summary>Reset all active input configs to the stored configs</summary>
         /// <param name="inputConfigManager">The input config manager</param>
-        public static void ATAnalogInputConfigManagerResetToStored(.ATAnalogInputConfigManager inputConfigManager)
+        public static void ATAnalogInputConfigManagerResetToStored(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             _Internal.ATAnalogInputConfigManagerResetToStored(_arg0);
         }
 
@@ -325,9 +325,9 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <param name="inputConfigManager">The input config manager</param>
         /// <param name="port">The port</param>
         /// <returns>`true` if storage needs updating for this port</returns>
-        public static bool ATAnalogInputConfigManagerStorageNeedsUpdate(.ATAnalogInputConfigManager inputConfigManager, .ATPort port)
+        public static bool ATAnalogInputConfigManagerStorageNeedsUpdate(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerStorageNeedsUpdate(_arg0, port);
             return _ret;
         }
@@ -335,9 +335,9 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <summary>Inform the input config manager that storage has been updated for a given port</summary>
         /// <param name="inputConfigManager">The input config manager</param>
         /// <param name="port">The port that has been stored</param>
-        public static void ATAnalogInputConfigManagerStorageUpdated(.ATAnalogInputConfigManager inputConfigManager, .ATPort port)
+        public static void ATAnalogInputConfigManagerStorageUpdated(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             _Internal.ATAnalogInputConfigManagerStorageUpdated(_arg0, port);
         }
 
@@ -345,9 +345,9 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <param name="inputConfigManager">The input config manager</param>
         /// <param name="port">The port</param>
         /// <returns>`true` if port config needs clearing</returns>
-        public static bool ATAnalogInputConfigManagerPortConfigNeedsClearing(.ATAnalogInputConfigManager inputConfigManager, .ATPort port)
+        public static bool ATAnalogInputConfigManagerPortConfigNeedsClearing(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             var _ret = _Internal.ATAnalogInputConfigManagerPortConfigNeedsClearing(_arg0, port);
             return _ret;
         }
@@ -355,23 +355,23 @@ namespace AirTurnManager.Api.DeviceConfiguration
         /// <summary>Inform the input config manager that a port config has been cleared</summary>
         /// <param name="inputConfigManager">The input config manager</param>
         /// <param name="port">The port</param>
-        public static void ATAnalogInputConfigManagerPortConfigCleared(.ATAnalogInputConfigManager inputConfigManager, .ATPort port)
+        public static void ATAnalogInputConfigManagerPortConfigCleared(DeviceConfiguration.ATAnalogInputConfigManagerUnsafe inputConfigManager, DeviceTypes.ATPortUnsafe port)
         {
-            var _arg0 = ReferenceEquals(inputConfigManager, null) ? global::System.IntPtr.Zero : inputConfigManager._Instance;
+            var _arg0 = ReferenceEquals(inputConfigManager, null) ? IntPtr.Zero : inputConfigManager._Instance;
             _Internal.ATAnalogInputConfigManagerPortConfigCleared(_arg0, port);
         }
 
-        public .ATBase Base
+        public Foundation.ATBaseUnsafe Base
         {
             get
             {
-                return .ATBase._CreateInstance(new global::System.IntPtr(&((.ATAnalogInputConfigManager._Internal*)_Instance)->_base));
+                return .ATBase._CreateInstance(new IntPtr(&((.ATAnalogInputConfigManager._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((.ATAnalogInputConfigManager._Internal*)_Instance)->_base = *(.ATBase._Internal*)value._Instance;
             }
         }

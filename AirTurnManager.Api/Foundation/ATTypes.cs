@@ -13,9 +13,9 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATInitialisePointerArray")]
-            internal static extern void ATInitialisePointerArray(global::System.IntPtr existingArrayOfSingleType, ulong existingTypeSize, ulong existingArrayCount, global::System.IntPtr destinationPointerArray);
+            internal static extern void ATInitialisePointerArray(IntPtr existingArrayOfSingleType, ulong existingTypeSize, ulong existingArrayCount, IntPtr destinationPointerArray);
         }
 
         /// <summary>Populate an array of pointers with pointers to elements in an array of items. Used in firmware for defining a local array of object storage, then generating an array of pointers to that storage for passing to the ATSC APIs which generally take an array of pointers to objects.</summary>
@@ -23,7 +23,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="existingTypeSize">The size of the elements</param>
         /// <param name="existingArrayCount">The number of elements</param>
         /// <param name="destinationPointerArray">The array of pointers to set element pointers in</param>
-        public static void ATInitialisePointerArray(global::System.IntPtr existingArrayOfSingleType, ulong existingTypeSize, ulong existingArrayCount, global::System.IntPtr destinationPointerArray)
+        public static void ATInitialisePointerArray(IntPtr existingArrayOfSingleType, ulong existingTypeSize, ulong existingArrayCount, IntPtr destinationPointerArray)
         {
             _Internal.ATInitialisePointerArray(existingArrayOfSingleType, existingTypeSize, existingArrayCount, destinationPointerArray);
         }

@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace AirTurnManager.Api.Foundation.Delegates
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
-    public unsafe delegate void Action_IntPtr(global::System.IntPtr @object);
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    public unsafe delegate void Action_IntPtr(IntPtr @object);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
-    public unsafe delegate void Action_IntPtr_IntPtr(global::System.IntPtr @object, global::System.IntPtr @string);
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    public unsafe delegate void Action_IntPtr_IntPtr(IntPtr @object, IntPtr @string);
 }
 
 namespace AirTurnManager.Api.Foundation
 {
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
-    public unsafe delegate void ATBaseFreeFunction(global::System.IntPtr @object);
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    public unsafe delegate void ATBaseFreeFunction(IntPtr @object);
 
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
-    public unsafe delegate void ATBaseDescriptionFunction(global::System.IntPtr @object, global::System.IntPtr @string);
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(Runtime.InteropServices.CallingConvention.Cdecl)]
+    public unsafe delegate void ATBaseDescriptionFunction(IntPtr @object, IntPtr @string);
 
     public unsafe partial class ATObjectDefinition : IDisposable
     {
@@ -35,22 +35,22 @@ namespace AirTurnManager.Api.Foundation
             internal Foundation.ATObjectType superType;
 
             [FieldOffset(16)]
-            internal global::System.IntPtr freeFunction;
+            internal IntPtr freeFunction;
 
             [FieldOffset(24)]
-            internal global::System.IntPtr description;
+            internal IntPtr description;
 
             [FieldOffset(32)]
-            internal global::System.IntPtr debugDescription;
+            internal IntPtr debugDescription;
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATObjectDefinition> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATObjectDefinition>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATObjectDefinition> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATObjectDefinition>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATObjectDefinition _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATObjectDefinition _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATObjectDefinition(native.ToPointer(), skipVTables);
         }
@@ -78,7 +78,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATObjectDefinition()
@@ -148,7 +148,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATObjectDefinition._Internal*)_Instance)->freeFunction = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->freeFunction = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
@@ -162,7 +162,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATObjectDefinition._Internal*)_Instance)->description = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->description = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
@@ -177,7 +177,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATObjectDefinition._Internal*)_Instance)->debugDescription = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->debugDescription = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
     }
@@ -187,24 +187,24 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseSubclassNew")]
-            internal static extern global::System.IntPtr ATBaseSubclassNew(global::System.IntPtr optionalStorage, Foundation.ATObjectType type);
+            internal static extern IntPtr ATBaseSubclassNew(IntPtr optionalStorage, Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseResizeObject")]
-            internal static extern global::System.IntPtr ATBaseResizeObject(global::System.IntPtr @object, ulong newSize);
+            internal static extern IntPtr ATBaseResizeObject(IntPtr @object, ulong newSize);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseRegisterSubclass")]
-            internal static extern void ATBaseRegisterSubclass(Foundation.ATObjectType type, global::System.IntPtr definition);
+            internal static extern void ATBaseRegisterSubclass(Foundation.ATObjectType type, IntPtr definition);
         }
 
         public static Foundation.ATBaseUnsafe ATBaseSubclassNew(Foundation.ATBaseUnsafe optionalStorage, Foundation.ATObjectType type)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATBaseSubclassNew(_arg0, type);
             Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -214,7 +214,7 @@ namespace AirTurnManager.Api.Foundation
             return _result0;
         }
 
-        public static Foundation.ATBaseUnsafe ATBaseResizeObject(global::System.IntPtr @object, ulong newSize)
+        public static Foundation.ATBaseUnsafe ATBaseResizeObject(IntPtr @object, ulong newSize)
         {
             var _ret = _Internal.ATBaseResizeObject(@object, newSize);
             Foundation.ATBaseUnsafe _result0;
@@ -227,7 +227,7 @@ namespace AirTurnManager.Api.Foundation
 
         public static void ATBaseRegisterSubclass(Foundation.ATObjectType type, Foundation.ATObjectDefinition definition)
         {
-            var _arg1 = ReferenceEquals(definition, null) ? global::System.IntPtr.Zero : definition._Instance;
+            var _arg1 = ReferenceEquals(definition, null) ? IntPtr.Zero : definition._Instance;
             _Internal.ATBaseRegisterSubclass(type, _arg1);
         }
     }

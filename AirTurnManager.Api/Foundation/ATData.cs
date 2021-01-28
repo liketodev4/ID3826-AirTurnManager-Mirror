@@ -30,133 +30,133 @@ namespace AirTurnManager.Api.Foundation
 
             /// The data pointer
             [FieldOffset(16)]
-            internal global::System.IntPtr bytes;
+            internal IntPtr bytes;
 
             /// The length of the data (may be shorter than capacity)
             [FieldOffset(24)]
             internal ulong length;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataNew")]
-            internal static extern global::System.IntPtr ATDataNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATDataNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataInit")]
-            internal static extern global::System.IntPtr ATDataInit(global::System.IntPtr data);
+            internal static extern IntPtr ATDataInit(IntPtr data);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataInitWithCapacity")]
-            internal static extern global::System.IntPtr ATDataInitWithCapacity(global::System.IntPtr data, ulong capacity);
+            internal static extern IntPtr ATDataInitWithCapacity(IntPtr data, ulong capacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataInitWithBytes")]
-            internal static extern global::System.IntPtr ATDataInitWithBytes(global::System.IntPtr data, global::System.IntPtr existingData, ulong length);
+            internal static extern IntPtr ATDataInitWithBytes(IntPtr data, IntPtr existingData, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataInitWithBytesNoCopy")]
-            internal static extern global::System.IntPtr ATDataInitWithBytesNoCopy(global::System.IntPtr data, global::System.IntPtr existingData, ulong length, ulong capacity);
+            internal static extern IntPtr ATDataInitWithBytesNoCopy(IntPtr data, IntPtr existingData, ulong length, ulong capacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataAdoptStorage")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataAdoptStorage(global::System.IntPtr data, global::System.IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage);
+            internal static extern bool ATDataAdoptStorage(IntPtr data, IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataAppendBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataAppendBytes(global::System.IntPtr data, global::System.IntPtr bytesToAppend, ulong length);
+            internal static extern bool ATDataAppendBytes(IntPtr data, IntPtr bytesToAppend, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataInsertBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataInsertBytes(global::System.IntPtr data, global::System.IntPtr bytesToInsert, ulong length, ulong index);
+            internal static extern bool ATDataInsertBytes(IntPtr data, IntPtr bytesToInsert, ulong length, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataRemoveBytes")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataRemoveBytes(global::System.IntPtr data, ulong length, ulong index);
+            internal static extern bool ATDataRemoveBytes(IntPtr data, ulong length, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataResetToEmpty")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataResetToEmpty(global::System.IntPtr data);
+            internal static extern bool ATDataResetToEmpty(IntPtr data);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataGetBytes")]
-            internal static extern void ATDataGetBytes(global::System.IntPtr data, global::System.IntPtr bytes, ulong maxLength);
+            internal static extern void ATDataGetBytes(IntPtr data, IntPtr bytes, ulong maxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataGetBytesAtOffset")]
-            internal static extern void ATDataGetBytesAtOffset(global::System.IntPtr data, global::System.IntPtr bytes, ulong offset, ulong maxLength);
+            internal static extern void ATDataGetBytesAtOffset(IntPtr data, IntPtr bytes, ulong offset, ulong maxLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataResizeCapacity")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataResizeCapacity(global::System.IntPtr data, ulong newCapacity);
+            internal static extern bool ATDataResizeCapacity(IntPtr data, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataResize")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataResize(global::System.IntPtr data, ulong newLength);
+            internal static extern bool ATDataResize(IntPtr data, ulong newLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataIncreaseLength")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataIncreaseLength(global::System.IntPtr data, ulong extraLength, byte fillWith);
+            internal static extern bool ATDataIncreaseLength(IntPtr data, ulong extraLength, byte fillWith);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataCopy(global::System.IntPtr destination, global::System.IntPtr source);
+            internal static extern bool ATDataCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataSubdataWithRange")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataSubdataWithRange(global::System.IntPtr data, global::System.IntPtr subData, ulong offset, ulong length);
+            internal static extern bool ATDataSubdataWithRange(IntPtr data, IntPtr subData, ulong offset, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataSubdataNoCopyWithRange")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataSubdataNoCopyWithRange(global::System.IntPtr data, global::System.IntPtr subData, ulong offset, ulong length);
+            internal static extern bool ATDataSubdataNoCopyWithRange(IntPtr data, IntPtr subData, ulong offset, ulong length);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataIsEqual(global::System.IntPtr data1, global::System.IntPtr data2);
+            internal static extern bool ATDataIsEqual(IntPtr data1, IntPtr data2);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATDataOwnsStorage")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATDataOwnsStorage(global::System.IntPtr data);
+            internal static extern bool ATDataOwnsStorage(IntPtr data);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATDataUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATDataUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATDataUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATDataUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATDataUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATDataUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATDataUnsafe(native.ToPointer(), skipVTables);
         }
@@ -184,7 +184,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATDataUnsafe()
@@ -223,7 +223,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. NULL if allocation could not be completed</returns>
         public static Foundation.ATDataUnsafe ATDataNew(Foundation.ATDataUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATDataNew(_arg0);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -238,7 +238,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATDataUnsafe ATDataInit(Foundation.ATDataUnsafe data)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInit(_arg0);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -254,7 +254,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialised object or `NULL` if initialization failed</returns>
         public static Foundation.ATDataUnsafe ATDataInitWithCapacity(Foundation.ATDataUnsafe data, ulong capacity)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInitWithCapacity(_arg0, capacity);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -269,9 +269,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="existingData">A pointer to some existing data to copy into the new data object</param>
         /// <param name="length">The length of the existing data</param>
         /// <returns>The initialized data object with the existing data copied in or `NULL` if initialization failed</returns>
-        public static Foundation.ATDataUnsafe ATDataInitWithBytes(Foundation.ATDataUnsafe data, global::System.IntPtr existingData, ulong length)
+        public static Foundation.ATDataUnsafe ATDataInitWithBytes(Foundation.ATDataUnsafe data, IntPtr existingData, ulong length)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInitWithBytes(_arg0, existingData, length);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -287,9 +287,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of the existing data</param>
         /// <param name="capacity">The capacity of the buffer pointed to. This can be larger or the same as the length but not smaller.</param>
         /// <returns>The initialized data object with the existing data copied in or `NULL` if initialization failed</returns>
-        public static Foundation.ATDataUnsafe ATDataInitWithBytesNoCopy(Foundation.ATDataUnsafe data, global::System.IntPtr existingData, ulong length, ulong capacity)
+        public static Foundation.ATDataUnsafe ATDataInitWithBytesNoCopy(Foundation.ATDataUnsafe data, IntPtr existingData, ulong length, ulong capacity)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInitWithBytesNoCopy(_arg0, existingData, length, capacity);
             Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -306,9 +306,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of data currently stored in the buffer</param>
         /// <param name="shouldOwnStorage">If this data object should assume ownership of the storage buffer</param>
         /// <returns>`true` if the storage was adopted successfully</returns>
-        public static bool ATDataAdoptStorage(Foundation.ATDataUnsafe data, global::System.IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage)
+        public static bool ATDataAdoptStorage(Foundation.ATDataUnsafe data, IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataAdoptStorage(_arg0, storageToAdopt, capacity, length, shouldOwnStorage);
             return _ret;
         }
@@ -319,9 +319,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of the bytes to append</param>
         /// <returns>`true` if appending was successful</returns>
         /// <remarks>The bytes will be copied into the data object's storage buffer</remarks>
-        public static bool ATDataAppendBytes(Foundation.ATDataUnsafe data, global::System.IntPtr bytesToAppend, ulong length)
+        public static bool ATDataAppendBytes(Foundation.ATDataUnsafe data, IntPtr bytesToAppend, ulong length)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataAppendBytes(_arg0, bytesToAppend, length);
             return _ret;
         }
@@ -333,9 +333,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="index">The index in the existing data object buffer at which to insert the new data. Must be less than or equal to the data object's length</param>
         /// <returns>`true` if the insertion was successful</returns>
         /// <remarks>The bytes will be copied into the data object's storage buffer at the index specified</remarks>
-        public static bool ATDataInsertBytes(Foundation.ATDataUnsafe data, global::System.IntPtr bytesToInsert, ulong length, ulong index)
+        public static bool ATDataInsertBytes(Foundation.ATDataUnsafe data, IntPtr bytesToInsert, ulong length, ulong index)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInsertBytes(_arg0, bytesToInsert, length, index);
             return _ret;
         }
@@ -348,7 +348,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out bytes above new length</remarks>
         public static bool ATDataRemoveBytes(Foundation.ATDataUnsafe data, ulong length, ulong index)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataRemoveBytes(_arg0, length, index);
             return _ret;
         }
@@ -359,7 +359,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out bytes removed</remarks>
         public static bool ATDataResetToEmpty(Foundation.ATDataUnsafe data)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataResetToEmpty(_arg0);
             return _ret;
         }
@@ -368,9 +368,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="data">The data object</param>
         /// <param name="bytes">The buffer to copy into</param>
         /// <param name="maxLength">The maximum length of data to copy</param>
-        public static void ATDataGetBytes(Foundation.ATDataUnsafe data, global::System.IntPtr bytes, ulong maxLength)
+        public static void ATDataGetBytes(Foundation.ATDataUnsafe data, IntPtr bytes, ulong maxLength)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             _Internal.ATDataGetBytes(_arg0, bytes, maxLength);
         }
 
@@ -379,9 +379,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="bytes">The buffer to copy into</param>
         /// <param name="offset">The offset in the data object to copy from</param>
         /// <param name="maxLength">The maximum length of data to copy</param>
-        public static void ATDataGetBytesAtOffset(Foundation.ATDataUnsafe data, global::System.IntPtr bytes, ulong offset, ulong maxLength)
+        public static void ATDataGetBytesAtOffset(Foundation.ATDataUnsafe data, IntPtr bytes, ulong offset, ulong maxLength)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             _Internal.ATDataGetBytesAtOffset(_arg0, bytes, offset, maxLength);
         }
 
@@ -392,7 +392,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>After resizing, the buffer pointer may change. If the data object does not own the data buffer then it cannot resize it so this will fail.</remarks>
         public static bool ATDataResizeCapacity(Foundation.ATDataUnsafe data, ulong newCapacity)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataResizeCapacity(_arg0, newCapacity);
             return _ret;
         }
@@ -404,7 +404,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>After resizing, the buffer pointer may change. If the data object does not own the data buffer then it cannot resize it so this will fail.</remarks>
         public static bool ATDataResize(Foundation.ATDataUnsafe data, ulong newLength)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataResize(_arg0, newLength);
             return _ret;
         }
@@ -416,7 +416,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATDataIncreaseLength(Foundation.ATDataUnsafe data, ulong extraLength, byte fillWith)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataIncreaseLength(_arg0, extraLength, fillWith);
             return _ret;
         }
@@ -428,8 +428,8 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will also copy the data buffer to the destination's buffer (as much as will fit in the destination capacity without resizing destination)</remarks>
         public static bool ATDataCopy(Foundation.ATDataUnsafe destination, Foundation.ATDataUnsafe source)
         {
-            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
-            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _arg0 = ReferenceEquals(destination, null) ? IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? IntPtr.Zero : source._Instance;
             var _ret = _Internal.ATDataCopy(_arg0, _arg1);
             return _ret;
         }
@@ -443,8 +443,8 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>The subdata object must have capacity to contain the full length of data requested</remarks>
         public static bool ATDataSubdataWithRange(Foundation.ATDataUnsafe data, Foundation.ATDataUnsafe subData, ulong offset, ulong length)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
-            var _arg1 = ReferenceEquals(subData, null) ? global::System.IntPtr.Zero : subData._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
+            var _arg1 = ReferenceEquals(subData, null) ? IntPtr.Zero : subData._Instance;
             var _ret = _Internal.ATDataSubdataWithRange(_arg0, _arg1, offset, length);
             return _ret;
         }
@@ -458,8 +458,8 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>The subData object will simply hold a pointer to the original `data` object's buffer at `offset`.</remarks>
         public static bool ATDataSubdataNoCopyWithRange(Foundation.ATDataUnsafe data, Foundation.ATDataUnsafe subData, ulong offset, ulong length)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
-            var _arg1 = ReferenceEquals(subData, null) ? global::System.IntPtr.Zero : subData._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
+            var _arg1 = ReferenceEquals(subData, null) ? IntPtr.Zero : subData._Instance;
             var _ret = _Internal.ATDataSubdataNoCopyWithRange(_arg0, _arg1, offset, length);
             return _ret;
         }
@@ -470,8 +470,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the data objects are equal (the bytes in the data buffer are the same and the length is the same)</returns>
         public static bool ATDataIsEqual(Foundation.ATDataUnsafe data1, Foundation.ATDataUnsafe data2)
         {
-            var _arg0 = ReferenceEquals(data1, null) ? global::System.IntPtr.Zero : data1._Instance;
-            var _arg1 = ReferenceEquals(data2, null) ? global::System.IntPtr.Zero : data2._Instance;
+            var _arg0 = ReferenceEquals(data1, null) ? IntPtr.Zero : data1._Instance;
+            var _arg1 = ReferenceEquals(data2, null) ? IntPtr.Zero : data2._Instance;
             var _ret = _Internal.ATDataIsEqual(_arg0, _arg1);
             return _ret;
         }
@@ -481,7 +481,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the data object does own its storage</returns>
         public static bool ATDataOwnsStorage(Foundation.ATDataUnsafe data)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataOwnsStorage(_arg0);
             return _ret;
         }
@@ -490,13 +490,13 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return Foundation.ATBaseUnsafe._CreateInstance(new global::System.IntPtr(&((Foundation.ATDataUnsafe._Internal*)_Instance)->_base));
+                return Foundation.ATBaseUnsafe._CreateInstance(new IntPtr(&((Foundation.ATDataUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((Foundation.ATDataUnsafe._Internal*)_Instance)->_base = *(Foundation.ATBaseUnsafe._Internal*)value._Instance;
             }
         }
@@ -527,7 +527,7 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public global::System.IntPtr Bytes
+        public IntPtr Bytes
         {
             get
             {
@@ -536,7 +536,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATDataUnsafe._Internal*)_Instance)->bytes = (global::System.IntPtr)value;
+                ((Foundation.ATDataUnsafe._Internal*)_Instance)->bytes = (IntPtr)value;
             }
         }
 

@@ -24,27 +24,27 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATChargingStateValidate(DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATChargingStateParseData(global::System.IntPtr data, DeviceTypes.ATChargingState* chargingState);
+            internal static extern bool ATChargingStateParseData(IntPtr data, DeviceTypes.ATChargingState* chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATChargingStateGetData(global::System.IntPtr data, DeviceTypes.ATChargingState chargingState);
+            internal static extern bool ATChargingStateGetData(IntPtr data, DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateDescription")]
-            internal static extern global::System.IntPtr ATChargingStateDescription(DeviceTypes.ATChargingState chargingState);
+            internal static extern IntPtr ATChargingStateDescription(DeviceTypes.ATChargingState chargingState);
         }
 
         /// <summary>Validate a charging state value</summary>
@@ -63,7 +63,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATChargingStateParseData(DeviceTypes.ATBytes data, ref DeviceTypes.ATChargingState chargingState)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
             fixed (DeviceTypes.ATChargingState* _chargingState1 = &chargingState)
             {
@@ -79,7 +79,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATChargingStateGetData(DeviceTypes.ATMutableBytes data, DeviceTypes.ATChargingState chargingState)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATChargingStateGetData(_arg0, chargingState);
             return _ret;
         }
@@ -90,12 +90,12 @@ namespace AirTurnManager.Api.DeviceTypes
         public static string ATChargingStateDescription(DeviceTypes.ATChargingState chargingState)
         {
             var _ret = _Internal.ATChargingStateDescription(chargingState);
-            if (_ret == global::System.IntPtr.Zero)
+            if (_ret == IntPtr.Zero)
                 return default(string);
             var _retPtr = (byte*)_ret;
             int _length = 0;
             while (*(_retPtr++) != 0) _length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
+            return Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
     }
 }

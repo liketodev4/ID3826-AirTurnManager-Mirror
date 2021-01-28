@@ -14,19 +14,19 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [FieldOffset(0)]
-            internal global::System.IntPtr domain;
+            internal IntPtr domain;
 
             [FieldOffset(8)]
             internal int code;
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATErrorUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATErrorUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATErrorUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATErrorUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATErrorUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATErrorUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATErrorUnsafe(native.ToPointer(), skipVTables);
         }
@@ -54,7 +54,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATErrorUnsafe()
@@ -92,20 +92,20 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                if (((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain == global::System.IntPtr.Zero)
+                if (((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain == IntPtr.Zero)
                     return default(string);
                 var _retPtr = (byte*)((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain;
                 int _length = 0;
                 while (*(_retPtr++) != 0) _length += sizeof(byte);
-                return global::System.Text.Encoding.UTF8.GetString((byte*)((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain, _length);
+                return Text.Encoding.UTF8.GetString((byte*)((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain, _length);
             }
 
             set
             {
-                byte[] _bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
+                byte[] _bytes0 = Text.Encoding.UTF8.GetBytes(value);
                 fixed (byte* _bytePtr0 = _bytes0)
                 {
-                    ((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
+                    ((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain = (IntPtr)new IntPtr(_bytePtr0);
                 }
             }
         }

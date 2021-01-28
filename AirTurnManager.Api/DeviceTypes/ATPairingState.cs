@@ -21,27 +21,27 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATPairingStateValidate(DeviceTypes.ATPairingState pairingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATPairingStateParseData(global::System.IntPtr data, DeviceTypes.ATPairingState* pairingState);
+            internal static extern bool ATPairingStateParseData(IntPtr data, DeviceTypes.ATPairingState* pairingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATPairingStateGetData(global::System.IntPtr data, DeviceTypes.ATPairingState pairingState);
+            internal static extern bool ATPairingStateGetData(IntPtr data, DeviceTypes.ATPairingState pairingState);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPairingStateDescription")]
-            internal static extern global::System.IntPtr ATPairingStateDescription(DeviceTypes.ATPairingState pairingState);
+            internal static extern IntPtr ATPairingStateDescription(DeviceTypes.ATPairingState pairingState);
         }
 
         /// <summary>Validate a pairing state value</summary>
@@ -60,7 +60,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATPairingStateParseData(Foundation.ATBytes data, ref DeviceTypes.ATPairingState pairingState)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
             fixed (DeviceTypes.ATPairingState* _pairingState1 = &pairingState)
             {
@@ -76,7 +76,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATPairingStateGetData(Foundation.ATMutableBytes data, DeviceTypes.ATPairingState pairingState)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATPairingStateGetData(_arg0, pairingState);
             return _ret;
         }
@@ -87,12 +87,12 @@ namespace AirTurnManager.Api.DeviceTypes
         public static string ATPairingStateDescription(DeviceTypes.ATPairingState pairingState)
         {
             var _ret = _Internal.ATPairingStateDescription(pairingState);
-            if (_ret == global::System.IntPtr.Zero)
+            if (_ret == IntPtr.Zero)
                 return default(string);
             var _retPtr = (byte*)_ret;
             int _length = 0;
             while (*(_retPtr++) != 0) _length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
+            return Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
     }
 }

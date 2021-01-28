@@ -13,9 +13,9 @@ namespace AirTurnManager.Api.Foundation
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseArraySubclassNew")]
-            internal static extern global::System.IntPtr ATBaseArraySubclassNew(global::System.IntPtr optionalStorage, Foundation.ATObjectType type);
+            internal static extern IntPtr ATBaseArraySubclassNew(IntPtr optionalStorage, Foundation.ATObjectType type);
         }
 
         /// <summary>Create a new base array object, for use in subclasses.</summary>
@@ -24,7 +24,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A new object subclassing `ATData` of the type and size specified.</returns>
         public static Foundation.ATBaseArrayUnsafe ATBaseArraySubclassNew(Foundation.ATBaseArrayUnsafe optionalStorage, Foundation.ATObjectType type)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATBaseArraySubclassNew(_arg0, type);
             Foundation.ATBaseArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;

@@ -39,7 +39,7 @@ namespace AirTurnManager.Api.Foundation
 
             // A pointer to all tokens
             [FieldOffset(8)]
-            internal global::System.IntPtr _tokens;
+            internal IntPtr _tokens;
 
             // The number of tokens
             [FieldOffset(16)]
@@ -71,7 +71,7 @@ namespace AirTurnManager.Api.Foundation
 
             // The JSON string
             [FieldOffset(152)]
-            internal global::System.IntPtr _string;
+            internal IntPtr _string;
 
             // PUBLIC
             // The parent element type
@@ -88,7 +88,7 @@ namespace AirTurnManager.Api.Foundation
 
             // The current object key, if in an object (otherwise `NULL`)
             [FieldOffset(176)]
-            internal global::System.IntPtr objectKey;
+            internal IntPtr objectKey;
 
             // The current object key length
             [FieldOffset(184)]
@@ -100,7 +100,7 @@ namespace AirTurnManager.Api.Foundation
 
             // The current element value
             [FieldOffset(200)]
-            internal global::System.IntPtr value;
+            internal IntPtr value;
 
             // The current element value length
             [FieldOffset(208)]
@@ -111,106 +111,106 @@ namespace AirTurnManager.Api.Foundation
             internal uint valueElementCount;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserNew")]
-            internal static extern global::System.IntPtr ATJSONParserNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATJSONParserNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserInitWithString")]
-            internal static extern global::System.IntPtr ATJSONParserInitWithString(global::System.IntPtr parser, [MarshalAs(UnmanagedType.LPUTF8Str)] string jsonString, ulong jsonStringLength);
+            internal static extern IntPtr ATJSONParserInitWithString(IntPtr parser, [MarshalAs(UnmanagedType.LPUTF8Str)] string jsonString, ulong jsonStringLength);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserKeyEquals")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserKeyEquals(global::System.IntPtr parser, [MarshalAs(UnmanagedType.LPUTF8Str)] string key);
+            internal static extern bool ATJSONParserKeyEquals(IntPtr parser, [MarshalAs(UnmanagedType.LPUTF8Str)] string key);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserPushKeysToError")]
-            internal static extern void ATJSONParserPushKeysToError(global::System.IntPtr parser);
+            internal static extern void ATJSONParserPushKeysToError(IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserNextElement")]
-            internal static extern void ATJSONParserNextElement(global::System.IntPtr parser);
+            internal static extern void ATJSONParserNextElement(IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserEnterObjectOrArray")]
-            internal static extern void ATJSONParserEnterObjectOrArray(global::System.IntPtr parser);
+            internal static extern void ATJSONParserEnterObjectOrArray(IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGoToObjectOrArrayEnd")]
-            internal static extern void ATJSONParserGoToObjectOrArrayEnd(global::System.IntPtr parser);
+            internal static extern void ATJSONParserGoToObjectOrArrayEnd(IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserLockLevel")]
-            internal static extern uint ATJSONParserLockLevel(global::System.IntPtr parser);
+            internal static extern uint ATJSONParserLockLevel(IntPtr parser);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserUnlockLevel")]
-            internal static extern void ATJSONParserUnlockLevel(global::System.IntPtr parser, uint levelLock);
+            internal static extern void ATJSONParserUnlockLevel(IntPtr parser, uint levelLock);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserUnlockLevelAndMoveToEnd")]
-            internal static extern void ATJSONParserUnlockLevelAndMoveToEnd(global::System.IntPtr parser, uint levelLock);
+            internal static extern void ATJSONParserUnlockLevelAndMoveToEnd(IntPtr parser, uint levelLock);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetBoolValue")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetBoolValue(global::System.IntPtr parser, bool* val);
+            internal static extern bool ATJSONParserGetBoolValue(IntPtr parser, bool* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetUInt8Value")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetUInt8Value(global::System.IntPtr parser, byte* val);
+            internal static extern bool ATJSONParserGetUInt8Value(IntPtr parser, byte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetUInt16Value")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetUInt16Value(global::System.IntPtr parser, ushort* val);
+            internal static extern bool ATJSONParserGetUInt16Value(IntPtr parser, ushort* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetInt8Value")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetInt8Value(global::System.IntPtr parser, sbyte* val);
+            internal static extern bool ATJSONParserGetInt8Value(IntPtr parser, sbyte* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetInt16Value")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetInt16Value(global::System.IntPtr parser, short* val);
+            internal static extern bool ATJSONParserGetInt16Value(IntPtr parser, short* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetLongValue")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetLongValue(global::System.IntPtr parser, long* val);
+            internal static extern bool ATJSONParserGetLongValue(IntPtr parser, long* val);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATJSONParserGetHexBytesValue")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATJSONParserGetHexBytesValue(global::System.IntPtr parser, byte* bytes, ulong maxSize, ulong* parsedBytesLength);
+            internal static extern bool ATJSONParserGetHexBytesValue(IntPtr parser, byte* bytes, ulong maxSize, ulong* parsedBytesLength);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATJSONParserUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATJSONParserUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATJSONParserUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATJSONParserUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATJSONParserUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATJSONParserUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATJSONParserUnsafe(native.ToPointer(), skipVTables);
         }
@@ -238,7 +238,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATJSONParserUnsafe()
@@ -277,7 +277,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static Foundation.ATJSONParserUnsafe ATJSONParserNew(Foundation.ATJSONParserUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATJSONParserNew(_arg0);
             Foundation.ATJSONParserUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -294,7 +294,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATJSONParserUnsafe ATJSONParserInitWithString(Foundation.ATJSONParserUnsafe parser, string jsonString, ulong jsonStringLength)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             var _ret = _Internal.ATJSONParserInitWithString(_arg0, jsonString, jsonStringLength);
             Foundation.ATJSONParserUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -310,7 +310,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the key is equal</returns>
         public static bool ATJSONParserKeyEquals(Foundation.ATJSONParserUnsafe parser, string key)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             var _ret = _Internal.ATJSONParserKeyEquals(_arg0, key);
             return _ret;
         }
@@ -319,7 +319,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="parser">The parser</param>
         public static void ATJSONParserPushKeysToError(Foundation.ATJSONParserUnsafe parser)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             _Internal.ATJSONParserPushKeysToError(_arg0);
         }
 
@@ -327,7 +327,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="parser">The parser</param>
         public static void ATJSONParserNextElement(Foundation.ATJSONParserUnsafe parser)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             _Internal.ATJSONParserNextElement(_arg0);
         }
 
@@ -335,7 +335,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="parser">The parser</param>
         public static void ATJSONParserEnterObjectOrArray(Foundation.ATJSONParserUnsafe parser)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             _Internal.ATJSONParserEnterObjectOrArray(_arg0);
         }
 
@@ -343,7 +343,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="parser">The parser</param>
         public static void ATJSONParserGoToObjectOrArrayEnd(Foundation.ATJSONParserUnsafe parser)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             _Internal.ATJSONParserGoToObjectOrArrayEnd(_arg0);
         }
 
@@ -352,7 +352,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>An integer required to unlock the level</returns>
         public static uint ATJSONParserLockLevel(Foundation.ATJSONParserUnsafe parser)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             var _ret = _Internal.ATJSONParserLockLevel(_arg0);
             return _ret;
         }
@@ -362,7 +362,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="levelLock">The level lock returned from `ATJSONParserLockLevel`</param>
         public static void ATJSONParserUnlockLevel(Foundation.ATJSONParserUnsafe parser, uint levelLock)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             _Internal.ATJSONParserUnlockLevel(_arg0, levelLock);
         }
 
@@ -371,7 +371,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="levelLock">The level lock returned from `ATJSONParserLockLevel`</param>
         public static void ATJSONParserUnlockLevelAndMoveToEnd(Foundation.ATJSONParserUnsafe parser, uint levelLock)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             _Internal.ATJSONParserUnlockLevelAndMoveToEnd(_arg0, levelLock);
         }
 
@@ -381,7 +381,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into bool</returns>
         public static bool ATJSONParserGetBoolValue(Foundation.ATJSONParserUnsafe parser, ref bool val)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             fixed (bool* _val1 = &val)
             {
                 var _arg1 = _val1;
@@ -396,7 +396,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into uint8_t</returns>
         public static bool ATJSONParserGetUInt8Value(Foundation.ATJSONParserUnsafe parser, byte* val)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             var _ret = _Internal.ATJSONParserGetUInt8Value(_arg0, val);
             return _ret;
         }
@@ -407,7 +407,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into uint16_t</returns>
         public static bool ATJSONParserGetUInt16Value(Foundation.ATJSONParserUnsafe parser, ref ushort val)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             fixed (ushort* _val1 = &val)
             {
                 var _arg1 = _val1;
@@ -422,7 +422,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into int8_t</returns>
         public static bool ATJSONParserGetInt8Value(Foundation.ATJSONParserUnsafe parser, sbyte* val)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             var _ret = _Internal.ATJSONParserGetInt8Value(_arg0, val);
             return _ret;
         }
@@ -433,7 +433,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into int16_t</returns>
         public static bool ATJSONParserGetInt16Value(Foundation.ATJSONParserUnsafe parser, ref short val)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             fixed (short* _val1 = &val)
             {
                 var _arg1 = _val1;
@@ -448,7 +448,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into long</returns>
         public static bool ATJSONParserGetLongValue(Foundation.ATJSONParserUnsafe parser, ref long val)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             fixed (long* _val1 = &val)
             {
                 var _arg1 = _val1;
@@ -465,7 +465,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the current element value could be successfully parsed into the bytes buffer</returns>
         public static bool ATJSONParserGetHexBytesValue(Foundation.ATJSONParserUnsafe parser, byte* bytes, ulong maxSize, ref ulong parsedBytesLength)
         {
-            var _arg0 = ReferenceEquals(parser, null) ? global::System.IntPtr.Zero : parser._Instance;
+            var _arg0 = ReferenceEquals(parser, null) ? IntPtr.Zero : parser._Instance;
             fixed (ulong* _parsedBytesLength3 = &parsedBytesLength)
             {
                 var _arg3 = _parsedBytesLength3;
@@ -478,18 +478,18 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return Foundation.ATBaseUnsafe._CreateInstance(new global::System.IntPtr(&((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_base));
+                return Foundation.ATBaseUnsafe._CreateInstance(new IntPtr(&((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_base = *(Foundation.ATBaseUnsafe._Internal*)value._Instance;
             }
         }
 
-        public global::System.IntPtr Tokens
+        public IntPtr Tokens
         {
             get
             {
@@ -498,7 +498,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_tokens = (global::System.IntPtr)value;
+                ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_tokens = (IntPtr)value;
             }
         }
 
@@ -630,20 +630,20 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                if (((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string == global::System.IntPtr.Zero)
+                if (((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string == IntPtr.Zero)
                     return default(string);
                 var _retPtr = (byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string;
                 int _length = 0;
                 while (*(_retPtr++) != 0) _length += sizeof(byte);
-                return global::System.Text.Encoding.UTF8.GetString((byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string, _length);
+                return Text.Encoding.UTF8.GetString((byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string, _length);
             }
 
             set
             {
-                byte[] _bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
+                byte[] _bytes0 = Text.Encoding.UTF8.GetBytes(value);
                 fixed (byte* _bytePtr0 = _bytes0)
                 {
-                    ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
+                    ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->_string = (IntPtr)new IntPtr(_bytePtr0);
                 }
             }
         }
@@ -691,20 +691,20 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                if (((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey == global::System.IntPtr.Zero)
+                if (((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey == IntPtr.Zero)
                     return default(string);
                 var _retPtr = (byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey;
                 int _length = 0;
                 while (*(_retPtr++) != 0) _length += sizeof(byte);
-                return global::System.Text.Encoding.UTF8.GetString((byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey, _length);
+                return Text.Encoding.UTF8.GetString((byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey, _length);
             }
 
             set
             {
-                byte[] _bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
+                byte[] _bytes0 = Text.Encoding.UTF8.GetBytes(value);
                 fixed (byte* _bytePtr0 = _bytes0)
                 {
-                    ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
+                    ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->objectKey = (IntPtr)new IntPtr(_bytePtr0);
                 }
             }
         }
@@ -739,20 +739,20 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                if (((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value == global::System.IntPtr.Zero)
+                if (((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value == IntPtr.Zero)
                     return default(string);
                 var _retPtr = (byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value;
                 int _length = 0;
                 while (*(_retPtr++) != 0) _length += sizeof(byte);
-                return global::System.Text.Encoding.UTF8.GetString((byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value, _length);
+                return Text.Encoding.UTF8.GetString((byte*)((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value, _length);
             }
 
             set
             {
-                byte[] _bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
+                byte[] _bytes0 = Text.Encoding.UTF8.GetBytes(value);
                 fixed (byte* _bytePtr0 = _bytes0)
                 {
-                    ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
+                    ((Foundation.ATJSONParserUnsafe._Internal*)_Instance)->value = (IntPtr)new IntPtr(_bytePtr0);
                 }
             }
         }

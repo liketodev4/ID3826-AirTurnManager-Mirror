@@ -30,87 +30,87 @@ namespace AirTurnManager.Api.Foundation
 
             // A pointer to the items storage
             [FieldOffset(48)]
-            internal global::System.IntPtr items;
+            internal IntPtr items;
 
             // The number of items stored in the array
             [FieldOffset(56)]
             internal ulong count;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayNew")]
-            internal static extern global::System.IntPtr ATGenericArrayNew(global::System.IntPtr optionalStorage);
+            internal static extern IntPtr ATGenericArrayNew(IntPtr optionalStorage);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInit")]
-            internal static extern global::System.IntPtr ATGenericArrayInit(global::System.IntPtr array, ulong capacity, ulong bytesPerItem);
+            internal static extern IntPtr ATGenericArrayInit(IntPtr array, ulong capacity, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInitWithItems")]
-            internal static extern global::System.IntPtr ATGenericArrayInitWithItems(global::System.IntPtr array, global::System.IntPtr existingData, ulong length, ulong bytesPerItem);
+            internal static extern IntPtr ATGenericArrayInitWithItems(IntPtr array, IntPtr existingData, ulong length, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInitWithItemsNoCopy")]
-            internal static extern global::System.IntPtr ATGenericArrayInitWithItemsNoCopy(global::System.IntPtr array, global::System.IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem);
+            internal static extern IntPtr ATGenericArrayInitWithItemsNoCopy(IntPtr array, IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayGetPointerForItem")]
-            internal static extern global::System.IntPtr ATGenericArrayGetPointerForItem(global::System.IntPtr array, ulong index);
+            internal static extern IntPtr ATGenericArrayGetPointerForItem(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayAppendItem")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayAppendItem(global::System.IntPtr array, global::System.IntPtr itemToAppend);
+            internal static extern bool ATGenericArrayAppendItem(IntPtr array, IntPtr itemToAppend);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayInsertItem")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayInsertItem(global::System.IntPtr array, global::System.IntPtr itemToInsert, ulong index);
+            internal static extern bool ATGenericArrayInsertItem(IntPtr array, IntPtr itemToInsert, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayRemoveItem")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayRemoveItem(global::System.IntPtr array, ulong index);
+            internal static extern bool ATGenericArrayRemoveItem(IntPtr array, ulong index);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayRemoveAllItems")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayRemoveAllItems(global::System.IntPtr array);
+            internal static extern bool ATGenericArrayRemoveAllItems(IntPtr array);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayResize")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayResize(global::System.IntPtr array, ulong newCapacity);
+            internal static extern bool ATGenericArrayResize(IntPtr array, ulong newCapacity);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayCopy")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayCopy(global::System.IntPtr destination, global::System.IntPtr source);
+            internal static extern bool ATGenericArrayCopy(IntPtr destination, IntPtr source);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGenericArrayIsEqual")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATGenericArrayIsEqual(global::System.IntPtr array1, global::System.IntPtr array2);
+            internal static extern bool ATGenericArrayIsEqual(IntPtr array1, IntPtr array2);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATGenericArrayUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATGenericArrayUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATGenericArrayUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATGenericArrayUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATGenericArrayUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATGenericArrayUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATGenericArrayUnsafe(native.ToPointer(), skipVTables);
         }
@@ -138,7 +138,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATGenericArrayUnsafe()
@@ -177,7 +177,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
         public static Foundation.ATGenericArrayUnsafe ATGenericArrayNew(Foundation.ATGenericArrayUnsafe optionalStorage)
         {
-            var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
+            var _arg0 = ReferenceEquals(optionalStorage, null) ? IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATGenericArrayNew(_arg0);
             Foundation.ATGenericArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -194,7 +194,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
         public static Foundation.ATGenericArrayUnsafe ATGenericArrayInit(Foundation.ATGenericArrayUnsafe array, ulong capacity, ulong bytesPerItem)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayInit(_arg0, capacity, bytesPerItem);
             Foundation.ATGenericArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -210,9 +210,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of the existing data (number of items)</param>
         /// <param name="bytesPerItem">The number of bytes per item</param>
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
-        public static Foundation.ATGenericArrayUnsafe ATGenericArrayInitWithItems(Foundation.ATGenericArrayUnsafe array, global::System.IntPtr existingData, ulong length, ulong bytesPerItem)
+        public static Foundation.ATGenericArrayUnsafe ATGenericArrayInitWithItems(Foundation.ATGenericArrayUnsafe array, IntPtr existingData, ulong length, ulong bytesPerItem)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayInitWithItems(_arg0, existingData, length, bytesPerItem);
             Foundation.ATGenericArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -229,9 +229,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="capacity">The capacity of the existing data buffer (number of items)</param>
         /// <param name="bytesPerItem">The number of bytes per item</param>
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
-        public static Foundation.ATGenericArrayUnsafe ATGenericArrayInitWithItemsNoCopy(Foundation.ATGenericArrayUnsafe array, global::System.IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem)
+        public static Foundation.ATGenericArrayUnsafe ATGenericArrayInitWithItemsNoCopy(Foundation.ATGenericArrayUnsafe array, IntPtr existingData, ulong length, ulong capacity, ulong bytesPerItem)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayInitWithItemsNoCopy(_arg0, existingData, length, capacity, bytesPerItem);
             Foundation.ATGenericArrayUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
@@ -245,9 +245,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="array">The array</param>
         /// <param name="index">The index of the item to retrieve</param>
         /// <returns>A pointer to the item</returns>
-        public static global::System.IntPtr ATGenericArrayGetPointerForItem(Foundation.ATGenericArrayUnsafe array, ulong index)
+        public static IntPtr ATGenericArrayGetPointerForItem(Foundation.ATGenericArrayUnsafe array, ulong index)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayGetPointerForItem(_arg0, index);
             return _ret;
         }
@@ -256,9 +256,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="array">The array</param>
         /// <param name="itemToAppend">A pointer to the item to append</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATGenericArrayAppendItem(Foundation.ATGenericArrayUnsafe array, global::System.IntPtr itemToAppend)
+        public static bool ATGenericArrayAppendItem(Foundation.ATGenericArrayUnsafe array, IntPtr itemToAppend)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayAppendItem(_arg0, itemToAppend);
             return _ret;
         }
@@ -268,9 +268,9 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="itemToInsert">The item to insert</param>
         /// <param name="index">The index to insert the item at</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATGenericArrayInsertItem(Foundation.ATGenericArrayUnsafe array, global::System.IntPtr itemToInsert, ulong index)
+        public static bool ATGenericArrayInsertItem(Foundation.ATGenericArrayUnsafe array, IntPtr itemToInsert, ulong index)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayInsertItem(_arg0, itemToInsert, index);
             return _ret;
         }
@@ -282,7 +282,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out items above new length</remarks>
         public static bool ATGenericArrayRemoveItem(Foundation.ATGenericArrayUnsafe array, ulong index)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayRemoveItem(_arg0, index);
             return _ret;
         }
@@ -293,7 +293,7 @@ namespace AirTurnManager.Api.Foundation
         /// <remarks>Will not zero out items removed</remarks>
         public static bool ATGenericArrayRemoveAllItems(Foundation.ATGenericArrayUnsafe array)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayRemoveAllItems(_arg0);
             return _ret;
         }
@@ -304,7 +304,7 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATGenericArrayResize(Foundation.ATGenericArrayUnsafe array, ulong newCapacity)
         {
-            var _arg0 = ReferenceEquals(array, null) ? global::System.IntPtr.Zero : array._Instance;
+            var _arg0 = ReferenceEquals(array, null) ? IntPtr.Zero : array._Instance;
             var _ret = _Internal.ATGenericArrayResize(_arg0, newCapacity);
             return _ret;
         }
@@ -315,8 +315,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if successful</returns>
         public static bool ATGenericArrayCopy(Foundation.ATGenericArrayUnsafe destination, Foundation.ATGenericArrayUnsafe source)
         {
-            var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
-            var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
+            var _arg0 = ReferenceEquals(destination, null) ? IntPtr.Zero : destination._Instance;
+            var _arg1 = ReferenceEquals(source, null) ? IntPtr.Zero : source._Instance;
             var _ret = _Internal.ATGenericArrayCopy(_arg0, _arg1);
             return _ret;
         }
@@ -327,8 +327,8 @@ namespace AirTurnManager.Api.Foundation
         /// <returns>`true` if the arrays are equal (the contents of the array are equal)</returns>
         public static bool ATGenericArrayIsEqual(Foundation.ATGenericArrayUnsafe array1, Foundation.ATGenericArrayUnsafe array2)
         {
-            var _arg0 = ReferenceEquals(array1, null) ? global::System.IntPtr.Zero : array1._Instance;
-            var _arg1 = ReferenceEquals(array2, null) ? global::System.IntPtr.Zero : array2._Instance;
+            var _arg0 = ReferenceEquals(array1, null) ? IntPtr.Zero : array1._Instance;
+            var _arg1 = ReferenceEquals(array2, null) ? IntPtr.Zero : array2._Instance;
             var _ret = _Internal.ATGenericArrayIsEqual(_arg0, _arg1);
             return _ret;
         }
@@ -337,13 +337,13 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return Foundation.ATDataUnsafe._CreateInstance(new global::System.IntPtr(&((Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_base));
+                return Foundation.ATDataUnsafe._CreateInstance(new IntPtr(&((Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
-                    throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
+                    throw new ArgumentNullException("value", "Cannot be null because it is passed by value.");
                 ((Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->_base = *(Foundation.ATDataUnsafe._Internal*)value._Instance;
             }
         }
@@ -374,7 +374,7 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public global::System.IntPtr Items
+        public IntPtr Items
         {
             get
             {
@@ -383,7 +383,7 @@ namespace AirTurnManager.Api.Foundation
 
             set
             {
-                ((Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->items = (global::System.IntPtr)value;
+                ((Foundation.ATGenericArrayUnsafe._Internal*)_Instance)->items = (IntPtr)value;
             }
         }
 

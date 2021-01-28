@@ -43,18 +43,18 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDDescription")]
-            internal static extern global::System.IntPtr ATModelIDDescription(DeviceTypes.ATModelID modelID);
+            internal static extern IntPtr ATModelIDDescription(DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsBLE113")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModelIDIsBLE113(DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsNordic")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATModelIDIsNordic(DeviceTypes.ATModelID modelID);
@@ -66,12 +66,12 @@ namespace AirTurnManager.Api.DeviceTypes
         public static string ATModelIDDescription(DeviceTypes.ATModelID modelID)
         {
             var _ret = _Internal.ATModelIDDescription(modelID);
-            if (_ret == global::System.IntPtr.Zero)
+            if (_ret == IntPtr.Zero)
                 return default(string);
             var _retPtr = (byte*)_ret;
             int _length = 0;
             while (*(_retPtr++) != 0) _length += sizeof(byte);
-            return global::System.Text.Encoding.UTF8.GetString((byte*)_ret, _length);
+            return Text.Encoding.UTF8.GetString((byte*)_ret, _length);
         }
 
         /// <summary>Determines if a given model ID is a BLE113 based model</summary>

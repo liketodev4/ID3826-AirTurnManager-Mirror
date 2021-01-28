@@ -35,7 +35,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [FieldOffset(0)]
-            internal DeviceTypes.ATPort associatedAxis;
+            internal DeviceTypes.ATPortEnum associatedAxis;
 
             [FieldOffset(0)]
             internal byte enabled;
@@ -50,7 +50,7 @@ namespace AirTurnManager.Api.DeviceTypes
         private ATAnalogActionParameters._Internal _instance;
         internal ATAnalogActionParameters._Internal _Instance { get { return _instance; } }
 
-        internal static DeviceTypes.ATAnalogActionParameters _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static DeviceTypes.ATAnalogActionParameters _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new DeviceTypes.ATAnalogActionParameters(native.ToPointer(), skipVTables);
         }
@@ -75,14 +75,14 @@ namespace AirTurnManager.Api.DeviceTypes
             : this()
         {
             var _arg0 = _0._Instance;
-            var _arg0 = new global::System.IntPtr(&_arg0);
+            var _arg0 = new IntPtr(&_arg0);
             fixed (_Internal* _instancePtr = &_instance)
             {
-                _Internal.cctor(new global::System.IntPtr(_instancePtr), _arg0);
+                _Internal.cctor(new IntPtr(_instancePtr), _arg0);
             }
         }
 
-        public DeviceTypes.ATPort AssociatedAxis
+        public DeviceTypes.ATPortEnum AssociatedAxis
         {
             get
             {
@@ -144,48 +144,48 @@ namespace AirTurnManager.Api.DeviceTypes
             internal DeviceTypes.ATAnalogActionType action;
 
             [FieldOffset(1)]
-            internal DeviceTypes.ATPort port;
+            internal DeviceTypes.ATPortEnum port;
 
             [FieldOffset(2)]
             internal DeviceTypes.ATAnalogActionParameters._Internal parameters;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionIsPortSpecificAction")]
             [return: MarshalAs(UnmanagedType.I1)]
             internal static extern bool ATAnalogActionIsPortSpecificAction(DeviceTypes.ATAnalogActionType actionType);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogActionValidate(global::System.IntPtr analogAction);
+            internal static extern bool ATAnalogActionValidate(IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogActionParseData(global::System.IntPtr data, global::System.IntPtr analogAction);
+            internal static extern bool ATAnalogActionParseData(IntPtr data, IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogActionGetData(global::System.IntPtr data, global::System.IntPtr analogAction);
+            internal static extern bool ATAnalogActionGetData(IntPtr data, IntPtr analogAction);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogActionDescription")]
-            internal static extern void ATAnalogActionDescription(global::System.IntPtr @string, global::System.IntPtr analogAction);
+            internal static extern void ATAnalogActionDescription(IntPtr @string, IntPtr analogAction);
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAnalogActionUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAnalogActionUnsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAnalogActionUnsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, DeviceTypes.ATAnalogActionUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static DeviceTypes.ATAnalogActionUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static DeviceTypes.ATAnalogActionUnsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new DeviceTypes.ATAnalogActionUnsafe(native.ToPointer(), skipVTables);
         }
@@ -213,7 +213,7 @@ namespace AirTurnManager.Api.DeviceTypes
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATAnalogActionUnsafe()
@@ -261,7 +261,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if valid</returns>
         public static bool ATAnalogActionValidate(DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
-            var _arg0 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _arg0 = ReferenceEquals(analogAction, null) ? IntPtr.Zero : analogAction._Instance;
             var _ret = _Internal.ATAnalogActionValidate(_arg0);
             return _ret;
         }
@@ -273,9 +273,9 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATAnalogActionParseData(DeviceTypes.ATBytes data, DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
-            var _arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _arg1 = ReferenceEquals(analogAction, null) ? IntPtr.Zero : analogAction._Instance;
             var _ret = _Internal.ATAnalogActionParseData(_arg0, _arg1);
             return _ret;
         }
@@ -286,8 +286,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATAnalogActionGetData(DeviceTypes.ATMutableBytes data, DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
-            var _arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
+            var _arg1 = ReferenceEquals(analogAction, null) ? IntPtr.Zero : analogAction._Instance;
             var _ret = _Internal.ATAnalogActionGetData(_arg0, _arg1);
             return _ret;
         }
@@ -297,8 +297,8 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="analogAction">The analog action</param>
         public static void ATAnalogActionDescription(DeviceTypes.ATString @string, DeviceTypes.ATAnalogActionUnsafe analogAction)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
-            var _arg1 = ReferenceEquals(analogAction, null) ? global::System.IntPtr.Zero : analogAction._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
+            var _arg1 = ReferenceEquals(analogAction, null) ? IntPtr.Zero : analogAction._Instance;
             _Internal.ATAnalogActionDescription(_arg0, _arg1);
         }
 
@@ -315,7 +315,7 @@ namespace AirTurnManager.Api.DeviceTypes
             }
         }
 
-        public DeviceTypes.ATPort Port
+        public DeviceTypes.ATPortEnum Port
         {
             get
             {

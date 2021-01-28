@@ -19,21 +19,21 @@ namespace AirTurnManager.Api.DeviceTypes
         public partial struct _Internal
         {
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputValueParseData(global::System.IntPtr data, short* analogInputValue);
+            internal static extern bool ATAnalogInputValueParseData(IntPtr data, short* analogInputValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATAnalogInputValueGetData(global::System.IntPtr data, short analogInputValue);
+            internal static extern bool ATAnalogInputValueGetData(IntPtr data, short analogInputValue);
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+            [DllImport(Constants.ATSC_API, CallingConvention = Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATAnalogInputValueDescription")]
-            internal static extern void ATAnalogInputValueDescription(global::System.IntPtr @string, short analogInputValue);
+            internal static extern void ATAnalogInputValueDescription(IntPtr @string, short analogInputValue);
         }
 
         /// <summary>Get a analog input value from data</summary>
@@ -43,7 +43,7 @@ namespace AirTurnManager.Api.DeviceTypes
         public static bool ATAnalogInputValueParseData(DeviceTypes.ATBytes data, ref short analogInputValue)
         {
             if (ReferenceEquals(data, null))
-                throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
             fixed (short* _analogInputValue1 = &analogInputValue)
             {
@@ -59,7 +59,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <returns>`true` if successful</returns>
         public static bool ATAnalogInputValueGetData(DeviceTypes.ATMutableBytes data, short analogInputValue)
         {
-            var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
+            var _arg0 = ReferenceEquals(data, null) ? IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATAnalogInputValueGetData(_arg0, analogInputValue);
             return _ret;
         }
@@ -69,7 +69,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="analogInputValue">The analog input value</param>
         public static void ATAnalogInputValueDescription(DeviceTypes.ATString @string, short analogInputValue)
         {
-            var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
+            var _arg0 = ReferenceEquals(@string, null) ? IntPtr.Zero : @string._Instance;
             _Internal.ATAnalogInputValueDescription(_arg0, analogInputValue);
         }
     }

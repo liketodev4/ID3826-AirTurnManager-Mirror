@@ -17,13 +17,13 @@ namespace AirTurnManager.Api.Foundation
             internal uint v;
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat32Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat32Unsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat32Unsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat32Unsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATSwappedFloat32Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATSwappedFloat32Unsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATSwappedFloat32Unsafe(native.ToPointer(), skipVTables);
         }
@@ -51,7 +51,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATSwappedFloat32Unsafe()
@@ -108,13 +108,13 @@ namespace AirTurnManager.Api.Foundation
             internal ulong v;
         }
 
-        public global::System.IntPtr _Instance { get; protected set; }
+        public IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat64Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat64Unsafe>();
+        internal static readonly Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat64Unsafe> NativeToManagedMap = new Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat64Unsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static Foundation.ATSwappedFloat64Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATSwappedFloat64Unsafe _CreateInstance(IntPtr native, bool skipVTables = false)
         {
             return new Foundation.ATSwappedFloat64Unsafe(native.ToPointer(), skipVTables);
         }
@@ -142,7 +142,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (native == null)
                 return;
-            _Instance = new global::System.IntPtr(native);
+            _Instance = new IntPtr(native);
         }
 
         public ATSwappedFloat64Unsafe()

@@ -107,7 +107,7 @@ namespace AirTurnManager.Api
         public static float ATConvertFloatSwappedToHost(DeviceDefaults.ATSwappedFloat32 arg)
         {
             if (ReferenceEquals(arg, null))
-                throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("arg", "Cannot be null because it is passed by value.");
             var _arg0 = arg._Instance;
             var _ret = _Internal.ATConvertFloatSwappedToHost(*(DeviceDefaults.ATSwappedFloat32._Internal*)_arg0);
             return _ret;
@@ -122,7 +122,7 @@ namespace AirTurnManager.Api
         public static double ATConvertDoubleSwappedToHost(DeviceDefaults.ATSwappedFloat64 arg)
         {
             if (ReferenceEquals(arg, null))
-                throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
+                throw new ArgumentNullException("arg", "Cannot be null because it is passed by value.");
             var _arg0 = arg._Instance;
             var _ret = _Internal.ATConvertDoubleSwappedToHost(*(DeviceDefaults.ATSwappedFloat64._Internal*)_arg0);
             return _ret;
