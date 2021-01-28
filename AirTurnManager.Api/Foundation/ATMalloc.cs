@@ -139,21 +139,21 @@ namespace AirTurnManager.Api.Foundation
         }
 
         /// <summary>Allows the user to register a function that will get called when the module calls malloc().</summary>
-        public static void ATMallocHookRegister(global::AirTurnManager.Api.Foundation.Delegates.Func_IntPtr_ulong mallocHook)
+        public static void ATMallocHookRegister(Foundation.Delegates.Func_IntPtr_ulong mallocHook)
         {
             var _arg0 = mallocHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(mallocHook);
             _Internal.ATMallocHookRegister(_arg0);
         }
 
         /// <summary>Allows the user to register a function that will get called when the module calls free().</summary>
-        public static void ATFreeHookRegister(global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong freeHook)
+        public static void ATFreeHookRegister(Foundation.Delegates.Action_IntPtr_ulong freeHook)
         {
             var _arg0 = freeHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(freeHook);
             _Internal.ATFreeHookRegister(_arg0);
         }
 
         /// <summary>Allows the user to register a function that will get called when the module calls realloc().</summary>
-        public static void ATReallocHookRegister(global::AirTurnManager.Api.Foundation.Delegates.Func_IntPtr_IntPtr_ulong_ulong reallocHook)
+        public static void ATReallocHookRegister(Foundation.Delegates.Func_IntPtr_IntPtr_ulong_ulong reallocHook)
         {
             var _arg0 = reallocHook == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(reallocHook);
             _Internal.ATReallocHookRegister(_arg0);
@@ -175,7 +175,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="callback">The callback function</param>
         /// <returns>`true` if registration was successful</returns>
         /// <remarks>When an array of pointers is registered, if any of the memory pointed to by any of the pointers is free'd, the pointer to that memory will be removed from the array and the callback will be called. Call `ATWeakPointerArrayUnregister` when the array is deallocated</remarks>
-        public static bool ATWeakPointerArrayRegister(void** arrayOfPointersToVariable, ulong length, global::System.IntPtr context, global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_ulong_IntPtr callback)
+        public static bool ATWeakPointerArrayRegister(void** arrayOfPointersToVariable, ulong length, global::System.IntPtr context, Foundation.Delegates.Action_IntPtr_ulong_IntPtr callback)
         {
             var _arg3 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
             var _ret = _Internal.ATWeakPointerArrayRegister(arrayOfPointersToVariable, length, context, _arg3);

@@ -47,12 +47,12 @@ namespace AirTurnManager.Api.DeviceTypes
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsIsPortSet")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATPortsIsPortSet(byte ports, global::AirTurnManager.Api.DeviceTypes.ATPort port);
+            internal static extern bool ATPortsIsPortSet(byte ports, DeviceTypes.ATPort port);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATPortsGetPortsForPort")]
-            internal static extern byte ATPortsGetPortsForPort(global::AirTurnManager.Api.DeviceTypes.ATPort port);
+            internal static extern byte ATPortsGetPortsForPort(DeviceTypes.ATPort port);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -73,7 +73,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="ports">On return, contains the digital port state value</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPortsParseData(global::AirTurnManager.Api.Foundation.ATBytesUnsafe data, byte* ports)
+        public static bool ATPortsParseData(Foundation.ATBytesUnsafe data, byte* ports)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -86,7 +86,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="ports">The digital port state value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATPortsGetData(global::AirTurnManager.Api.Foundation.ATMutableBytes data, byte ports)
+        public static bool ATPortsGetData(Foundation.ATMutableBytes data, byte ports)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATPortsGetData(_arg0, ports);
@@ -97,7 +97,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="ports">The digital port state</param>
         /// <param name="port">The port to check</param>
         /// <returns>`true` if set</returns>
-        public static bool ATPortsIsPortSet(byte ports, global::AirTurnManager.Api.DeviceTypes.ATPort port)
+        public static bool ATPortsIsPortSet(byte ports, DeviceTypes.ATPort port)
         {
             var _ret = _Internal.ATPortsIsPortSet(ports, port);
             return _ret;
@@ -106,7 +106,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Get the ports value for a port</summary>
         /// <param name="port">The port to get</param>
         /// <returns>`true` if set</returns>
-        public static byte ATPortsGetPortsForPort(global::AirTurnManager.Api.DeviceTypes.ATPort port)
+        public static byte ATPortsGetPortsForPort(DeviceTypes.ATPort port)
         {
             var _ret = _Internal.ATPortsGetPortsForPort(port);
             return _ret;
@@ -115,7 +115,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Get a description for a digital port state value</summary>
         /// <param name="string">The string to append the description to</param>
         /// <param name="ports">The digital port state value</param>
-        public static void ATPortsDescription(global::AirTurnManager.Api.Foundation.ATStringUnsafe @string, byte ports)
+        public static void ATPortsDescription(Foundation.ATStringUnsafe @string, byte ports)
         {
             var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
             _Internal.ATPortsDescription(_arg0, ports);

@@ -76,7 +76,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="modeFeatures">On return, contains the mode features value</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATModeFeaturesParseData(global::AirTurnManager.Api.DeviceTypes.ATBytes data, ref ushort modeFeatures)
+        public static bool ATModeFeaturesParseData(DeviceTypes.ATBytes data, ref ushort modeFeatures)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -93,7 +93,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="modeFeatures">The mode features value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATModeFeaturesGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, ushort modeFeatures)
+        public static bool ATModeFeaturesGetData(DeviceTypes.ATMutableBytes data, ushort modeFeatures)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATModeFeaturesGetData(_arg0, modeFeatures);
@@ -106,7 +106,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="maxCount">The max num of mode features that will be parsed into modeFeatures</param>
         /// <param name="numParsed">On return, set to the number of mode features parsed</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATModeFeaturesParseDataMultiple(global::AirTurnManager.Api.DeviceTypes.ATBytes data, ref ushort modeFeatures, byte maxCount, byte* numParsed)
+        public static bool ATModeFeaturesParseDataMultiple(DeviceTypes.ATBytes data, ref ushort modeFeatures, byte maxCount, byte* numParsed)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
@@ -124,7 +124,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="modeFeatures">The mode features values to encode</param>
         /// <param name="count">The number of mode features to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATModeFeaturesGetDataMultiple(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, ref ushort modeFeatures, byte count)
+        public static bool ATModeFeaturesGetDataMultiple(DeviceTypes.ATMutableBytes data, ref ushort modeFeatures, byte count)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             fixed (ushort* _modeFeatures1 = &modeFeatures)
@@ -138,7 +138,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Get a description for a mode features value</summary>
         /// <param name="string">The string to append the description to</param>
         /// <param name="modeFeatures">The mode features value</param>
-        public static void ATModeFeaturesDescription(global::AirTurnManager.Api.DeviceTypes.ATString @string, ushort modeFeatures)
+        public static void ATModeFeaturesDescription(DeviceTypes.ATString @string, ushort modeFeatures)
         {
             var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
             _Internal.ATModeFeaturesDescription(_arg0, modeFeatures);

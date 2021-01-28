@@ -32,30 +32,30 @@ namespace AirTurnManager.Api.DeviceTypes
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeValidate(global::AirTurnManager.Api.DeviceTypes.ATMode mode);
+            internal static extern bool ATModeValidate(DeviceTypes.ATMode mode);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATMode* mode);
+            internal static extern bool ATModeParseData(global::System.IntPtr data, DeviceTypes.ATMode* mode);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModeGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATMode mode);
+            internal static extern bool ATModeGetData(global::System.IntPtr data, DeviceTypes.ATMode mode);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModeDescription")]
-            internal static extern global::System.IntPtr ATModeDescription(global::AirTurnManager.Api.DeviceTypes.ATMode mode);
+            internal static extern global::System.IntPtr ATModeDescription(DeviceTypes.ATMode mode);
         }
 
         /// <summary>Validate a mode value</summary>
         /// <param name="mode">The mode value to validate</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATModeValidate(global::AirTurnManager.Api.DeviceTypes.ATMode mode)
+        public static bool ATModeValidate(DeviceTypes.ATMode mode)
         {
             var _ret = _Internal.ATModeValidate(mode);
             return _ret;
@@ -65,12 +65,12 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="mode">On return, contains the mode value</param>
         /// <returns>`true` if valid</returns>
-        public static bool ATModeParseData(global::AirTurnManager.Api.DeviceTypes.ATBytes data, ref global::AirTurnManager.Api.DeviceTypes.ATMode mode)
+        public static bool ATModeParseData(DeviceTypes.ATBytes data, ref DeviceTypes.ATMode mode)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
-            fixed (global::AirTurnManager.Api.DeviceTypes.ATMode* _mode1 = &mode)
+            fixed (DeviceTypes.ATMode* _mode1 = &mode)
             {
                 var _arg1 = _mode1;
                 var _ret = _Internal.ATModeParseData(_arg0, _arg1);
@@ -82,7 +82,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="mode">The repeat rate value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATModeGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATMode mode)
+        public static bool ATModeGetData(DeviceTypes.ATMutableBytes data, DeviceTypes.ATMode mode)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATModeGetData(_arg0, mode);
@@ -92,7 +92,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Get a description for a mode value</summary>
         /// <param name="mode">The mode value</param>
         /// <returns>A null-terminated constant string</returns>
-        public static string ATModeDescription(global::AirTurnManager.Api.DeviceTypes.ATMode mode)
+        public static string ATModeDescription(DeviceTypes.ATMode mode)
         {
             var _ret = _Internal.ATModeDescription(mode);
             if (_ret == global::System.IntPtr.Zero)

@@ -17,7 +17,7 @@ namespace AirTurnManager.Api.Foundation
             // PRIVATE - do not use
             /// The super-struct
             [FieldOffset(0)]
-            internal global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal _base;
+            internal Foundation.ATBaseUnsafe._Internal _base;
 
             /// If this object owns the storage at its bytes pointer
             [FieldOffset(4)]
@@ -152,28 +152,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATDataUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATDataUnsafe>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATDataUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATDataUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATDataUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATDataUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATDataUnsafe(native.ToPointer(), skipVTables);
+            return new Foundation.ATDataUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATDataUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal native, bool skipVTables = false)
+        internal static Foundation.ATDataUnsafe _CreateInstance(Foundation.ATDataUnsafe._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATDataUnsafe(native, skipVTables);
+            return new Foundation.ATDataUnsafe(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal native)
+        private static void* _CopyValue(Foundation.ATDataUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATDataUnsafe._Internal));
+            *(Foundation.ATDataUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATDataUnsafe(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal native, bool skipVTables = false)
+        private ATDataUnsafe(Foundation.ATDataUnsafe._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -189,17 +189,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATDataUnsafe()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATDataUnsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATDataUnsafe(global::AirTurnManager.Api.Foundation.ATDataUnsafe _0)
+        public ATDataUnsafe(Foundation.ATDataUnsafe _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATDataUnsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_0._Instance);
+            *((Foundation.ATDataUnsafe._Internal*)_Instance) = *((Foundation.ATDataUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -211,7 +211,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATDataUnsafe _dummy;
+            Foundation.ATDataUnsafe _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
@@ -221,30 +221,30 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Create a new data object</summary>
         /// <param name="optionalStorage">Optionally, a pointer to a struct or memory where the object can be stored</param>
         /// <returns>A pointer to the new object. NULL if allocation could not be completed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATDataUnsafe ATDataNew(global::AirTurnManager.Api.Foundation.ATDataUnsafe optionalStorage)
+        public static Foundation.ATDataUnsafe ATDataNew(Foundation.ATDataUnsafe optionalStorage)
         {
             var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATDataNew(_arg0);
-            global::AirTurnManager.Api.Foundation.ATDataUnsafe _result0;
+            Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATDataUnsafe)global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATDataUnsafe)Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATDataUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
         /// <summary>Initialize a new data object with empty bytes</summary>
         /// <param name="data">The object to initialize. Can be `NULL` so the result from `ATDataNew` can be passed directly, in which case it will simply return `NULL`</param>
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATDataUnsafe ATDataInit(global::AirTurnManager.Api.Foundation.ATDataUnsafe data)
+        public static Foundation.ATDataUnsafe ATDataInit(Foundation.ATDataUnsafe data)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInit(_arg0);
-            global::AirTurnManager.Api.Foundation.ATDataUnsafe _result0;
+            Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATDataUnsafe)global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATDataUnsafe)Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATDataUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
@@ -252,15 +252,15 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="data">The object to initialize. Can be `NULL` so the result from `ATDataNew` can be passed directly, in which case it will simply return `NULL`</param>
         /// <param name="capacity">The capacity to allocate for the data bytes</param>
         /// <returns>The initialised object or `NULL` if initialization failed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATDataUnsafe ATDataInitWithCapacity(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, ulong capacity)
+        public static Foundation.ATDataUnsafe ATDataInitWithCapacity(Foundation.ATDataUnsafe data, ulong capacity)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInitWithCapacity(_arg0, capacity);
-            global::AirTurnManager.Api.Foundation.ATDataUnsafe _result0;
+            Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATDataUnsafe)global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATDataUnsafe)Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATDataUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
@@ -269,15 +269,15 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="existingData">A pointer to some existing data to copy into the new data object</param>
         /// <param name="length">The length of the existing data</param>
         /// <returns>The initialized data object with the existing data copied in or `NULL` if initialization failed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATDataUnsafe ATDataInitWithBytes(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr existingData, ulong length)
+        public static Foundation.ATDataUnsafe ATDataInitWithBytes(Foundation.ATDataUnsafe data, global::System.IntPtr existingData, ulong length)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInitWithBytes(_arg0, existingData, length);
-            global::AirTurnManager.Api.Foundation.ATDataUnsafe _result0;
+            Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATDataUnsafe)global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATDataUnsafe)Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATDataUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
@@ -287,15 +287,15 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of the existing data</param>
         /// <param name="capacity">The capacity of the buffer pointed to. This can be larger or the same as the length but not smaller.</param>
         /// <returns>The initialized data object with the existing data copied in or `NULL` if initialization failed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATDataUnsafe ATDataInitWithBytesNoCopy(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr existingData, ulong length, ulong capacity)
+        public static Foundation.ATDataUnsafe ATDataInitWithBytesNoCopy(Foundation.ATDataUnsafe data, global::System.IntPtr existingData, ulong length, ulong capacity)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInitWithBytesNoCopy(_arg0, existingData, length, capacity);
-            global::AirTurnManager.Api.Foundation.ATDataUnsafe _result0;
+            Foundation.ATDataUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATDataUnsafe)global::AirTurnManager.Api.Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATDataUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATDataUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATDataUnsafe)Foundation.ATDataUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATDataUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
@@ -306,7 +306,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of data currently stored in the buffer</param>
         /// <param name="shouldOwnStorage">If this data object should assume ownership of the storage buffer</param>
         /// <returns>`true` if the storage was adopted successfully</returns>
-        public static bool ATDataAdoptStorage(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage)
+        public static bool ATDataAdoptStorage(Foundation.ATDataUnsafe data, global::System.IntPtr storageToAdopt, ulong capacity, ulong length, bool shouldOwnStorage)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataAdoptStorage(_arg0, storageToAdopt, capacity, length, shouldOwnStorage);
@@ -319,7 +319,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of the bytes to append</param>
         /// <returns>`true` if appending was successful</returns>
         /// <remarks>The bytes will be copied into the data object's storage buffer</remarks>
-        public static bool ATDataAppendBytes(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr bytesToAppend, ulong length)
+        public static bool ATDataAppendBytes(Foundation.ATDataUnsafe data, global::System.IntPtr bytesToAppend, ulong length)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataAppendBytes(_arg0, bytesToAppend, length);
@@ -333,7 +333,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="index">The index in the existing data object buffer at which to insert the new data. Must be less than or equal to the data object's length</param>
         /// <returns>`true` if the insertion was successful</returns>
         /// <remarks>The bytes will be copied into the data object's storage buffer at the index specified</remarks>
-        public static bool ATDataInsertBytes(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr bytesToInsert, ulong length, ulong index)
+        public static bool ATDataInsertBytes(Foundation.ATDataUnsafe data, global::System.IntPtr bytesToInsert, ulong length, ulong index)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataInsertBytes(_arg0, bytesToInsert, length, index);
@@ -346,7 +346,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="index">The index from which to remove the data</param>
         /// <returns>`true` if removal was successful</returns>
         /// <remarks>Will not zero out bytes above new length</remarks>
-        public static bool ATDataRemoveBytes(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, ulong length, ulong index)
+        public static bool ATDataRemoveBytes(Foundation.ATDataUnsafe data, ulong length, ulong index)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataRemoveBytes(_arg0, length, index);
@@ -357,7 +357,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="data">The data object</param>
         /// <returns>`true` if removal was successful</returns>
         /// <remarks>Will not zero out bytes removed</remarks>
-        public static bool ATDataResetToEmpty(global::AirTurnManager.Api.Foundation.ATDataUnsafe data)
+        public static bool ATDataResetToEmpty(Foundation.ATDataUnsafe data)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataResetToEmpty(_arg0);
@@ -368,7 +368,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="data">The data object</param>
         /// <param name="bytes">The buffer to copy into</param>
         /// <param name="maxLength">The maximum length of data to copy</param>
-        public static void ATDataGetBytes(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr bytes, ulong maxLength)
+        public static void ATDataGetBytes(Foundation.ATDataUnsafe data, global::System.IntPtr bytes, ulong maxLength)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             _Internal.ATDataGetBytes(_arg0, bytes, maxLength);
@@ -379,7 +379,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="bytes">The buffer to copy into</param>
         /// <param name="offset">The offset in the data object to copy from</param>
         /// <param name="maxLength">The maximum length of data to copy</param>
-        public static void ATDataGetBytesAtOffset(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::System.IntPtr bytes, ulong offset, ulong maxLength)
+        public static void ATDataGetBytesAtOffset(Foundation.ATDataUnsafe data, global::System.IntPtr bytes, ulong offset, ulong maxLength)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             _Internal.ATDataGetBytesAtOffset(_arg0, bytes, offset, maxLength);
@@ -390,7 +390,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="newCapacity">The new size of the data buffer</param>
         /// <returns>`true` if resize was successful. If not the buffer will remain the same size</returns>
         /// <remarks>After resizing, the buffer pointer may change. If the data object does not own the data buffer then it cannot resize it so this will fail.</remarks>
-        public static bool ATDataResizeCapacity(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, ulong newCapacity)
+        public static bool ATDataResizeCapacity(Foundation.ATDataUnsafe data, ulong newCapacity)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataResizeCapacity(_arg0, newCapacity);
@@ -402,7 +402,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="newLength">The new length of the data object. If longer than current capacity, buffer resize will be attempted.</param>
         /// <returns>`true` if resize was successful. If not the buffer and data length will remain the same size</returns>
         /// <remarks>After resizing, the buffer pointer may change. If the data object does not own the data buffer then it cannot resize it so this will fail.</remarks>
-        public static bool ATDataResize(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, ulong newLength)
+        public static bool ATDataResize(Foundation.ATDataUnsafe data, ulong newLength)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataResize(_arg0, newLength);
@@ -414,7 +414,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="extraLength">How much to extend the data length by</param>
         /// <param name="fillWith">The value to fill the new bytes with</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATDataIncreaseLength(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, ulong extraLength, byte fillWith)
+        public static bool ATDataIncreaseLength(Foundation.ATDataUnsafe data, ulong extraLength, byte fillWith)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataIncreaseLength(_arg0, extraLength, fillWith);
@@ -426,7 +426,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="source">The source object</param>
         /// <returns>`true` if the copy was successful</returns>
         /// <remarks>Will also copy the data buffer to the destination's buffer (as much as will fit in the destination capacity without resizing destination)</remarks>
-        public static bool ATDataCopy(global::AirTurnManager.Api.Foundation.ATDataUnsafe destination, global::AirTurnManager.Api.Foundation.ATDataUnsafe source)
+        public static bool ATDataCopy(Foundation.ATDataUnsafe destination, Foundation.ATDataUnsafe source)
         {
             var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
             var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
@@ -441,7 +441,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of data to copy</param>
         /// <returns>`true` if copying was successful</returns>
         /// <remarks>The subdata object must have capacity to contain the full length of data requested</remarks>
-        public static bool ATDataSubdataWithRange(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::AirTurnManager.Api.Foundation.ATDataUnsafe subData, ulong offset, ulong length)
+        public static bool ATDataSubdataWithRange(Foundation.ATDataUnsafe data, Foundation.ATDataUnsafe subData, ulong offset, ulong length)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _arg1 = ReferenceEquals(subData, null) ? global::System.IntPtr.Zero : subData._Instance;
@@ -456,7 +456,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="length">The length of data to copy</param>
         /// <returns>`true` if adoption was successful</returns>
         /// <remarks>The subData object will simply hold a pointer to the original `data` object's buffer at `offset`.</remarks>
-        public static bool ATDataSubdataNoCopyWithRange(global::AirTurnManager.Api.Foundation.ATDataUnsafe data, global::AirTurnManager.Api.Foundation.ATDataUnsafe subData, ulong offset, ulong length)
+        public static bool ATDataSubdataNoCopyWithRange(Foundation.ATDataUnsafe data, Foundation.ATDataUnsafe subData, ulong offset, ulong length)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _arg1 = ReferenceEquals(subData, null) ? global::System.IntPtr.Zero : subData._Instance;
@@ -468,7 +468,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="data1">The first data object</param>
         /// <param name="data2">The second data object</param>
         /// <returns>`true` if the data objects are equal (the bytes in the data buffer are the same and the length is the same)</returns>
-        public static bool ATDataIsEqual(global::AirTurnManager.Api.Foundation.ATDataUnsafe data1, global::AirTurnManager.Api.Foundation.ATDataUnsafe data2)
+        public static bool ATDataIsEqual(Foundation.ATDataUnsafe data1, Foundation.ATDataUnsafe data2)
         {
             var _arg0 = ReferenceEquals(data1, null) ? global::System.IntPtr.Zero : data1._Instance;
             var _arg1 = ReferenceEquals(data2, null) ? global::System.IntPtr.Zero : data2._Instance;
@@ -479,25 +479,25 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Determine if a data object owns its storage buffer</summary>
         /// <param name="data">The data object</param>
         /// <returns>`true` if the data object does own its storage</returns>
-        public static bool ATDataOwnsStorage(global::AirTurnManager.Api.Foundation.ATDataUnsafe data)
+        public static bool ATDataOwnsStorage(Foundation.ATDataUnsafe data)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATDataOwnsStorage(_arg0);
             return _ret;
         }
 
-        public global::AirTurnManager.Api.Foundation.ATBaseUnsafe Base
+        public Foundation.ATBaseUnsafe Base
         {
             get
             {
-                return global::AirTurnManager.Api.Foundation.ATBaseUnsafe._CreateInstance(new global::System.IntPtr(&((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->_base));
+                return Foundation.ATBaseUnsafe._CreateInstance(new global::System.IntPtr(&((Foundation.ATDataUnsafe._Internal*)_Instance)->_base));
             }
 
             set
             {
                 if (ReferenceEquals(value, null))
                     throw new global::System.ArgumentNullException("value", "Cannot be null because it is passed by value.");
-                ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->_base = *(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)value._Instance;
+                ((Foundation.ATDataUnsafe._Internal*)_Instance)->_base = *(Foundation.ATBaseUnsafe._Internal*)value._Instance;
             }
         }
 
@@ -505,12 +505,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->_ownsBytesStorage != 0;
+                return ((Foundation.ATDataUnsafe._Internal*)_Instance)->_ownsBytesStorage != 0;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->_ownsBytesStorage = (byte)(value ? 1 : 0);
+                ((Foundation.ATDataUnsafe._Internal*)_Instance)->_ownsBytesStorage = (byte)(value ? 1 : 0);
             }
         }
 
@@ -518,12 +518,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->capacity;
+                return ((Foundation.ATDataUnsafe._Internal*)_Instance)->capacity;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->capacity = value;
+                ((Foundation.ATDataUnsafe._Internal*)_Instance)->capacity = value;
             }
         }
 
@@ -531,12 +531,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->bytes;
+                return ((Foundation.ATDataUnsafe._Internal*)_Instance)->bytes;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->bytes = (global::System.IntPtr)value;
+                ((Foundation.ATDataUnsafe._Internal*)_Instance)->bytes = (global::System.IntPtr)value;
             }
         }
 
@@ -544,12 +544,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->length;
+                return ((Foundation.ATDataUnsafe._Internal*)_Instance)->length;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATDataUnsafe._Internal*)_Instance)->length = value;
+                ((Foundation.ATDataUnsafe._Internal*)_Instance)->length = value;
             }
         }
     }

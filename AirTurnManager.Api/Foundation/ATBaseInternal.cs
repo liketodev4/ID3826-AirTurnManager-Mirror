@@ -32,7 +32,7 @@ namespace AirTurnManager.Api.Foundation
             internal ulong objectSize;
 
             [FieldOffset(8)]
-            internal global::AirTurnManager.Api.Foundation.ATObjectType superType;
+            internal Foundation.ATObjectType superType;
 
             [FieldOffset(16)]
             internal global::System.IntPtr freeFunction;
@@ -46,28 +46,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATObjectDefinition> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATObjectDefinition>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATObjectDefinition> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATObjectDefinition>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATObjectDefinition _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATObjectDefinition _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATObjectDefinition(native.ToPointer(), skipVTables);
+            return new Foundation.ATObjectDefinition(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATObjectDefinition _CreateInstance(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal native, bool skipVTables = false)
+        internal static Foundation.ATObjectDefinition _CreateInstance(Foundation.ATObjectDefinition._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATObjectDefinition(native, skipVTables);
+            return new Foundation.ATObjectDefinition(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal native)
+        private static void* _CopyValue(Foundation.ATObjectDefinition._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATObjectDefinition._Internal));
+            *(Foundation.ATObjectDefinition._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATObjectDefinition(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal native, bool skipVTables = false)
+        private ATObjectDefinition(Foundation.ATObjectDefinition._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -83,17 +83,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATObjectDefinition()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATObjectDefinition._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATObjectDefinition(global::AirTurnManager.Api.Foundation.ATObjectDefinition _0)
+        public ATObjectDefinition(Foundation.ATObjectDefinition _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATObjectDefinition._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_0._Instance);
+            *((Foundation.ATObjectDefinition._Internal*)_Instance) = *((Foundation.ATObjectDefinition._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -105,7 +105,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATObjectDefinition _dummy;
+            Foundation.ATObjectDefinition _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
@@ -116,68 +116,68 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->objectSize;
+                return ((Foundation.ATObjectDefinition._Internal*)_Instance)->objectSize;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->objectSize = value;
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->objectSize = value;
             }
         }
 
-        public global::AirTurnManager.Api.Foundation.ATObjectType SuperType
+        public Foundation.ATObjectType SuperType
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->superType;
+                return ((Foundation.ATObjectDefinition._Internal*)_Instance)->superType;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->superType = value;
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->superType = value;
             }
         }
 
-        public global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr FreeFunction
+        public Foundation.Delegates.Action_IntPtr FreeFunction
         {
             get
             {
-                var _ptr0 = ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->freeFunction;
-                return _ptr0 == IntPtr.Zero ? null : (global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr));
+                var _ptr0 = ((Foundation.ATObjectDefinition._Internal*)_Instance)->freeFunction;
+                return _ptr0 == IntPtr.Zero ? null : (Foundation.Delegates.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(Foundation.Delegates.Action_IntPtr));
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->freeFunction = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->freeFunction = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
-        public global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_IntPtr Description
+        public Foundation.Delegates.Action_IntPtr_IntPtr Description
         {
             get
             {
-                var _ptr0 = ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->description;
-                return _ptr0 == IntPtr.Zero ? null : (global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_IntPtr)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_IntPtr));
+                var _ptr0 = ((Foundation.ATObjectDefinition._Internal*)_Instance)->description;
+                return _ptr0 == IntPtr.Zero ? null : (Foundation.Delegates.Action_IntPtr_IntPtr)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(Foundation.Delegates.Action_IntPtr_IntPtr));
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->description = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->description = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
-        public global::AirTurnManager.Api.Foundation.Delegates.Action_IntPtr_IntPtr DebugDescription
+        public Foundation.Delegates.Action_IntPtr_IntPtr DebugDescription
         {
             get
             {
                 // TODO WTF?
-                var _ptr0 = ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->debugDescription;
-                return _ptr0 == IntPtr.Zero ? null : (global::AirTurnManager.Api.Foundation.ATBaseDescriptionFunction)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(global::AirTurnManager.Api.Foundation.ATBaseDescriptionFunction));
+                var _ptr0 = ((Foundation.ATObjectDefinition._Internal*)_Instance)->debugDescription;
+                return _ptr0 == IntPtr.Zero ? null : (Foundation.ATBaseDescriptionFunction)Marshal.GetDelegateForFunctionPointer(_ptr0, typeof(Foundation.ATBaseDescriptionFunction));
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATObjectDefinition._Internal*)_Instance)->debugDescription = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((Foundation.ATObjectDefinition._Internal*)_Instance)->debugDescription = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
     }
@@ -189,7 +189,7 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseSubclassNew")]
-            internal static extern global::System.IntPtr ATBaseSubclassNew(global::System.IntPtr optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type);
+            internal static extern global::System.IntPtr ATBaseSubclassNew(global::System.IntPtr optionalStorage, Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -199,33 +199,33 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATBaseRegisterSubclass")]
-            internal static extern void ATBaseRegisterSubclass(global::AirTurnManager.Api.Foundation.ATObjectType type, global::System.IntPtr definition);
+            internal static extern void ATBaseRegisterSubclass(Foundation.ATObjectType type, global::System.IntPtr definition);
         }
 
-        public static global::AirTurnManager.Api.Foundation.ATBaseUnsafe ATBaseSubclassNew(global::AirTurnManager.Api.Foundation.ATBaseUnsafe optionalStorage, global::AirTurnManager.Api.Foundation.ATObjectType type)
+        public static Foundation.ATBaseUnsafe ATBaseSubclassNew(Foundation.ATBaseUnsafe optionalStorage, Foundation.ATObjectType type)
         {
             var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATBaseSubclassNew(_arg0, type);
-            global::AirTurnManager.Api.Foundation.ATBaseUnsafe _result0;
+            Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseUnsafe)global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATBaseUnsafe)Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATBaseUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
-        public static global::AirTurnManager.Api.Foundation.ATBaseUnsafe ATBaseResizeObject(global::System.IntPtr @object, ulong newSize)
+        public static Foundation.ATBaseUnsafe ATBaseResizeObject(global::System.IntPtr @object, ulong newSize)
         {
             var _ret = _Internal.ATBaseResizeObject(@object, newSize);
-            global::AirTurnManager.Api.Foundation.ATBaseUnsafe _result0;
+            Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseUnsafe)global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATBaseUnsafe)Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATBaseUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
-        public static void ATBaseRegisterSubclass(global::AirTurnManager.Api.Foundation.ATObjectType type, global::AirTurnManager.Api.Foundation.ATObjectDefinition definition)
+        public static void ATBaseRegisterSubclass(Foundation.ATObjectType type, Foundation.ATObjectDefinition definition)
         {
             var _arg1 = ReferenceEquals(definition, null) ? global::System.IntPtr.Zero : definition._Instance;
             _Internal.ATBaseRegisterSubclass(type, _arg1);

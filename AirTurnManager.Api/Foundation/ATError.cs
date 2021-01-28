@@ -22,28 +22,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATErrorUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATErrorUnsafe>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATErrorUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATErrorUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATErrorUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATErrorUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATErrorUnsafe(native.ToPointer(), skipVTables);
+            return new Foundation.ATErrorUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATErrorUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal native, bool skipVTables = false)
+        internal static Foundation.ATErrorUnsafe _CreateInstance(Foundation.ATErrorUnsafe._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATErrorUnsafe(native, skipVTables);
+            return new Foundation.ATErrorUnsafe(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal native)
+        private static void* _CopyValue(Foundation.ATErrorUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATErrorUnsafe._Internal));
+            *(Foundation.ATErrorUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATErrorUnsafe(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal native, bool skipVTables = false)
+        private ATErrorUnsafe(Foundation.ATErrorUnsafe._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -59,17 +59,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATErrorUnsafe()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATErrorUnsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATErrorUnsafe(global::AirTurnManager.Api.Foundation.ATErrorUnsafe _0)
+        public ATErrorUnsafe(Foundation.ATErrorUnsafe _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATErrorUnsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_0._Instance);
+            *((Foundation.ATErrorUnsafe._Internal*)_Instance) = *((Foundation.ATErrorUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -81,7 +81,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATErrorUnsafe _dummy;
+            Foundation.ATErrorUnsafe _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
@@ -92,12 +92,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                if (((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance)->domain == global::System.IntPtr.Zero)
+                if (((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain == global::System.IntPtr.Zero)
                     return default(string);
-                var _retPtr = (byte*)((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance)->domain;
+                var _retPtr = (byte*)((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain;
                 int _length = 0;
                 while (*(_retPtr++) != 0) _length += sizeof(byte);
-                return global::System.Text.Encoding.UTF8.GetString((byte*)((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance)->domain, _length);
+                return global::System.Text.Encoding.UTF8.GetString((byte*)((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain, _length);
             }
 
             set
@@ -105,7 +105,7 @@ namespace AirTurnManager.Api.Foundation
                 byte[] _bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                 fixed (byte* _bytePtr0 = _bytes0)
                 {
-                    ((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance)->domain = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
+                    ((Foundation.ATErrorUnsafe._Internal*)_Instance)->domain = (global::System.IntPtr)new global::System.IntPtr(_bytePtr0);
                 }
             }
         }
@@ -114,12 +114,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance)->code;
+                return ((Foundation.ATErrorUnsafe._Internal*)_Instance)->code;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATErrorUnsafe._Internal*)_Instance)->code = value;
+                ((Foundation.ATErrorUnsafe._Internal*)_Instance)->code = value;
             }
         }
     }

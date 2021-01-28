@@ -65,7 +65,7 @@ namespace AirTurnManager.Api.Foundation
             internal static extern int ATJSONNumTokensInValue(global::System.IntPtr token);
         }
 
-        public static bool ATJSONParseBool(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref bool val)
+        public static bool ATJSONParseBool(string json, Foundation.Jsmntok token, ref bool val)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             fixed (bool* _val2 = &val)
@@ -76,21 +76,21 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public static bool ATJSONStringEquals(string json, global::AirTurnManager.Api.Foundation.Jsmntok tok, string s)
+        public static bool ATJSONStringEquals(string json, Foundation.Jsmntok tok, string s)
         {
             var _arg1 = ReferenceEquals(tok, null) ? global::System.IntPtr.Zero : tok._Instance;
             var _ret = _Internal.ATJSONStringEquals(json, _arg1, s);
             return _ret;
         }
 
-        public static bool ATJSONParseUInt8(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, byte* val)
+        public static bool ATJSONParseUInt8(string json, Foundation.Jsmntok token, byte* val)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             var _ret = _Internal.ATJSONParseUInt8(json, _arg1, val);
             return _ret;
         }
 
-        public static bool ATJSONParseUInt16(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref ushort val)
+        public static bool ATJSONParseUInt16(string json, Foundation.Jsmntok token, ref ushort val)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             fixed (ushort* _val2 = &val)
@@ -101,14 +101,14 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public static bool ATJSONParseInt8(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, sbyte* val)
+        public static bool ATJSONParseInt8(string json, Foundation.Jsmntok token, sbyte* val)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             var _ret = _Internal.ATJSONParseInt8(json, _arg1, val);
             return _ret;
         }
 
-        public static bool ATJSONParseInt16(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref short val)
+        public static bool ATJSONParseInt16(string json, Foundation.Jsmntok token, ref short val)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             fixed (short* _val2 = &val)
@@ -119,7 +119,7 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public static bool ATJSONParseLong(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, ref long val)
+        public static bool ATJSONParseLong(string json, Foundation.Jsmntok token, ref long val)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             fixed (long* _val2 = &val)
@@ -130,7 +130,7 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public static bool ATJSONParseHexBytes(string json, global::AirTurnManager.Api.Foundation.Jsmntok token, byte* bytes, ulong maxSize, ref ulong parsedBytesLength)
+        public static bool ATJSONParseHexBytes(string json, Foundation.Jsmntok token, byte* bytes, ulong maxSize, ref ulong parsedBytesLength)
         {
             var _arg1 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             fixed (ulong* _parsedBytesLength4 = &parsedBytesLength)
@@ -141,7 +141,7 @@ namespace AirTurnManager.Api.Foundation
             }
         }
 
-        public static int ATJSONNumTokensInValue(global::AirTurnManager.Api.Foundation.Jsmntok token)
+        public static int ATJSONNumTokensInValue(Foundation.Jsmntok token)
         {
             var _arg0 = ReferenceEquals(token, null) ? global::System.IntPtr.Zero : token._Instance;
             var _ret = _Internal.ATJSONNumTokensInValue(_arg0);

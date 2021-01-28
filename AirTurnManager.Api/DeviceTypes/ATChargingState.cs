@@ -27,30 +27,30 @@ namespace AirTurnManager.Api.DeviceTypes
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateValidate")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATChargingStateValidate(global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState);
+            internal static extern bool ATChargingStateValidate(DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateParseData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATChargingStateParseData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATChargingState* chargingState);
+            internal static extern bool ATChargingStateParseData(global::System.IntPtr data, DeviceTypes.ATChargingState* chargingState);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateGetData")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATChargingStateGetData(global::System.IntPtr data, global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState);
+            internal static extern bool ATChargingStateGetData(global::System.IntPtr data, DeviceTypes.ATChargingState chargingState);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATChargingStateDescription")]
-            internal static extern global::System.IntPtr ATChargingStateDescription(global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState);
+            internal static extern global::System.IntPtr ATChargingStateDescription(DeviceTypes.ATChargingState chargingState);
         }
 
         /// <summary>Validate a charging state value</summary>
         /// <param name="chargingState">The charging state value to validate</param>
         /// <returns>`true` if valid</returns>
-        public static bool ATChargingStateValidate(global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState)
+        public static bool ATChargingStateValidate(DeviceTypes.ATChargingState chargingState)
         {
             var _ret = _Internal.ATChargingStateValidate(chargingState);
             return _ret;
@@ -60,12 +60,12 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">The data</param>
         /// <param name="chargingState">On return, contains the charging state value</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATChargingStateParseData(global::AirTurnManager.Api.DeviceTypes.ATBytes data, ref global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState)
+        public static bool ATChargingStateParseData(DeviceTypes.ATBytes data, ref DeviceTypes.ATChargingState chargingState)
         {
             if (ReferenceEquals(data, null))
                 throw new global::System.ArgumentNullException("data", "Cannot be null because it is passed by value.");
             var _arg0 = data._Instance;
-            fixed (global::AirTurnManager.Api.DeviceTypes.ATChargingState* _chargingState1 = &chargingState)
+            fixed (DeviceTypes.ATChargingState* _chargingState1 = &chargingState)
             {
                 var _arg1 = _chargingState1;
                 var _ret = _Internal.ATChargingStateParseData(_arg0, _arg1);
@@ -77,7 +77,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <param name="data">Will be populated with the data</param>
         /// <param name="chargingState">The repeat rate value to encode</param>
         /// <returns>`true` if successful</returns>
-        public static bool ATChargingStateGetData(global::AirTurnManager.Api.DeviceTypes.ATMutableBytes data, global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState)
+        public static bool ATChargingStateGetData(DeviceTypes.ATMutableBytes data, DeviceTypes.ATChargingState chargingState)
         {
             var _arg0 = ReferenceEquals(data, null) ? global::System.IntPtr.Zero : data._Instance;
             var _ret = _Internal.ATChargingStateGetData(_arg0, chargingState);
@@ -87,7 +87,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Get a description for a charging state value</summary>
         /// <param name="chargingState">The charging state value</param>
         /// <returns>A null-terminated constant string</returns>
-        public static string ATChargingStateDescription(global::AirTurnManager.Api.DeviceTypes.ATChargingState chargingState)
+        public static string ATChargingStateDescription(DeviceTypes.ATChargingState chargingState)
         {
             var _ret = _Internal.ATChargingStateDescription(chargingState);
             if (_ret == global::System.IntPtr.Zero)

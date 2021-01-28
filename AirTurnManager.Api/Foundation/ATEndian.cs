@@ -19,28 +19,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat32Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat32Unsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATSwappedFloat32Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe(native.ToPointer(), skipVTables);
+            return new Foundation.ATSwappedFloat32Unsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal native, bool skipVTables = false)
+        internal static Foundation.ATSwappedFloat32Unsafe _CreateInstance(Foundation.ATSwappedFloat32Unsafe._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe(native, skipVTables);
+            return new Foundation.ATSwappedFloat32Unsafe(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal native)
+        private static void* _CopyValue(Foundation.ATSwappedFloat32Unsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATSwappedFloat32Unsafe._Internal));
+            *(Foundation.ATSwappedFloat32Unsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATSwappedFloat32Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal native, bool skipVTables = false)
+        private ATSwappedFloat32Unsafe(Foundation.ATSwappedFloat32Unsafe._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -56,17 +56,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATSwappedFloat32Unsafe()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATSwappedFloat32Unsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATSwappedFloat32Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _0)
+        public ATSwappedFloat32Unsafe(Foundation.ATSwappedFloat32Unsafe _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATSwappedFloat32Unsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_0._Instance);
+            *((Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance) = *((Foundation.ATSwappedFloat32Unsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -78,7 +78,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe _dummy;
+            Foundation.ATSwappedFloat32Unsafe _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
@@ -89,12 +89,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance)->v;
+                return ((Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance)->v;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance)->v = value;
+                ((Foundation.ATSwappedFloat32Unsafe._Internal*)_Instance)->v = value;
             }
         }
     }
@@ -110,28 +110,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat64Unsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATSwappedFloat64Unsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATSwappedFloat64Unsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe(native.ToPointer(), skipVTables);
+            return new Foundation.ATSwappedFloat64Unsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal native, bool skipVTables = false)
+        internal static Foundation.ATSwappedFloat64Unsafe _CreateInstance(Foundation.ATSwappedFloat64Unsafe._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe(native, skipVTables);
+            return new Foundation.ATSwappedFloat64Unsafe(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal native)
+        private static void* _CopyValue(Foundation.ATSwappedFloat64Unsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATSwappedFloat64Unsafe._Internal));
+            *(Foundation.ATSwappedFloat64Unsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATSwappedFloat64Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal native, bool skipVTables = false)
+        private ATSwappedFloat64Unsafe(Foundation.ATSwappedFloat64Unsafe._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -147,17 +147,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATSwappedFloat64Unsafe()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATSwappedFloat64Unsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATSwappedFloat64Unsafe(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _0)
+        public ATSwappedFloat64Unsafe(Foundation.ATSwappedFloat64Unsafe _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATSwappedFloat64Unsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_0._Instance);
+            *((Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance) = *((Foundation.ATSwappedFloat64Unsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -169,7 +169,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe _dummy;
+            Foundation.ATSwappedFloat64Unsafe _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
@@ -180,12 +180,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance)->v;
+                return ((Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance)->v;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance)->v = value;
+                ((Foundation.ATSwappedFloat64Unsafe._Internal*)_Instance)->v = value;
             }
         }
     }

@@ -45,25 +45,25 @@ namespace AirTurnManager.Api.DeviceTypes
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDDescription")]
-            internal static extern global::System.IntPtr ATModelIDDescription(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);
+            internal static extern global::System.IntPtr ATModelIDDescription(DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsBLE113")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModelIDIsBLE113(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);
+            internal static extern bool ATModelIDIsBLE113(DeviceTypes.ATModelID modelID);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATModelIDIsNordic")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ATModelIDIsNordic(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);
+            internal static extern bool ATModelIDIsNordic(DeviceTypes.ATModelID modelID);
         }
 
         /// <summary>Get a description for a model ID value</summary>
         /// <param name="modelID">The modelID value</param>
         /// <returns>A null-terminated constant string</returns>
-        public static string ATModelIDDescription(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
+        public static string ATModelIDDescription(DeviceTypes.ATModelID modelID)
         {
             var _ret = _Internal.ATModelIDDescription(modelID);
             if (_ret == global::System.IntPtr.Zero)
@@ -77,7 +77,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Determines if a given model ID is a BLE113 based model</summary>
         /// <param name="modelID">The model ID</param>
         /// <returns>`true` if model is a BLE113 model</returns>
-        public static bool ATModelIDIsBLE113(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
+        public static bool ATModelIDIsBLE113(DeviceTypes.ATModelID modelID)
         {
             var _ret = _Internal.ATModelIDIsBLE113(modelID);
             return _ret;
@@ -86,7 +86,7 @@ namespace AirTurnManager.Api.DeviceTypes
         /// <summary>Determines if a given model ID is a Nordic based model</summary>
         /// <param name="modelID">The model ID</param>
         /// <returns>`true` if model is a Nordic model</returns>
-        public static bool ATModelIDIsNordic(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
+        public static bool ATModelIDIsNordic(DeviceTypes.ATModelID modelID)
         {
             var _ret = _Internal.ATModelIDIsNordic(modelID);
             return _ret;

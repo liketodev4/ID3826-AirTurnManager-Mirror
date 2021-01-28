@@ -98,33 +98,33 @@ namespace AirTurnManager.Api
             return _ret;
         }
 
-        public static global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32 ATConvertFloatHostToSwapped(float arg)
+        public static DeviceDefaults.ATSwappedFloat32 ATConvertFloatHostToSwapped(float arg)
         {
             var _ret = _Internal.ATConvertFloatHostToSwapped(arg);
-            return global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32._CreateInstance(_ret);
+            return DeviceDefaults.ATSwappedFloat32._CreateInstance(_ret);
         }
 
-        public static float ATConvertFloatSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32 arg)
+        public static float ATConvertFloatSwappedToHost(DeviceDefaults.ATSwappedFloat32 arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
             var _arg0 = arg._Instance;
-            var _ret = _Internal.ATConvertFloatSwappedToHost(*(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat32._Internal*)_arg0);
+            var _ret = _Internal.ATConvertFloatSwappedToHost(*(DeviceDefaults.ATSwappedFloat32._Internal*)_arg0);
             return _ret;
         }
 
-        public static global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64 ATConvertDoubleHostToSwapped(double arg)
+        public static DeviceDefaults.ATSwappedFloat64 ATConvertDoubleHostToSwapped(double arg)
         {
             var _ret = _Internal.ATConvertDoubleHostToSwapped(arg);
-            return global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64._CreateInstance(_ret);
+            return DeviceDefaults.ATSwappedFloat64._CreateInstance(_ret);
         }
 
-        public static double ATConvertDoubleSwappedToHost(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64 arg)
+        public static double ATConvertDoubleSwappedToHost(DeviceDefaults.ATSwappedFloat64 arg)
         {
             if (ReferenceEquals(arg, null))
                 throw new global::System.ArgumentNullException("arg", "Cannot be null because it is passed by value.");
             var _arg0 = arg._Instance;
-            var _ret = _Internal.ATConvertDoubleSwappedToHost(*(global::AirTurnManager.Api.DeviceDefaults.ATSwappedFloat64._Internal*)_arg0);
+            var _ret = _Internal.ATConvertDoubleSwappedToHost(*(DeviceDefaults.ATSwappedFloat64._Internal*)_arg0);
             return _ret;
         }
     }

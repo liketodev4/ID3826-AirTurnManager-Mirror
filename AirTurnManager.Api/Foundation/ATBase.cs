@@ -54,7 +54,7 @@ namespace AirTurnManager.Api.Foundation
 
             // The type of the object
             [FieldOffset(3)]
-            internal global::AirTurnManager.Api.Foundation.ATObjectType _type;
+            internal Foundation.ATObjectType _type;
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -85,7 +85,7 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetType")]
-            internal static extern global::AirTurnManager.Api.Foundation.ATObjectType ATGetType(global::System.IntPtr @object);
+            internal static extern Foundation.ATObjectType ATGetType(global::System.IntPtr @object);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -107,7 +107,7 @@ namespace AirTurnManager.Api.Foundation
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATGetDescriptionForType")]
-            internal static extern global::System.IntPtr ATGetDescriptionForType(global::AirTurnManager.Api.Foundation.ATObjectType type);
+            internal static extern global::System.IntPtr ATGetDescriptionForType(Foundation.ATObjectType type);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -134,28 +134,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBaseUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATBaseUnsafe>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseUnsafe> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATBaseUnsafe>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATBaseUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATBaseUnsafe _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATBaseUnsafe(native.ToPointer(), skipVTables);
+            return new Foundation.ATBaseUnsafe(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATBaseUnsafe _CreateInstance(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal native, bool skipVTables = false)
+        internal static Foundation.ATBaseUnsafe _CreateInstance(Foundation.ATBaseUnsafe._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATBaseUnsafe(native, skipVTables);
+            return new Foundation.ATBaseUnsafe(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal native)
+        private static void* _CopyValue(Foundation.ATBaseUnsafe._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATBaseUnsafe._Internal));
+            *(Foundation.ATBaseUnsafe._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATBaseUnsafe(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal native, bool skipVTables = false)
+        private ATBaseUnsafe(Foundation.ATBaseUnsafe._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -171,17 +171,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATBaseUnsafe()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATBaseUnsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATBaseUnsafe(global::AirTurnManager.Api.Foundation.ATBaseUnsafe _0)
+        public ATBaseUnsafe(Foundation.ATBaseUnsafe _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATBaseUnsafe._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_0._Instance);
+            *((Foundation.ATBaseUnsafe._Internal*)_Instance) = *((Foundation.ATBaseUnsafe._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -193,7 +193,7 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATBaseUnsafe _dummy;
+            Foundation.ATBaseUnsafe _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
@@ -203,30 +203,30 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Create a new object</summary>
         /// <param name="optionalStorage">Optionally, a pointer to a struct or memory where the object can be stored</param>
         /// <returns>A pointer to the new object. `NULL` if allocation could not be completed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATBaseUnsafe ATBaseNew(global::AirTurnManager.Api.Foundation.ATBaseUnsafe optionalStorage)
+        public static Foundation.ATBaseUnsafe ATBaseNew(Foundation.ATBaseUnsafe optionalStorage)
         {
             var _arg0 = ReferenceEquals(optionalStorage, null) ? global::System.IntPtr.Zero : optionalStorage._Instance;
             var _ret = _Internal.ATBaseNew(_arg0);
-            global::AirTurnManager.Api.Foundation.ATBaseUnsafe _result0;
+            Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseUnsafe)global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATBaseUnsafe)Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATBaseUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
         /// <summary>Initialize a new object</summary>
         /// <param name="base">The object to initialize. Can be `NULL` so the result from `ATBaseNew` can be passed directly, in which case it will simply return `NULL`</param>
         /// <returns>The initialized object or `NULL` if initialization failed</returns>
-        public static global::AirTurnManager.Api.Foundation.ATBaseUnsafe ATBaseInit(global::AirTurnManager.Api.Foundation.ATBaseUnsafe @base)
+        public static Foundation.ATBaseUnsafe ATBaseInit(Foundation.ATBaseUnsafe @base)
         {
             var _arg0 = ReferenceEquals(@base, null) ? global::System.IntPtr.Zero : @base._Instance;
             var _ret = _Internal.ATBaseInit(_arg0);
-            global::AirTurnManager.Api.Foundation.ATBaseUnsafe _result0;
+            Foundation.ATBaseUnsafe _result0;
             if (_ret == IntPtr.Zero) _result0 = null;
-            else if (global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
-                _result0 = (global::AirTurnManager.Api.Foundation.ATBaseUnsafe)global::AirTurnManager.Api.Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
-            else _result0 = global::AirTurnManager.Api.Foundation.ATBaseUnsafe._CreateInstance(_ret);
+            else if (Foundation.ATBaseUnsafe.NativeToManagedMap.ContainsKey(_ret))
+                _result0 = (Foundation.ATBaseUnsafe)Foundation.ATBaseUnsafe.NativeToManagedMap[_ret];
+            else _result0 = Foundation.ATBaseUnsafe._CreateInstance(_ret);
             return _result0;
         }
 
@@ -234,7 +234,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="destination">The destination storage to copy into</param>
         /// <param name="source">The source object to copy from</param>
         /// <returns>`true` if copying was successful. Will fail if either pointer is `NULL` or the type of the objects is not the same.</returns>
-        public static bool ATBaseCopy(global::AirTurnManager.Api.Foundation.ATBaseUnsafe destination, global::AirTurnManager.Api.Foundation.ATBaseUnsafe source)
+        public static bool ATBaseCopy(Foundation.ATBaseUnsafe destination, Foundation.ATBaseUnsafe source)
         {
             var _arg0 = ReferenceEquals(destination, null) ? global::System.IntPtr.Zero : destination._Instance;
             var _arg1 = ReferenceEquals(source, null) ? global::System.IntPtr.Zero : source._Instance;
@@ -263,7 +263,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Get the type of an object</summary>
         /// <param name="object">The object</param>
         /// <returns>The type of the object</returns>
-        public static global::AirTurnManager.Api.Foundation.ATObjectType ATGetType(global::System.IntPtr @object)
+        public static Foundation.ATObjectType ATGetType(global::System.IntPtr @object)
         {
             var _ret = _Internal.ATGetType(@object);
             return _ret;
@@ -300,7 +300,7 @@ namespace AirTurnManager.Api.Foundation
         /// <summary>Get a description for an object type</summary>
         /// <param name="type">The object type</param>
         /// <returns>A description of the type, or NULL if unknown type</returns>
-        public static string ATGetDescriptionForType(global::AirTurnManager.Api.Foundation.ATObjectType type)
+        public static string ATGetDescriptionForType(Foundation.ATObjectType type)
         {
             var _ret = _Internal.ATGetDescriptionForType(type);
             if (_ret == global::System.IntPtr.Zero)
@@ -315,7 +315,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="object">The object</param>
         /// <param name="string">The string to populate with a description</param>
         /// <returns>`true` if the object could be described successfully</returns>
-        public static bool ATGetDescription(global::System.IntPtr @object, global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
+        public static bool ATGetDescription(global::System.IntPtr @object, Foundation.ATStringUnsafe @string)
         {
             var _arg1 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATGetDescription(@object, _arg1);
@@ -326,7 +326,7 @@ namespace AirTurnManager.Api.Foundation
         /// <param name="object">The object</param>
         /// <param name="string">The string to populate with a description</param>
         /// <returns>`true` if the object could be described successfully</returns>
-        public static bool ATGetDebugDescription(global::System.IntPtr @object, global::AirTurnManager.Api.Foundation.ATStringUnsafe @string)
+        public static bool ATGetDebugDescription(global::System.IntPtr @object, Foundation.ATStringUnsafe @string)
         {
             var _arg1 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATGetDebugDescription(@object, _arg1);
@@ -351,12 +351,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_signature;
+                return ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_signature;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_signature = value;
+                ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_signature = value;
             }
         }
 
@@ -364,12 +364,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_retainCount;
+                return ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_retainCount;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_retainCount = value;
+                ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_retainCount = value;
             }
         }
 
@@ -377,12 +377,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_ownsMemory != 0;
+                return ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_ownsMemory != 0;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_ownsMemory = (byte)(value ? 1 : 0);
+                ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_ownsMemory = (byte)(value ? 1 : 0);
             }
         }
 
@@ -390,25 +390,25 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_hasInitCompleted != 0;
+                return ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_hasInitCompleted != 0;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_hasInitCompleted = (byte)(value ? 1 : 0);
+                ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_hasInitCompleted = (byte)(value ? 1 : 0);
             }
         }
 
-        public global::AirTurnManager.Api.Foundation.ATObjectType Type
+        public Foundation.ATObjectType Type
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_type;
+                return ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_type;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATBaseUnsafe._Internal*)_Instance)->_type = value;
+                ((Foundation.ATBaseUnsafe._Internal*)_Instance)->_type = value;
             }
         }
     }

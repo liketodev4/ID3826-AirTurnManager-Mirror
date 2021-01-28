@@ -31,28 +31,28 @@ namespace AirTurnManager.Api.Foundation
 
         public global::System.IntPtr _Instance { get; protected set; }
 
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATMutableStringPointer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::AirTurnManager.Api.Foundation.ATMutableStringPointer>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATMutableStringPointer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Foundation.ATMutableStringPointer>();
 
         protected bool _ownsNativeInstance;
 
-        internal static global::AirTurnManager.Api.Foundation.ATMutableStringPointer _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static Foundation.ATMutableStringPointer _CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATMutableStringPointer(native.ToPointer(), skipVTables);
+            return new Foundation.ATMutableStringPointer(native.ToPointer(), skipVTables);
         }
 
-        internal static global::AirTurnManager.Api.Foundation.ATMutableStringPointer _CreateInstance(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal native, bool skipVTables = false)
+        internal static Foundation.ATMutableStringPointer _CreateInstance(Foundation.ATMutableStringPointer._Internal native, bool skipVTables = false)
         {
-            return new global::AirTurnManager.Api.Foundation.ATMutableStringPointer(native, skipVTables);
+            return new Foundation.ATMutableStringPointer(native, skipVTables);
         }
 
-        private static void* _CopyValue(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal native)
+        private static void* _CopyValue(Foundation.ATMutableStringPointer._Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal));
-            *(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(Foundation.ATMutableStringPointer._Internal));
+            *(Foundation.ATMutableStringPointer._Internal*)ret = native;
             return ret.ToPointer();
         }
 
-        private ATMutableStringPointer(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal native, bool skipVTables = false)
+        private ATMutableStringPointer(Foundation.ATMutableStringPointer._Internal native, bool skipVTables = false)
             : this(_CopyValue(native), skipVTables)
         {
             _ownsNativeInstance = true;
@@ -68,17 +68,17 @@ namespace AirTurnManager.Api.Foundation
 
         public ATMutableStringPointer()
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATMutableStringPointer._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
         }
 
-        public ATMutableStringPointer(global::AirTurnManager.Api.Foundation.ATMutableStringPointer _0)
+        public ATMutableStringPointer(Foundation.ATMutableStringPointer _0)
         {
-            _Instance = Marshal.AllocHGlobal(sizeof(global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal));
+            _Instance = Marshal.AllocHGlobal(sizeof(Foundation.ATMutableStringPointer._Internal));
             _ownsNativeInstance = true;
             NativeToManagedMap[_Instance] = this;
-            *((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_Instance) = *((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_0._Instance);
+            *((Foundation.ATMutableStringPointer._Internal*)_Instance) = *((Foundation.ATMutableStringPointer._Internal*)_0._Instance);
         }
 
         public void Dispose()
@@ -90,14 +90,14 @@ namespace AirTurnManager.Api.Foundation
         {
             if (_Instance == IntPtr.Zero)
                 return;
-            global::AirTurnManager.Api.Foundation.ATMutableStringPointer _dummy;
+            Foundation.ATMutableStringPointer _dummy;
             NativeToManagedMap.TryRemove(_Instance, out _dummy);
             if (_ownsNativeInstance)
                 Marshal.FreeHGlobal(_Instance);
             _Instance = IntPtr.Zero;
         }
 
-        public static bool ATMutableStringPointerAddStringWithFormat(global::AirTurnManager.Api.Foundation.ATMutableStringPointer @string, string format)
+        public static bool ATMutableStringPointerAddStringWithFormat(Foundation.ATMutableStringPointer @string, string format)
         {
             var _arg0 = ReferenceEquals(@string, null) ? global::System.IntPtr.Zero : @string._Instance;
             var _ret = _Internal.ATMutableStringPointerAddStringWithFormat(_arg0, format);
@@ -108,12 +108,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return (sbyte*)((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_Instance)->@string;
+                return (sbyte*)((Foundation.ATMutableStringPointer._Internal*)_Instance)->@string;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_Instance)->@string = (global::System.IntPtr)value;
+                ((Foundation.ATMutableStringPointer._Internal*)_Instance)->@string = (global::System.IntPtr)value;
             }
         }
 
@@ -121,12 +121,12 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_Instance)->length;
+                return ((Foundation.ATMutableStringPointer._Internal*)_Instance)->length;
             }
 
             set
             {
-                ((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_Instance)->length = value;
+                ((Foundation.ATMutableStringPointer._Internal*)_Instance)->length = value;
             }
         }
 
@@ -134,7 +134,7 @@ namespace AirTurnManager.Api.Foundation
         {
             get
             {
-                return ((global::AirTurnManager.Api.Foundation.ATMutableStringPointer._Internal*)_Instance)->capacity;
+                return ((Foundation.ATMutableStringPointer._Internal*)_Instance)->capacity;
             }
         }
     }

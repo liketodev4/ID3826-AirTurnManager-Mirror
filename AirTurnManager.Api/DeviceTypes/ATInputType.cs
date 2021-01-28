@@ -31,10 +31,10 @@ namespace AirTurnManager.Api.DeviceTypes
             [SuppressUnmanagedCodeSecurity]
             [DllImport(Constants.ATSC_API, CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "ATInputTypeFromModelID")]
-            internal static extern global::AirTurnManager.Api.DeviceTypes.ATInputType ATInputTypeFromModelID(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID);
+            internal static extern DeviceTypes.ATInputType ATInputTypeFromModelID(DeviceTypes.ATModelID modelID);
         }
 
-        public static global::AirTurnManager.Api.DeviceTypes.ATInputType ATInputTypeFromModelID(global::AirTurnManager.Api.DeviceTypes.ATModelID modelID)
+        public static DeviceTypes.ATInputType ATInputTypeFromModelID(DeviceTypes.ATModelID modelID)
         {
             var _ret = _Internal.ATInputTypeFromModelID(modelID);
             return _ret;
